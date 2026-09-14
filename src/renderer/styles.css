@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  margin: 0;
+  height: 100%;
+  font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: #f5f7fa;
+}
+
+.app-container {
+  height: 100%;
+  padding: 12px;
+}
+
+.app-container > .el-tabs {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container .el-tabs__content {
+  flex: 1;
+  overflow: auto;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.sub {
+  color: #909399;
+  font-size: 12px;
+}
+
+.schedule-cell {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 4px;
+}
+
+.schedule-cell.is-rest {
+  background: #f0f9eb;
+  color: #67c23a;
+}
+
+.schedule-cell.is-empty {
+  color: #c0c4cc;
+}
+
+.schedule-cell.is-disabled {
+  cursor: not-allowed;
+  background: #f2f2f2;
+  color: #909399;
+}
+
+.hint {
+  color: #909399;
+  font-size: 13px;
+}
+
+/* 删除确认弹窗：居中 + 系统灰白风格 */
+.el-message-box {
+  background-color: #f5f7fa;
+  border: 1px solid #e4e7ed;
+}
+
+.el-message-box .el-message-box__title {
+  color: #303133;
+}
+
+.el-message-box .el-message-box__content {
+  color: #606266;
+}
