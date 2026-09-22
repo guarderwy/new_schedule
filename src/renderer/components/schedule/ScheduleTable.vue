@@ -3,8 +3,8 @@ import { computed, ref } from 'vue'
 import type { ScheduleDetail, ScheduleWeek } from '@renderer/types/schedule'
 import type { Staff } from '@renderer/types/staff'
 import type { Shift } from '@renderer/types/shift'
-import { formatColumnLabel, getWeekDates } from '@renderer/core/weekUtils'
-import { GROUP_TYPE_LABEL } from '@renderer/constants'
+import type { Post } from '@renderer/types/post'
+import { getWeekDates, monthDay, weekdayName } from '@renderer/core/weekUtils'
 import ScheduleCell from './ScheduleCell.vue'
 import ShiftSelectDialog from './ShiftSelectDialog.vue'
 
@@ -12,6 +12,8 @@ const props = defineProps<{
   week: ScheduleWeek
   staffList: Staff[]
   shiftList: Shift[]
+  postList?: Post[]
+  title?: string
   editable?: boolean | ((date: string) => boolean)
 }>()
 
@@ -26,12 +28,17 @@ const staffInWeek = computed(() => {
   return props.staffList.filter((s) => ids.has(s.id))
 })
 
+const postMap = computed(() => new Map((props.postList ?? []).map((p) => [p.id, p.name])))
+
 const tableData = computed(() =>
   staffInWeek.value.map((s) => ({
     staffId: s.id,
     staffName: s.name,
-    employeeNo: s.employeeNo,
-    groupType: s.groupType
+    title: s.title,
+    annualLeave: s.annualLeave,
+    accumulatedLeave: s.accumulatedLeave,
+    bedManagement: s.bedManagement ?? '',
+    postName: s.postId ? (postMap.value.get(s.postId) ?? '') : ''
   }))
 )
 
@@ -71,34 +78,61 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean }) {
 </script>
 
 <template>
-  <el-table :data="tableData" border height="calc(100vh - 220px)">
-    <el-table-column prop="staffName" label="人员" fixed width="180">
-      <template #default="{ row }">
-        <div>{{ row.staffName }}</div>
-        <div class="sub">{{ row.employeeNo }} · {{ GROUP_TYPE_LABEL[row.groupType] }}</div>
-      </template>
-    </el-table-column>
-    <el-table-column
-      v-for="date in weekDates"
-      :key="date"
-      :label="formatColumnLabel(date)"
-      min-width="120"
-    >
-      <template #default="{ row }">
-        <ScheduleCell
-          :detail="getDetail(row.staffId, date)"
-          :shift="getShift(getDetail(row.staffId, date)?.shiftId)"
-          :editable="isEditable(date)"
-          @click="openDialog(row.staffId, date)"
-        />
-      </template>
-    </el-table-column>
-  </el-table>
+  <div class="schedule-wrap">
+    <h3 v-if="title" class="schedule-title">{{ title }}</h3>
+    <el-table :data="tableData" border height="calc(100vh - 260px)" class="schedule-table">
+      <el-table-column prop="annualLeave" label="年假" width="56" fixed="left" align="center" />
+      <el-table-column prop="title" label="能级/职称" width="90" fixed="left" align="center" />
+      <el-table-column prop="postName" label="岗位" width="110" fixed="left" align="center" />
+      <el-table-column prop="bedManagement" label="管床" width="110" fixed="left" />
+      <el-table-column prop="staffName" label="姓名" width="84" fixed="left" align="center" />
+      <el-table-column v-for="date in weekDates" :key="date" min-width="108" align="center">
+        <template #header>
+          <div class="day-head">
+            <div class="day-name">星期{{ weekdayName(date) }}</div>
+            <div class="day-date">{{ monthDay(date) }}</div>
+          </div>
+        </template>
+        <template #default="{ row }">
+          <ScheduleCell
+            :detail="getDetail(row.staffId, date)"
+            :shift="getShift(getDetail(row.staffId, date)?.shiftId)"
+            :editable="isEditable(date)"
+            @click="openDialog(row.staffId, date)"
+          />
+        </template>
+      </el-table-column>
+      <el-table-column prop="accumulatedLeave" label="积休" width="56" fixed="right" align="center" />
+    </el-table>
 
-  <ShiftSelectDialog
-    v-model="dialogVisible"
-    :shifts="shiftList"
-    :current="currentDetail"
-    @confirm="onDialogConfirm"
-  />
+    <ShiftSelectDialog
+      v-model="dialogVisible"
+      :shifts="shiftList"
+      :current="currentDetail"
+      @confirm="onDialogConfirm"
+    />
+  </div>
 </template>
+
+<style scoped>
+.schedule-title {
+  margin: 4px 0 12px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: #303133;
+}
+
+.day-head {
+  line-height: 1.4;
+}
+
+.day-name {
+  font-weight: 600;
+}
+
+.day-date {
+  font-size: 12px;
+  color: #909399;
+}
+</style>

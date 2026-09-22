@@ -3,6 +3,7 @@ import { computed } from 'vue'
 import { useScheduleStore } from '@renderer/stores/useScheduleStore'
 import { useStaffStore } from '@renderer/stores/useStaffStore'
 import { useShiftStore } from '@renderer/stores/useShiftStore'
+import { usePostStore } from '@renderer/stores/usePostStore'
 import { getCurrentWeekKey, canEditDate, todayStr } from '@renderer/core/weekUtils'
 import { buildEmptyWeek } from '@renderer/core/scheduler'
 import type { ScheduleWeek } from '@renderer/types/schedule'
@@ -11,6 +12,7 @@ import ScheduleTable from '@renderer/components/schedule/ScheduleTable.vue'
 const scheduleStore = useScheduleStore()
 const staffStore = useStaffStore()
 const shiftStore = useShiftStore()
+const postStore = usePostStore()
 
 const weekKey = getCurrentWeekKey()
 const today = todayStr()
@@ -46,9 +48,11 @@ async function onCellChange(payload: {
     </div>
     <ScheduleTable
       v-if="week"
+      title="护士排班表"
       :week="week"
       :staff-list="staffStore.list"
       :shift-list="shiftStore.list"
+      :post-list="postStore.list"
       :editable="editable"
       @cell-change="onCellChange"
     />

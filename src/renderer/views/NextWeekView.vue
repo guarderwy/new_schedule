@@ -4,6 +4,7 @@ import { ElMessage, ElMessageBox } from 'element-plus'
 import { useScheduleStore } from '@renderer/stores/useScheduleStore'
 import { useStaffStore } from '@renderer/stores/useStaffStore'
 import { useShiftStore } from '@renderer/stores/useShiftStore'
+import { usePostStore } from '@renderer/stores/usePostStore'
 import { useNightRuleStore } from '@renderer/stores/useNightRuleStore'
 import { useDemandStore } from '@renderer/stores/useDemandStore'
 import { useSettingsStore } from '@renderer/stores/useSettingsStore'
@@ -15,6 +16,7 @@ import ScheduleTable from '@renderer/components/schedule/ScheduleTable.vue'
 const scheduleStore = useScheduleStore()
 const staffStore = useStaffStore()
 const shiftStore = useShiftStore()
+const postStore = usePostStore()
 const nightRuleStore = useNightRuleStore()
 const demandStore = useDemandStore()
 const settingsStore = useSettingsStore()
@@ -108,9 +110,11 @@ async function onDeleteWeek() {
 
     <ScheduleTable
       v-if="week"
+      title="护士排班表"
       :week="week"
       :staff-list="staffStore.list"
       :shift-list="shiftStore.list"
+      :post-list="postStore.list"
       :editable="true"
       @cell-change="onCellChange"
     />

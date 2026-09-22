@@ -43,31 +43,51 @@ function isDirectory(filePath: string): boolean {
 }
 
 export function backupDataDir(dataDir: string): boolean {
-  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true })
-  const backupRoot = path.join(dataDir, 'backup')
-  if (!fs.existsSync(backupRoot)) fs.mkdirSync(backupRoot, { recursive: true })
-  const stamp = new Date().toISOString().slice(0, 10)
-  const target = path.join(backupRoot, stamp)
-  if (!fs.existsSync(target)) fs.mkdirSync(target, { recursive: true })
+  try {
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true })
 
-  for (const f of fs.readdirSync(dataDir)) {
-    if (f === 'backup') continue
-    const src = path.join(dataDir, f)
-    if (isDirectory(src)) continue
-    if (f.endsWith('.tmp')) continue
-    fs.copyFileSync(src, path.join(target, f))
-  }
-
-  const cutoff = Date.now() - BACKUP_KEEP_DAYS * 24 * 60 * 60 * 1000
-  for (const name of fs.readdirSync(backupRoot)) {
-    const dir = path.join(backupRoot, name)
-    if (!isDirectory(dir)) continue
-    const time = Date.parse(name)
-    if (!Number.isNaN(time) && time < cutoff) {
-      fs.rmSync(dir, { recursive: true, force: true })
+    const backupRoot = path.join(dataDir, 'backup')
+    if (!fs.existsSync(backupRoot)) {
+      fs.mkdirSync(backupRoot, { recursive: true })
+    } else if (!isDirectory(backupRoot)) {
+      // 异常状态：backup 不是目录（例如意外变成了文件），先清理再重建
+      fs.rmSync(backupRoot, { recursive: true, force: true })
+      fs.mkdirSync(backupRoot, { recursive: true })
     }
+
+    const stamp = new Date().toISOString().slice(0, 10)
+    const target = path.join(backupRoot, stamp)
+    if (fs.existsSync(target) && !isDirectory(target)) {
+      fs.rmSync(target, { recursive: true, force: true })
+    }
+    if (!fs.existsSync(target)) fs.mkdirSync(target, { recursive: true })
+
+    for (const f of fs.readdirSync(dataDir)) {
+      if (f === 'backup') continue
+      if (f.endsWith('.tmp') || f.endsWith('.bak')) continue
+      const src = path.join(dataDir, f)
+      if (isDirectory(src)) continue
+      try {
+        fs.copyFileSync(src, path.join(target, f))
+      } catch (copyErr) {
+        console.error('backup copy failed for', f, copyErr)
+      }
+    }
+
+    const cutoff = Date.now() - BACKUP_KEEP_DAYS * 24 * 60 * 60 * 1000
+    for (const name of fs.readdirSync(backupRoot)) {
+      const dir = path.join(backupRoot, name)
+      if (!isDirectory(dir)) continue
+      const time = Date.parse(name)
+      if (!Number.isNaN(time) && time < cutoff) {
+        fs.rmSync(dir, { recursive: true, force: true })
+      }
+    }
+    return true
+  } catch (e) {
+    console.error('backupDataDir failed', e)
+    return false
   }
-  return true
 }
 
 export function ensureDataFiles(dataDir: string): void {

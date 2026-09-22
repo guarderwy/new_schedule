@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import { ElMessage } from 'element-plus'
 import { useNightRuleStore } from '@renderer/stores/useNightRuleStore'
 import { useShiftStore } from '@renderer/stores/useShiftStore'
-import type { NightShiftRule } from '@renderer/types/nightRule'
+import { REST_RULE_SHIFT_ID, type NightShiftRule } from '@renderer/types/nightRule'
 import NightRuleEditor from '@renderer/components/nightRule/NightRuleEditor.vue'
 
 const nightRuleStore = useNightRuleStore()
@@ -16,9 +16,14 @@ const rulesClone = computed<NightShiftRule[]>(() =>
   nightRuleStore.rules.map((r) => ({ ...r }))
 )
 
-const availableShifts = computed(() =>
-  shiftStore.list.filter((s) => !nightRuleStore.rules.some((r) => r.shiftId === s.id))
-)
+// 所有班次 + 「休息」，允许重复选择（不剔除已加入的规则）
+const shiftOptions = computed(() => [
+  ...shiftStore.list.map((s) => ({
+    id: s.id,
+    label: `${s.name}（${s.startTime || '-'}-${s.endTime || '-'}）`
+  })),
+  { id: REST_RULE_SHIFT_ID, label: '休息' }
+])
 
 async function onReorder(rules: NightShiftRule[]) {
   await nightRuleStore.reorder(rules)
@@ -54,12 +59,12 @@ async function onAdd() {
     <el-empty v-if="nightRuleStore.rules.length === 0" description="暂无夜班循环规则" />
 
     <el-dialog v-model="addVisible" title="添加夜班班次" width="400px">
-      <el-select v-model="selectedShift" placeholder="选择班次" style="width: 100%">
+      <el-select v-model="selectedShift" placeholder="选择班次或休息" style="width: 100%">
         <el-option
-          v-for="s in availableShifts"
-          :key="s.id"
-          :label="`${s.name}（${s.startTime}-${s.endTime}）`"
-          :value="s.id"
+          v-for="opt in shiftOptions"
+          :key="opt.id"
+          :label="opt.label"
+          :value="opt.id"
         />
       </el-select>
       <template #footer>

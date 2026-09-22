@@ -49,6 +49,16 @@ export function formatColumnLabel(date: string): string {
   return `${d.format('MM-DD')} 周${names[d.day()]}`
 }
 
+export function weekdayName(date: string): string {
+  const names = ['日', '一', '二', '三', '四', '五', '六']
+  return names[dayjs(date).day()]
+}
+
+export function monthDay(date: string): string {
+  const d = dayjs(date)
+  return `${d.month() + 1}.${d.date()}`
+}
+
 export function canDeleteWeek(weekStart: string): boolean {
   return dayjs(weekStart).isAfter(dayjs(), 'day')
 }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import draggable from 'vuedraggable'
-import type { NightShiftRule } from '@renderer/types/nightRule'
+import { REST_RULE_SHIFT_ID, type NightShiftRule } from '@renderer/types/nightRule'
 import type { Shift } from '@renderer/types/shift'
 
 const props = defineProps<{
@@ -20,10 +20,12 @@ const list = computed<NightShiftRule[]>({
 })
 
 function shiftName(id: string): string {
+  if (id === REST_RULE_SHIFT_ID) return '休息'
   return props.shiftList.find((s) => s.id === id)?.name ?? id
 }
 
 function shiftTime(id: string): string {
+  if (id === REST_RULE_SHIFT_ID) return ''
   const s = props.shiftList.find((x) => x.id === id)
   return s ? `${s.startTime} - ${s.endTime}` : ''
 }

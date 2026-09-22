@@ -1,6 +1,7 @@
 import { cloneDeep } from 'lodash-es'
 import type { Demand } from '@renderer/types/demand'
 import type { NightShiftRule } from '@renderer/types/nightRule'
+import { REST_RULE_SHIFT_ID } from '@renderer/types/nightRule'
 import type { ScheduleDetail, ScheduleWeek } from '@renderer/types/schedule'
 import type { Settings } from '@renderer/types/settings'
 import type { Shift } from '@renderer/types/shift'
@@ -155,8 +156,14 @@ function generateNightShifts(
       if (detail.isRest || detail.shiftId) continue
       const shiftId = nextNightShiftId(rules, cursor, date, assistNightShiftId)
       if (!shiftId) continue
-      detail.shiftId = shiftId
-      detail.isRest = false
+      if (shiftId === REST_RULE_SHIFT_ID) {
+        // 夜班循环规则中的「休息」：标记该员工当天休息
+        detail.shiftId = null
+        detail.isRest = true
+      } else {
+        detail.shiftId = shiftId
+        detail.isRest = false
+      }
     }
   }
 }

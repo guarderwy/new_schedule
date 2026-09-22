@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { ElMessage } from 'element-plus'
+import { ElMessage, ElMessageBox } from 'element-plus'
 import { useSettingsStore } from '@renderer/stores/useSettingsStore'
 import { useStaffStore } from '@renderer/stores/useStaffStore'
 import { usePostStore } from '@renderer/stores/usePostStore'
@@ -8,6 +8,7 @@ import { useShiftStore } from '@renderer/stores/useShiftStore'
 import { useNightRuleStore } from '@renderer/stores/useNightRuleStore'
 import { useDemandStore } from '@renderer/stores/useDemandStore'
 import { useScheduleStore } from '@renderer/stores/useScheduleStore'
+import { buildDemoData } from '@renderer/core/demoData'
 
 const settingsStore = useSettingsStore()
 const shiftStore = useShiftStore()
@@ -70,6 +71,30 @@ async function onBackup() {
   await settingsStore.update({ lastBackupAt: new Date().toISOString() })
   ElMessage.success('已备份')
 }
+
+async function onLoadDemo() {
+  await ElMessageBox.confirm(
+    '将覆盖当前的人员、班次、岗位、夜班规则、设置以及本周/下周排班，确定载入示例数据？',
+    '载入示例数据',
+    { type: 'warning' }
+  )
+  const demo = buildDemoData()
+  postStore.list = demo.posts
+  shiftStore.list = demo.shifts
+  staffStore.list = demo.staff
+  nightRuleStore.rules = demo.nightRules
+  settingsStore.settings = demo.settings
+  scheduleStore.weeks = Object.fromEntries(demo.weeks.map((w) => [w.weekKey, w]))
+  await Promise.all([
+    postStore.persist(),
+    shiftStore.persist(),
+    staffStore.persist(),
+    nightRuleStore.persist(),
+    settingsStore.persist(),
+    scheduleStore.persist()
+  ])
+  ElMessage.success('示例数据已载入')
+}
 </script>
 
 <template>
@@ -78,6 +103,7 @@ async function onBackup() {
       <el-button @click="onExport">导出数据</el-button>
       <el-button @click="onImport">导入数据</el-button>
       <el-button @click="onBackup">立即备份</el-button>
+      <el-button type="warning" plain @click="onLoadDemo">载入示例数据</el-button>
       <span class="hint">上次备份：{{ settingsStore.settings.lastBackupAt ?? '从未' }}</span>
     </div>
 
