@@ -9,24 +9,51 @@ import {
   readJsonSafe
 } from '../utils/fileSystem'
 
+/** 允许渲染进程读写的白名单数据文件，防止路径穿越读写任意文件 */
+const ALLOWED_DATA_FILES = new Set([
+  'staff.json',
+  'posts.json',
+  'shifts.json',
+  'schedules.json',
+  'night_shift_rules.json',
+  'demands.json',
+  'settings.json'
+])
+
+function safeDataFileName(fileName: unknown): string | null {
+  if (typeof fileName !== 'string' || fileName.length === 0) return null
+  const base = path.basename(fileName)
+  return ALLOWED_DATA_FILES.has(base) ? base : null
+}
+
 function getDataDir(): string {
   return path.join(app.getPath('userData'), 'data')
 }
 
 export function registerStorageIPC(): void {
   ipcMain.handle('storage:read', async (_e, fileName: string) => {
-    return readJsonSafe(path.join(getDataDir(), fileName))
+    const safe = safeDataFileName(fileName)
+    if (!safe) return null
+    return readJsonSafe(path.join(getDataDir(), safe))
   })
 
   ipcMain.handle('storage:write', async (_e, fileName: string, data: unknown) => {
-    await Promise.resolve(atomicWriteJson(path.join(getDataDir(), fileName), data))
+    const safe = safeDataFileName(fileName)
+    if (!safe) return false
+    await Promise.resolve(atomicWriteJson(path.join(getDataDir(), safe), data))
     return true
   })
 
   ipcMain.handle('storage:list', async () => {
     const dataDir = getDataDir()
     if (!fs.existsSync(dataDir)) return []
-    return fs.readdirSync(dataDir)
+    return fs.readdirSync(dataDir).filter((name) => {
+      try {
+        return fs.statSync(path.join(dataDir, name)).isFile()
+      } catch {
+        return false
+      }
+    })
   })
 
   ipcMain.handle('storage:export', async (_e, targetPath: string) => {

@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { ElMessage, ElMessageBox } from 'element-plus'
+import { ElMessage } from 'element-plus'
+import { confirmAction, reportError } from '@renderer/core/feedback'
+import { DEMAND_STATUS_LABEL, DEMAND_TYPE_LABEL } from '@renderer/constants'
+import type { Demand } from '@renderer/types/demand'
 import { useDemandStore } from '@renderer/stores/useDemandStore'
 import { useStaffStore } from '@renderer/stores/useStaffStore'
 import { useShiftStore } from '@renderer/stores/useShiftStore'
-import { DEMAND_STATUS_LABEL, DEMAND_TYPE_LABEL } from '@renderer/constants'
-import type { Demand } from '@renderer/types/demand'
 
 const props = defineProps<{
   rows: Demand[]
@@ -28,9 +29,46 @@ function shiftName(id: string | null): string {
 }
 
 async function onRemove(row: Demand) {
-  await ElMessageBox.confirm('确认删除该需求？', '删除确认', { type: 'warning' })
-  await demandStore.remove(row.id)
-  ElMessage.success('已删除')
+  const ok = await confirmAction('确认删除该需求？', '删除确认')
+  if (!ok) return
+  try {
+    await demandStore.remove(row.id)
+    ElMessage.success('已删除')
+  } catch (e) {
+    reportError('删除需求', e)
+  }
+}
+
+async function onMarkMet(row: Demand) {
+  try {
+    await demandStore.update(row.id, { status: 'met' })
+    ElMessage.success('已标记为已满足')
+  } catch (e) {
+    reportError('标记需求', e)
+  }
+}
+
+async function onReject(row: Demand) {
+  const ok = await confirmAction(
+    `确认拒绝「${staffName(row.staffId)} ${row.date}」的需求？`,
+    '拒绝确认'
+  )
+  if (!ok) return
+  try {
+    await demandStore.update(row.id, { status: 'rejected' })
+    ElMessage.success('已拒绝')
+  } catch (e) {
+    reportError('拒绝需求', e)
+  }
+}
+
+async function onReopen(row: Demand) {
+  try {
+    await demandStore.update(row.id, { status: 'pending' })
+    ElMessage.success('已恢复为待处理')
+  } catch (e) {
+    reportError('恢复需求', e)
+  }
 }
 </script>
 
@@ -39,7 +77,7 @@ async function onRemove(row: Demand) {
     <el-table-column label="人员" width="140">
       <template #default="{ row }">{{ staffName(row.staffId) }}</template>
     </el-table-column>
-    <el-table-column prop="date" label="日期" width="140" />
+    <el-table-column prop="date" label="日期" width="140" sortable />
     <el-table-column label="类型" width="120">
       <template #default="{ row }">{{ DEMAND_TYPE_LABEL[row.type] }}</template>
     </el-table-column>
@@ -54,9 +92,33 @@ async function onRemove(row: Demand) {
         </el-tag>
       </template>
     </el-table-column>
-    <el-table-column label="操作" width="160" fixed="right">
+    <el-table-column label="操作" width="260" fixed="right">
       <template #default="{ row }">
         <el-button link type="primary" @click="emit('edit', row as Demand)">编辑</el-button>
+        <el-button
+          v-if="row.status !== 'met'"
+          link
+          type="success"
+          @click="onMarkMet(row as Demand)"
+        >
+          标记满足
+        </el-button>
+        <el-button
+          v-if="row.status !== 'rejected'"
+          link
+          type="warning"
+          @click="onReject(row as Demand)"
+        >
+          拒绝
+        </el-button>
+        <el-button
+          v-if="row.status !== 'pending'"
+          link
+          type="info"
+          @click="onReopen(row as Demand)"
+        >
+          恢复待处理
+        </el-button>
         <el-button link type="danger" @click="onRemove(row as Demand)">删除</el-button>
       </template>
     </el-table-column>

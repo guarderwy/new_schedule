@@ -45,24 +45,32 @@ function applyDemands(
   details: ScheduleDetail[],
   demands: Demand[],
   dates: string[],
-  availableStaff: Staff[]
+  availableStaff: Staff[],
+  shifts: Shift[]
 ): string[] {
   const dateSet = new Set(dates)
   const staffSet = new Set(availableStaff.map((s) => s.id))
+  const shiftIdSet = new Set(shifts.map((s) => s.id))
   const metDemandIds: string[] = []
 
   for (const demand of demands) {
     if (demand.status === 'rejected') continue
     if (!dateSet.has(demand.date)) continue
     if (!staffSet.has(demand.staffId)) continue
+    const staff = availableStaff.find((s) => s.id === demand.staffId)
+    // 员工当天不可用时不应用需求，保持“待处理”，避免排出无效班
+    if (staff && !isStaffAvailableOnDate(staff, demand.date)) continue
     const detail = findDetail(details, demand.staffId, demand.date)
     if (!detail) continue
     if (demand.type === 'rest') {
       detail.isRest = true
       detail.shiftId = null
-    } else if (demand.shiftId) {
+    } else if (demand.shiftId && shiftIdSet.has(demand.shiftId)) {
       detail.isRest = false
       detail.shiftId = demand.shiftId
+    } else {
+      // 指定班次但未选择（或班次已被删除）：视为未满足，不标记
+      continue
     }
     metDemandIds.push(demand.id)
   }
@@ -73,7 +81,8 @@ function copyNonNightFromLastWeek(
   details: ScheduleDetail[],
   lastWeek: ScheduleWeek,
   nightShiftIds: Set<string>,
-  demands: Demand[]
+  demands: Demand[],
+  staffList: Staff[]
 ): void {
   const lastDates = getWeekDates(lastWeek.weekStart)
   const targetDates = [...new Set(details.map((d) => d.date))].sort()
@@ -86,6 +95,9 @@ function copyNonNightFromLastWeek(
     for (const lastDetail of lastDayDetails) {
       if (lastDetail.shiftId && nightShiftIds.has(lastDetail.shiftId)) continue
       if (hasDemandOnDate(demands, lastDetail.staffId, date)) continue
+      const staff = staffList.find((s) => s.id === lastDetail.staffId)
+      // 员工当天不可用时不复制班次，避免把班排给已休假的人
+      if (staff && !isStaffAvailableOnDate(staff, date)) continue
       const detail = findDetail(details, lastDetail.staffId, date)
       if (!detail) continue
       if (detail.shiftId || detail.isRest) continue
@@ -148,7 +160,11 @@ function generateNightShifts(
   }
 
   const cursor = { index: startIndex }
-  for (const date of dates) {
+  dates.forEach((date, dayIndex) => {
+    // 关键修复：每天的循环起点在上一天基础上整体后移一格。
+    // 原实现只按“员工×天”累加游标，当夜班人数与规则数成整除关系时
+    // 循环会完全停滞（同一员工每天固定拿到同一条规则）。
+    cursor.index = (startIndex + dayIndex) % rules.length
     for (const staff of nightStaff) {
       if (!isStaffAvailableOnDate(staff, date)) continue
       const detail = findDetail(details, staff.id, date)
@@ -165,7 +181,7 @@ function generateNightShifts(
         detail.isRest = false
       }
     }
-  }
+  })
 }
 
 function fillRequiredShifts(
@@ -178,7 +194,8 @@ function fillRequiredShifts(
     .filter((s) => s.groupType === 'day')
     .sort((a, b) => a.employeeNo.localeCompare(b.employeeNo) || a.name.localeCompare(b.name))
 
-  let poll = 0
+  // 记录每个必备班次上一次安排的人，保证同一必备班次逐日轮换到不同的人
+  const lastPicked = new Map<string, string>()
   for (const date of dates) {
     const requiredIds = isWeekend(date)
       ? settings.weekendRequiredShiftIds
@@ -193,8 +210,11 @@ function fillRequiredShifts(
         return !detail.isRest && !detail.shiftId
       })
       if (candidates.length === 0) continue
-      const staff = candidates[poll % candidates.length]
-      poll += 1
+      const previous = lastPicked.get(shiftId)
+      let index = candidates.findIndex((staff) => staff.id !== previous)
+      if (index < 0) index = 0
+      const staff = candidates[index]
+      lastPicked.set(shiftId, staff.id)
       const detail = findDetail(details, staff.id, date)
       if (!detail) continue
       detail.shiftId = shiftId
@@ -223,11 +243,11 @@ export function generateSchedule(params: GenerateParams): GenerateResult {
     }
   }
 
-  const metDemandIds = applyDemands(details, demands, dates, availableStaff)
+  const metDemandIds = applyDemands(details, demands, dates, availableStaff, shifts)
 
   const nightShiftIds = new Set(nightRules.map((r) => r.shiftId))
   if (lastWeek) {
-    copyNonNightFromLastWeek(details, lastWeek, nightShiftIds, demands)
+    copyNonNightFromLastWeek(details, lastWeek, nightShiftIds, demands, staffList)
   }
 
   generateNightShifts(details, dates, availableStaff, nightRules, lastWeek, settings.assistNightShiftId)
@@ -241,7 +261,7 @@ export function generateSchedule(params: GenerateParams): GenerateResult {
     settings,
     nightRules
   })
-  warnings.push(...findTimeConflicts(details, shifts))
+  warnings.push(...findTimeConflicts(details, shifts, staffList))
 
   return {
     week: {
@@ -263,12 +283,17 @@ export function copyLastWeekSchedule(params: {
   lastWeek: ScheduleWeek
   staffList: Staff[]
   shifts: Shift[]
+  demands?: Demand[]
+  settings?: Settings
 }): ScheduleWeek {
-  const { targetWeekKey, lastWeek, staffList } = params
+  const { targetWeekKey, lastWeek, staffList, shifts } = params
+  const demands = params.demands ?? []
+  const settings = params.settings
   const { weekStart: ws, weekEnd: we } = parseWeekKey(targetWeekKey)
   const dates = getWeekDates(ws)
   const lastDates = getWeekDates(lastWeek.weekStart)
   const availableStaff = staffList.filter((s) => isStaffAvailable(s, ws, we))
+  const shiftIdSet = new Set(shifts.map((s) => s.id))
 
   const details: ScheduleDetail[] = []
   for (const staff of availableStaff) {
@@ -276,13 +301,46 @@ export function copyLastWeekSchedule(params: {
       const date = dates[i]
       const lastDate = lastDates[i]
       const lastDetail = lastWeek.details.find((d) => d.staffId === staff.id && d.date === lastDate)
+
+      let shiftId: string | null = null
+      let isRest = false
+      let remark = ''
+
+      const demand = demands.find(
+        (d) => d.staffId === staff.id && d.date === date && d.status !== 'rejected'
+      )
+      const availableOnDate = isStaffAvailableOnDate(staff, date)
+
+      if (demand && availableOnDate) {
+        // 与“生成排班”保持一致：优先应用需求
+        if (demand.type === 'rest') {
+          isRest = true
+        } else if (demand.shiftId && shiftIdSet.has(demand.shiftId)) {
+          shiftId = demand.shiftId
+        }
+        remark = demand.remark ?? ''
+      } else if (availableOnDate && lastDetail) {
+        shiftId = lastDetail.shiftId
+        isRest = lastDetail.isRest
+        remark = lastDetail.remark ?? ''
+        // 与“生成排班”保持一致：周末不排助夜班
+        if (
+          isWeekend(date) &&
+          settings?.assistNightShiftId &&
+          shiftId === settings.assistNightShiftId
+        ) {
+          shiftId = null
+          isRest = false
+        }
+      }
+
       details.push({
         id: crypto.randomUUID(),
         staffId: staff.id,
         date,
-        shiftId: lastDetail?.shiftId ?? null,
-        isRest: lastDetail?.isRest ?? false,
-        remark: lastDetail?.remark ?? ''
+        shiftId,
+        isRest,
+        remark
       })
     }
   }
@@ -329,4 +387,32 @@ export function buildEmptyWeek(
 
 export function cloneWeek(week: ScheduleWeek): ScheduleWeek {
   return cloneDeep(week)
+}
+
+/**
+ * 把尚未进入某一周排班的人员补充进去（生成空白排班单元）。
+ * 解决“周生成后新增员工在排班表中没有行、也无法手动加入”的问题。
+ */
+export function appendStaffToWeek(week: ScheduleWeek, staffList: Staff[]): ScheduleWeek {
+  const dates = getWeekDates(week.weekStart)
+  const existing = new Set(week.details.map((d) => d.staffId))
+  const additions: ScheduleDetail[] = []
+
+  for (const staff of staffList) {
+    if (existing.has(staff.id)) continue
+    if (!isStaffAvailable(staff, week.weekStart, week.weekEnd)) continue
+    for (const date of dates) {
+      additions.push({
+        id: crypto.randomUUID(),
+        staffId: staff.id,
+        date,
+        shiftId: null,
+        isRest: false,
+        remark: ''
+      })
+    }
+  }
+
+  if (additions.length === 0) return week
+  return { ...week, details: [...week.details, ...additions] }
 }

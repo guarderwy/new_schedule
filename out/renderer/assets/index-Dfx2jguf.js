@@ -3,7 +3,7 @@ var __commonJS = (cb, mod) => function __require() {
   return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
 };
 var require_index_001 = __commonJS({
-  "assets/index-BXLR7QEh.js"(exports, module) {
+  "assets/index-Dfx2jguf.js"(exports, module) {
     /**
     * @vue/shared v3.5.42
     * (c) 2018-present Yuxi (Evan) You and Vue contributors
@@ -19206,7 +19206,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
     Schema.warning = warning;
     Schema.messages = messages;
     Schema.validators = validators;
-    const _hoisted_1$J = ["role", "aria-labelledby"];
+    const _hoisted_1$M = ["role", "aria-labelledby"];
     var form_item_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "ElFormItem",
       __name: "form-item",
@@ -19489,7 +19489,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               role: "alert"
             }, toDisplayString(validateMessage.value), 3)]) : createCommentVNode("v-if", true)]),
             _: 3
-          }, 8, ["name"])], 6)], 10, _hoisted_1$J);
+          }, 8, ["name"])], 6)], 10, _hoisted_1$M);
         };
       }
     });
@@ -20525,8 +20525,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     var content_default = content_vue_vue_type_script_setup_true_lang_default;
-    const _hoisted_1$I = ["innerHTML"];
-    const _hoisted_2$q = { key: 1 };
+    const _hoisted_1$L = ["innerHTML"];
+    const _hoisted_2$w = { key: 1 };
     var tooltip_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "ElTooltip",
       __name: "tooltip",
@@ -20685,7 +20685,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               default: withCtx(() => [renderSlot(_ctx.$slots, "content", {}, () => [__props.rawContent ? (openBlock(), createElementBlock("span", {
                 key: 0,
                 innerHTML: __props.content
-              }, null, 8, _hoisted_1$I)) : (openBlock(), createElementBlock("span", _hoisted_2$q, toDisplayString(__props.content), 1))]), __props.showArrow ? (openBlock(), createBlock(unref(arrow_default), { key: 0 })) : createCommentVNode("v-if", true)]),
+              }, null, 8, _hoisted_1$L)) : (openBlock(), createElementBlock("span", _hoisted_2$w, toDisplayString(__props.content), 1))]), __props.showArrow ? (openBlock(), createBlock(unref(arrow_default), { key: 0 })) : createCommentVNode("v-if", true)]),
               _: 3
             }, 8, [
               "aria-label",
@@ -21010,7 +21010,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       hiddenTextarea = void 0;
       return result;
     }
-    const _hoisted_1$H = [
+    const _hoisted_1$K = [
       "id",
       "name",
       "minlength",
@@ -21027,7 +21027,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       "role",
       "inputmode"
     ];
-    const _hoisted_2$p = ["aria-label"];
+    const _hoisted_2$v = ["aria-label"];
     const _hoisted_3$d = [
       "id",
       "name",
@@ -21045,7 +21045,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       "role",
       "inputmode"
     ];
-    const _hoisted_4$8 = ["aria-label"];
+    const _hoisted_4$9 = ["aria-label"];
     const COMPONENT_NAME$8 = "ElInput";
     var input_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: COMPONENT_NAME$8,
@@ -21437,7 +21437,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 onInput: handleInput,
                 onChange: handleChange,
                 onKeydown: handleKeydown
-              }), null, 16, _hoisted_1$H),
+              }), null, 16, _hoisted_1$K),
               createCommentVNode(" suffix slot "),
               suffixVisible.value ? (openBlock(), createElementBlock("span", {
                 key: 1,
@@ -21483,7 +21483,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   class: normalizeClass([unref(nsInput).e("count"), unref(nsInput).is("outside", __props.wordLimitPosition === "outside")]),
                   "aria-label": wordLimitLabel.value,
                   role: "status"
-                }, [createBaseVNode("span", { class: normalizeClass(unref(nsInput).e("count-inner")) }, toDisplayString(textLength.value) + " / " + toDisplayString(maxlength.value), 3)], 10, _hoisted_2$p)) : createCommentVNode("v-if", true),
+                }, [createBaseVNode("span", { class: normalizeClass(unref(nsInput).e("count-inner")) }, toDisplayString(textLength.value) + " / " + toDisplayString(maxlength.value), 3)], 10, _hoisted_2$v)) : createCommentVNode("v-if", true),
                 validateState.value && validateIcon.value && needStatusIcon.value ? (openBlock(), createBlock(unref(ElIcon), {
                   key: 4,
                   class: normalizeClass([
@@ -21558,7 +21558,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               class: normalizeClass([unref(nsInput).e("count"), unref(nsInput).is("outside", __props.wordLimitPosition === "outside")]),
               "aria-label": wordLimitLabel.value,
               role: "status"
-            }, toDisplayString(textLength.value) + " / " + toDisplayString(maxlength.value), 15, _hoisted_4$8)) : createCommentVNode("v-if", true)
+            }, toDisplayString(textLength.value) + " / " + toDisplayString(maxlength.value), 15, _hoisted_4$9)) : createCommentVNode("v-if", true)
           ], 64))], 38);
         };
       }
@@ -21910,7 +21910,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     var bar_default = bar_vue_vue_type_script_setup_true_lang_default;
-    const _hoisted_1$G = ["tabindex"];
+    const _hoisted_1$J = ["tabindex"];
     const COMPONENT_NAME$6 = "ElScrollbar";
     var scrollbar_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: COMPONENT_NAME$6,
@@ -22110,7 +22110,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             "role",
             "aria-label",
             "aria-orientation"
-          ]))], 46, _hoisted_1$G), !__props.native ? (openBlock(), createBlock(bar_default, {
+          ]))], 46, _hoisted_1$J), !__props.native ? (openBlock(), createBlock(bar_default, {
             key: 0,
             ref_key: "barRef",
             ref: barRef,
@@ -24487,14 +24487,14 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         onSetPickerOption
       };
     };
-    const _hoisted_1$F = [
+    const _hoisted_1$I = [
       "id",
       "name",
       "placeholder",
       "value",
       "disabled"
     ];
-    const _hoisted_2$o = [
+    const _hoisted_2$u = [
       "id",
       "name",
       "placeholder",
@@ -24587,7 +24587,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               disabled: _ctx.disabled,
               onInput: handleStartInput,
               onChange: handleStartChange
-            }), null, 16, _hoisted_1$F),
+            }), null, 16, _hoisted_1$I),
             renderSlot(_ctx.$slots, "range-separator"),
             createBaseVNode("input", mergeProps(unref(attrs), {
               id: _ctx.id && _ctx.id[1],
@@ -24600,7 +24600,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               disabled: _ctx.disabled,
               onInput: handleEndInput,
               onChange: handleEndChange
-            }), null, 16, _hoisted_2$o),
+            }), null, 16, _hoisted_2$u),
             renderSlot(_ctx.$slots, "suffix")
           ], 38);
         };
@@ -25246,8 +25246,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       },
       ...disabledTimeListsProps
     });
-    const _hoisted_1$E = ["onClick"];
-    const _hoisted_2$n = ["onMouseenter"];
+    const _hoisted_1$H = ["onClick"];
+    const _hoisted_2$t = ["onMouseenter"];
     var basic_time_spinner_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       __name: "basic-time-spinner",
       props: basicTimeSpinnerProps,
@@ -25471,7 +25471,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                     value: key,
                     disabled
                   })
-                }, [item === "hours" ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [createTextVNode(toDisplayString(("0" + (_ctx.amPmMode ? key % 12 || 12 : key)).slice(-2)) + toDisplayString(getAmPmFlag(key)), 1)], 64)) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [createTextVNode(toDisplayString(("0" + key).slice(-2)), 1)], 64))], 10, _hoisted_1$E);
+                }, [item === "hours" ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [createTextVNode(toDisplayString(("0" + (_ctx.amPmMode ? key % 12 || 12 : key)).slice(-2)) + toDisplayString(getAmPmFlag(key)), 1)], 64)) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [createTextVNode(toDisplayString(("0" + key).slice(-2)), 1)], 64))], 10, _hoisted_1$H);
               }), 128))]),
               _: 2
             }, 1032, [
@@ -25504,7 +25504,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   ])
                 }, [unref(isNumber)(time) ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [item === "hours" ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [createTextVNode(toDisplayString(("0" + (_ctx.amPmMode ? time % 12 || 12 : time)).slice(-2)) + toDisplayString(getAmPmFlag(time)), 1)], 64)) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [createTextVNode(toDisplayString(("0" + time).slice(-2)), 1)], 64))], 64)) : createCommentVNode("v-if", true)], 2);
               }), 128))], 2)
-            ], 42, _hoisted_2$n);
+            ], 42, _hoisted_2$t);
           }), 128)) : createCommentVNode("v-if", true)], 2);
         };
       }
@@ -25671,7 +25671,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       ...timePanelSharedProps,
       parsedValue: { type: definePropType(Array) }
     });
-    const _hoisted_1$D = ["disabled"];
+    const _hoisted_1$G = ["disabled"];
     var panel_time_range_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       __name: "panel-time-range",
       props: panelTimeRangeProps,
@@ -25893,7 +25893,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             class: normalizeClass([unref(nsTime).be("panel", "btn"), "confirm"]),
             disabled: btnConfirmDisabled.value,
             onClick: _cache[1] || (_cache[1] = ($event) => handleConfirm())
-          }, toDisplayString(unref(t)("el.datepicker.confirm")), 11, _hoisted_1$D)], 2)], 2)) : createCommentVNode("v-if", true);
+          }, toDisplayString(unref(t)("el.datepicker.confirm")), 11, _hoisted_1$G)], 2)], 2)) : createCommentVNode("v-if", true);
         };
       }
     });
@@ -26136,8 +26136,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       close: (evt) => evt instanceof MouseEvent,
       click: (evt) => evt instanceof MouseEvent
     };
-    const _hoisted_1$C = ["aria-label"];
-    const _hoisted_2$m = ["aria-label"];
+    const _hoisted_1$F = ["aria-label"];
+    const _hoisted_2$s = ["aria-label"];
     var tag_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "ElTag",
       __name: "tag",
@@ -26185,7 +26185,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           }, [createVNode(unref(ElIcon), null, {
             default: withCtx(() => [createVNode(unref(close_default))]),
             _: 1
-          })], 10, _hoisted_1$C)) : createCommentVNode("v-if", true)], 6)) : (openBlock(), createBlock(Transition, {
+          })], 10, _hoisted_1$F)) : createCommentVNode("v-if", true)], 6)) : (openBlock(), createBlock(Transition, {
             key: 1,
             name: `${unref(ns).namespace.value}-zoom-in-center`,
             appear: "",
@@ -26204,7 +26204,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             }, [createVNode(unref(ElIcon), null, {
               default: withCtx(() => [createVNode(unref(close_default))]),
               _: 1
-            })], 10, _hoisted_2$m)) : createCommentVNode("v-if", true)], 6)]),
+            })], 10, _hoisted_2$s)) : createCommentVNode("v-if", true)], 6)]),
             _: 3
           }, 8, ["name"]));
         };
@@ -26704,7 +26704,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _hoisted_1$B = [
+    const _hoisted_1$E = [
       "id",
       "aria-disabled",
       "aria-selected"
@@ -26719,7 +26719,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }, { [toHandlerKey(_ctx.mouseMoveEventName)]: _cache[0] || (_cache[0] = (...args) => _ctx.hoverItem && _ctx.hoverItem(...args)) }, {
         onMousedown: _cache[1] || (_cache[1] = (...args) => _ctx.handleMousedown && _ctx.handleMousedown(...args)),
         onClick: _cache[2] || (_cache[2] = withModifiers((...args) => _ctx.selectOptionClick && _ctx.selectOptionClick(...args), ["stop"]))
-      }), [renderSlot(_ctx.$slots, "default", {}, () => [createBaseVNode("span", null, toDisplayString(_ctx.currentLabel), 1)])], 16, _hoisted_1$B)), [[vShow, _ctx.visible]]);
+      }), [renderSlot(_ctx.$slots, "default", {}, () => [createBaseVNode("span", null, toDisplayString(_ctx.currentLabel), 1)])], 16, _hoisted_1$E)), [[vShow, _ctx.visible]]);
     }
     var option_default = /* @__PURE__ */ _plugin_vue_export_helper_default(option_vue_vue_type_script_lang_default, [["render", _sfc_render$5]]);
     var option_group_vue_vue_type_script_lang_default = /* @__PURE__ */ defineComponent({
@@ -27583,7 +27583,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _hoisted_1$A = [
+    const _hoisted_1$D = [
       "id",
       "value",
       "name",
@@ -27596,7 +27596,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       "aria-expanded",
       "aria-label"
     ];
-    const _hoisted_2$l = ["textContent"];
+    const _hoisted_2$r = ["textContent"];
     const _hoisted_3$c = { key: 1 };
     function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
       const _component_el_tag = resolveComponent("el-tag");
@@ -27806,13 +27806,13 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               onChange: _cache[5] || (_cache[5] = withModifiers(() => {
               }, ["stop"])),
               onClick: _cache[6] || (_cache[6] = withModifiers((...args) => _ctx.toggleMenu && _ctx.toggleMenu(...args), ["stop"]))
-            }, null, 46, _hoisted_1$A), _ctx.filterable ? (openBlock(), createElementBlock("span", {
+            }, null, 46, _hoisted_1$D), _ctx.filterable ? (openBlock(), createElementBlock("span", {
               key: 0,
               ref: "calculatorRef",
               "aria-hidden": "true",
               class: normalizeClass(_ctx.nsSelect.e("input-calculator")),
               textContent: toDisplayString(_ctx.states.inputValue)
-            }, null, 10, _hoisted_2$l)) : createCommentVNode("v-if", true)], 2),
+            }, null, 10, _hoisted_2$r)) : createCommentVNode("v-if", true)], 2),
             _ctx.shouldShowPlaceholder ? (openBlock(), createElementBlock("div", {
               key: 1,
               class: normalizeClass([
@@ -28543,7 +28543,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         onClickRoot
       };
     };
-    const _hoisted_1$z = [
+    const _hoisted_1$C = [
       "id",
       "indeterminate",
       "name",
@@ -28608,7 +28608,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               onBlur: _cache[3] || (_cache[3] = ($event) => isFocused.value = false),
               onClick: _cache[4] || (_cache[4] = withModifiers(() => {
               }, ["stop"]))
-            }), null, 16, _hoisted_1$z), [[vModelCheckbox, unref(model)]]), createBaseVNode("span", { class: normalizeClass(unref(ns).e("inner")) }, null, 2)], 2), unref(hasOwnLabel) ? (openBlock(), createElementBlock("span", {
+            }), null, 16, _hoisted_1$C), [[vModelCheckbox, unref(model)]]), createBaseVNode("span", { class: normalizeClass(unref(ns).e("inner")) }, null, 2)], 2), unref(hasOwnLabel) ? (openBlock(), createElementBlock("span", {
               key: 0,
               class: normalizeClass(unref(ns).e("label"))
             }, [renderSlot(_ctx.$slots, "default"), !_ctx.$slots.default ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [createTextVNode(toDisplayString(__props.label), 1)], 64)) : createCommentVNode("v-if", true)], 2)) : createCommentVNode("v-if", true)]),
@@ -28625,7 +28625,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     var checkbox_default = checkbox_vue_vue_type_script_setup_true_lang_default;
-    const _hoisted_1$y = [
+    const _hoisted_1$B = [
       "name",
       "tabindex",
       "disabled"
@@ -28679,7 +28679,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             onBlur: _cache[3] || (_cache[3] = ($event) => isFocused.value = false),
             onClick: _cache[4] || (_cache[4] = withModifiers(() => {
             }, ["stop"]))
-          }), null, 16, _hoisted_1$y), [[vModelCheckbox, unref(model)]]), _ctx.$slots.default || __props.label ? (openBlock(), createElementBlock("span", {
+          }), null, 16, _hoisted_1$B), [[vModelCheckbox, unref(model)]]), _ctx.$slots.default || __props.label ? (openBlock(), createElementBlock("span", {
             key: 0,
             class: normalizeClass(unref(ns).be("button", "inner")),
             style: normalizeStyle(unref(isChecked) ? activeStyle.value : void 0)
@@ -28963,7 +28963,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         actualValue
       };
     };
-    const _hoisted_1$x = [
+    const _hoisted_1$A = [
       "value",
       "name",
       "disabled",
@@ -29009,7 +29009,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             onChange: handleChange,
             onClick: _cache[3] || (_cache[3] = withModifiers(() => {
             }, ["stop"]))
-          }, null, 42, _hoisted_1$x), [[vModelRadio, unref(modelValue)]]), createBaseVNode("span", { class: normalizeClass(unref(ns).e("inner")) }, null, 2)], 2), createBaseVNode("span", {
+          }, null, 42, _hoisted_1$A), [[vModelRadio, unref(modelValue)]]), createBaseVNode("span", { class: normalizeClass(unref(ns).e("inner")) }, null, 2)], 2), createBaseVNode("span", {
             class: normalizeClass(unref(ns).e("label")),
             onKeydown: _cache[4] || (_cache[4] = withModifiers(() => {
             }, ["stop"]))
@@ -29018,7 +29018,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     var radio_default = radio_vue_vue_type_script_setup_true_lang_default;
-    const _hoisted_1$w = [
+    const _hoisted_1$z = [
       "value",
       "name",
       "disabled"
@@ -29059,7 +29059,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             onBlur: _cache[2] || (_cache[2] = ($event) => focus.value = false),
             onClick: _cache[3] || (_cache[3] = withModifiers(() => {
             }, ["stop"]))
-          }, null, 42, _hoisted_1$w), [[vModelRadio, unref(modelValue)]]), createBaseVNode("span", {
+          }, null, 42, _hoisted_1$z), [[vModelRadio, unref(modelValue)]]), createBaseVNode("span", {
             class: normalizeClass(unref(ns).be("button", "inner")),
             style: normalizeStyle(unref(modelValue) === unref(actualValue) ? activeStyle.value : {}),
             onKeydown: _cache[4] || (_cache[4] = withModifiers(() => {
@@ -29069,7 +29069,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     var radio_button_default = radio_button_vue_vue_type_script_setup_true_lang_default;
-    const _hoisted_1$v = [
+    const _hoisted_1$y = [
       "id",
       "aria-label",
       "aria-labelledby"
@@ -29139,7 +29139,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             "aria-labelledby": unref(isLabeledByFormItem) ? unref(formItem).labelId : void 0
           }, [renderSlot(_ctx.$slots, "default", {}, () => [(openBlock(true), createElementBlock(Fragment, null, renderList(__props.options, (item, index2) => {
             return openBlock(), createBlock(resolveDynamicComponent(optionComponent.value), mergeProps({ key: index2 }, { ref_for: true }, getOptionProps(item)), null, 16);
-          }), 128))])], 10, _hoisted_1$v);
+          }), 128))])], 10, _hoisted_1$y);
         };
       }
     });
@@ -29815,8 +29815,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _hoisted_1$u = ["aria-label"];
-    const _hoisted_2$k = ["aria-label"];
+    const _hoisted_1$x = ["aria-label"];
+    const _hoisted_2$q = ["aria-label"];
     const _hoisted_3$b = [
       "aria-current",
       "aria-selected",
@@ -29867,7 +29867,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               key,
               "aria-label": unref(t)("el.datepicker.weeksFull." + week),
               scope: "col"
-            }, toDisplayString(unref(t)("el.datepicker.weeks." + week)), 9, _hoisted_2$k);
+            }, toDisplayString(unref(t)("el.datepicker.weeks." + week)), 9, _hoisted_2$q);
           }), 128))]), (openBlock(true), createElementBlock(Fragment, null, renderList(unref(rows), (row, rowKey) => {
             return openBlock(), createElementBlock("tr", {
               key: rowKey,
@@ -29885,7 +29885,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 onFocus: _cache[0] || (_cache[0] = (...args) => unref(handleFocus) && unref(handleFocus)(...args))
               }, [createVNode(unref(basic_cell_render_default), { cell }, null, 8, ["cell"])], 42, _hoisted_3$b);
             }), 128))], 2);
-          }), 128))], 512)], 42, _hoisted_1$u);
+          }), 128))], 512)], 42, _hoisted_1$x);
         };
       }
     });
@@ -29894,8 +29894,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       ...datePickerSharedProps,
       selectionMode: selectionModeWithDefault("month")
     });
-    const _hoisted_1$t = ["aria-label"];
-    const _hoisted_2$j = [
+    const _hoisted_1$w = ["aria-label"];
+    const _hoisted_2$p = [
       "aria-selected",
       "aria-label",
       "tabindex",
@@ -30085,9 +30085,9 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [createVNode(unref(basic_cell_render_default), { cell: {
                 ...cell,
                 renderText: unref(t)("el.datepicker.months." + months.value[cell.text])
-              } }, null, 8, ["cell"])], 42, _hoisted_2$j);
+              } }, null, 8, ["cell"])], 42, _hoisted_2$p);
             }), 128))]);
-          }), 128))], 512)], 42, _hoisted_1$t);
+          }), 128))], 512)], 42, _hoisted_1$w);
         };
       }
     });
@@ -30096,8 +30096,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       ...datePickerSharedProps,
       selectionMode: selectionModeWithDefault("quarter")
     });
-    const _hoisted_1$s = ["aria-label"];
-    const _hoisted_2$i = [
+    const _hoisted_1$v = ["aria-label"];
+    const _hoisted_2$o = [
       "aria-selected",
       "aria-label",
       "tabindex",
@@ -30281,8 +30281,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             }, [createVNode(unref(basic_cell_render_default), { cell: {
               ...cell,
               renderText: `Q${cell.text + 1}`
-            } }, null, 8, ["cell"])], 42, _hoisted_2$i);
-          }), 128))])], 512)], 42, _hoisted_1$s);
+            } }, null, 8, ["cell"])], 42, _hoisted_2$o);
+          }), 128))])], 512)], 42, _hoisted_1$v);
         };
       }
     });
@@ -30291,8 +30291,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       ...datePickerSharedProps,
       selectionMode: selectionModeWithDefault("year")
     });
-    const _hoisted_1$r = ["aria-label"];
-    const _hoisted_2$h = [
+    const _hoisted_1$u = ["aria-label"];
+    const _hoisted_2$n = [
       "aria-selected",
       "aria-label",
       "tabindex",
@@ -30483,18 +30483,18 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 "aria-label": String(cell.text),
                 tabindex: cell.isSelected ? 0 : -1,
                 onKeydown: [withKeys(withModifiers(handleYearTableClick, ["prevent", "stop"]), ["space"]), withKeys(withModifiers(handleYearTableClick, ["prevent", "stop"]), ["enter"])]
-              }, [createVNode(unref(basic_cell_render_default), { cell }, null, 8, ["cell"])], 42, _hoisted_2$h);
+              }, [createVNode(unref(basic_cell_render_default), { cell }, null, 8, ["cell"])], 42, _hoisted_2$n);
             }), 128))]);
-          }), 128))], 512)], 42, _hoisted_1$r);
+          }), 128))], 512)], 42, _hoisted_1$u);
         };
       }
     });
     var basic_year_table_default = basic_year_table_vue_vue_type_script_setup_true_lang_default;
-    const _hoisted_1$q = ["disabled", "onClick"];
-    const _hoisted_2$g = ["aria-label", "disabled"];
+    const _hoisted_1$t = ["disabled", "onClick"];
+    const _hoisted_2$m = ["aria-label", "disabled"];
     const _hoisted_3$a = ["aria-label", "disabled"];
-    const _hoisted_4$7 = ["tabindex", "aria-disabled"];
-    const _hoisted_5$5 = ["tabindex", "aria-disabled"];
+    const _hoisted_4$8 = ["tabindex", "aria-disabled"];
+    const _hoisted_5$6 = ["tabindex", "aria-disabled"];
     const _hoisted_6$2 = ["aria-label", "disabled"];
     const _hoisted_7$2 = ["aria-label", "disabled"];
     var panel_date_pick_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
@@ -30959,7 +30959,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 disabled: unref(dateDisabled),
                 class: normalizeClass(unref(ppNs).e("shortcut")),
                 onClick: ($event) => handleShortcutClick(shortcut)
-              }, toDisplayString(shortcut.text), 11, _hoisted_1$q);
+              }, toDisplayString(shortcut.text), 11, _hoisted_1$t);
             }), 128))], 2)) : createCommentVNode("v-if", true),
             createBaseVNode("div", { class: normalizeClass(unref(ppNs).e("body")) }, [
               showTime.value ? (openBlock(), createElementBlock("div", {
@@ -31014,7 +31014,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 }, [renderSlot(_ctx.$slots, "prev-year", {}, () => [createVNode(unref(ElIcon), null, {
                   default: withCtx(() => [createVNode(unref(d_arrow_left_default))]),
                   _: 1
-                })])], 10, _hoisted_2$g), withDirectives(createBaseVNode("button", {
+                })])], 10, _hoisted_2$m), withDirectives(createBaseVNode("button", {
                   type: "button",
                   "aria-label": unref(t)(`el.datepicker.prevMonth`),
                   class: normalizeClass([unref(ppNs).e("icon-btn"), "arrow-left"]),
@@ -31032,7 +31032,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   "aria-disabled": _ctx.disabled,
                   onKeydown: _cache[4] || (_cache[4] = withKeys(($event) => showPicker("year"), ["enter"])),
                   onClick: _cache[5] || (_cache[5] = ($event) => showPicker("year"))
-                }, toDisplayString(yearLabel.value), 43, _hoisted_4$7),
+                }, toDisplayString(yearLabel.value), 43, _hoisted_4$8),
                 withDirectives(createBaseVNode("span", {
                   role: "button",
                   "aria-live": "polite",
@@ -31041,7 +31041,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   class: normalizeClass([unref(dpNs).e("header-label"), { active: currentView.value === "month" }]),
                   onKeydown: _cache[6] || (_cache[6] = withKeys(($event) => showPicker("month"), ["enter"])),
                   onClick: _cache[7] || (_cache[7] = ($event) => showPicker("month"))
-                }, toDisplayString(unref(t)(`el.datepicker.month${month.value + 1}`)), 43, _hoisted_5$5), [[vShow, currentView.value === "date"]]),
+                }, toDisplayString(unref(t)(`el.datepicker.month${month.value + 1}`)), 43, _hoisted_5$6), [[vShow, currentView.value === "date"]]),
                 createBaseVNode("span", { class: normalizeClass(unref(dpNs).e("next-btn")) }, [withDirectives(createBaseVNode("button", {
                   type: "button",
                   "aria-label": unref(t)(`el.datepicker.nextMonth`),
@@ -31364,11 +31364,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         adjustDateByView
       };
     };
-    const _hoisted_1$p = ["disabled", "onClick"];
-    const _hoisted_2$f = ["aria-label", "disabled"];
+    const _hoisted_1$s = ["disabled", "onClick"];
+    const _hoisted_2$l = ["aria-label", "disabled"];
     const _hoisted_3$9 = ["aria-label", "disabled"];
-    const _hoisted_4$6 = ["disabled", "aria-label"];
-    const _hoisted_5$4 = ["disabled", "aria-label"];
+    const _hoisted_4$7 = ["disabled", "aria-label"];
+    const _hoisted_5$5 = ["disabled", "aria-label"];
     const _hoisted_6$1 = ["tabindex", "aria-disabled"];
     const _hoisted_7$1 = ["tabindex", "aria-disabled"];
     const _hoisted_8$1 = ["disabled", "aria-label"];
@@ -31688,7 +31688,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 disabled: unref(dateRangeDisabled),
                 class: normalizeClass(unref(ppNs).e("shortcut")),
                 onClick: ($event) => unref(handleShortcutClick)(shortcut)
-              }, toDisplayString(shortcut.text), 11, _hoisted_1$p);
+              }, toDisplayString(shortcut.text), 11, _hoisted_1$s);
             }), 128))], 2)) : createCommentVNode("v-if", true),
             createBaseVNode("div", { class: normalizeClass(unref(ppNs).e("body")) }, [
               showTime.value ? (openBlock(), createElementBlock("div", {
@@ -31803,7 +31803,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   }, [renderSlot(_ctx.$slots, "prev-year", {}, () => [createVNode(unref(ElIcon), null, {
                     default: withCtx(() => [createVNode(unref(d_arrow_left_default))]),
                     _: 1
-                  })])], 10, _hoisted_2$f),
+                  })])], 10, _hoisted_2$l),
                   withDirectives(createBaseVNode("button", {
                     type: "button",
                     class: normalizeClass([unref(ppNs).e("icon-btn"), "arrow-left"]),
@@ -31824,7 +31824,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   }, [renderSlot(_ctx.$slots, "next-year", {}, () => [createVNode(unref(ElIcon), null, {
                     default: withCtx(() => [createVNode(unref(d_arrow_right_default))]),
                     _: 1
-                  })])], 10, _hoisted_4$6)) : createCommentVNode("v-if", true),
+                  })])], 10, _hoisted_4$7)) : createCommentVNode("v-if", true),
                   _ctx.unlinkPanels && unref(leftCurrentView) === "date" || _ctx.singlePanel ? (openBlock(), createElementBlock("button", {
                     key: 1,
                     type: "button",
@@ -31835,7 +31835,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   }, [renderSlot(_ctx.$slots, "next-month", {}, () => [createVNode(unref(ElIcon), null, {
                     default: withCtx(() => [createVNode(unref(arrow_right_default))]),
                     _: 1
-                  })])], 10, _hoisted_5$4)) : createCommentVNode("v-if", true),
+                  })])], 10, _hoisted_5$5)) : createCommentVNode("v-if", true),
                   createBaseVNode("div", null, [createBaseVNode("span", {
                     role: "button",
                     class: normalizeClass(unref(drpNs).e("header-label")),
@@ -32114,11 +32114,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         })
       };
     };
-    const _hoisted_1$o = ["disabled", "onClick"];
-    const _hoisted_2$e = ["disabled"];
+    const _hoisted_1$r = ["disabled", "onClick"];
+    const _hoisted_2$k = ["disabled"];
     const _hoisted_3$8 = ["disabled"];
-    const _hoisted_4$5 = ["disabled"];
-    const _hoisted_5$3 = ["disabled"];
+    const _hoisted_4$6 = ["disabled"];
+    const _hoisted_5$4 = ["disabled"];
     const unit$2 = "year";
     var panel_month_range_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "DatePickerMonthRange",
@@ -32212,7 +32212,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 class: normalizeClass(unref(ppNs).e("shortcut")),
                 disabled: unref(monthRangeDisabled),
                 onClick: ($event) => unref(handleShortcutClick)(shortcut)
-              }, toDisplayString(shortcut.text), 11, _hoisted_1$o);
+              }, toDisplayString(shortcut.text), 11, _hoisted_1$r);
             }), 128))], 2)) : createCommentVNode("v-if", true),
             createBaseVNode("div", { class: normalizeClass(unref(ppNs).e("body")) }, [createBaseVNode("div", { class: normalizeClass([
               unref(ppNs).e("content"),
@@ -32227,7 +32227,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "prev-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_left_default))]),
                 _: 1
-              })])], 10, _hoisted_2$e),
+              })])], 10, _hoisted_2$k),
               _ctx.unlinkPanels || _ctx.singlePanel ? (openBlock(), createElementBlock("button", {
                 key: 0,
                 type: "button",
@@ -32274,7 +32274,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "prev-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_left_default))]),
                 _: 1
-              })])], 10, _hoisted_4$5)) : createCommentVNode("v-if", true),
+              })])], 10, _hoisted_4$6)) : createCommentVNode("v-if", true),
               createBaseVNode("button", {
                 type: "button",
                 class: normalizeClass([unref(ppNs).e("icon-btn"), "d-arrow-right"]),
@@ -32283,7 +32283,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "next-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_right_default))]),
                 _: 1
-              })])], 10, _hoisted_5$3),
+              })])], 10, _hoisted_5$4),
               createBaseVNode("div", null, toDisplayString(unref(rightLabel)), 1)
             ], 2), createVNode(basic_month_table_default, {
               "selection-mode": "range",
@@ -32355,11 +32355,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         })
       };
     };
-    const _hoisted_1$n = ["disabled", "onClick"];
-    const _hoisted_2$d = ["disabled"];
+    const _hoisted_1$q = ["disabled", "onClick"];
+    const _hoisted_2$j = ["disabled"];
     const _hoisted_3$7 = ["disabled"];
-    const _hoisted_4$4 = ["disabled"];
-    const _hoisted_5$2 = ["disabled"];
+    const _hoisted_4$5 = ["disabled"];
+    const _hoisted_5$3 = ["disabled"];
     const step = 10;
     const unit$1 = "year";
     var panel_year_range_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
@@ -32494,7 +32494,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 class: normalizeClass(unref(ppNs).e("shortcut")),
                 disabled: unref(yearRangeDisabled),
                 onClick: ($event) => unref(handleShortcutClick)(shortcut)
-              }, toDisplayString(shortcut.text), 11, _hoisted_1$n);
+              }, toDisplayString(shortcut.text), 11, _hoisted_1$q);
             }), 128))], 2)) : createCommentVNode("v-if", true),
             createBaseVNode("div", { class: normalizeClass(unref(ppNs).e("body")) }, [createBaseVNode("div", { class: normalizeClass(leftPanelKls.value.content) }, [createBaseVNode("div", { class: normalizeClass(unref(drpNs).e("header")) }, [
               createBaseVNode("button", {
@@ -32505,7 +32505,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "prev-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_left_default))]),
                 _: 1
-              })])], 10, _hoisted_2$d),
+              })])], 10, _hoisted_2$j),
               _ctx.unlinkPanels || _ctx.singlePanel ? (openBlock(), createElementBlock("button", {
                 key: 0,
                 type: "button",
@@ -32552,7 +32552,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "prev-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_left_default))]),
                 _: 1
-              })])], 10, _hoisted_4$4)) : createCommentVNode("v-if", true),
+              })])], 10, _hoisted_4$5)) : createCommentVNode("v-if", true),
               createBaseVNode("button", {
                 type: "button",
                 class: normalizeClass(rightPanelKls.value.arrowRightBtn),
@@ -32561,7 +32561,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "next-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_right_default))]),
                 _: 1
-              })])], 10, _hoisted_5$2),
+              })])], 10, _hoisted_5$3),
               createBaseVNode("div", null, toDisplayString(unref(rightLabel)), 1)
             ], 2), createVNode(basic_year_table_default, {
               "selection-mode": "range",
@@ -32597,11 +32597,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       "set-picker-option",
       "calendar-change"
     ];
-    const _hoisted_1$m = ["disabled", "onClick"];
-    const _hoisted_2$c = ["disabled"];
+    const _hoisted_1$p = ["disabled", "onClick"];
+    const _hoisted_2$i = ["disabled"];
     const _hoisted_3$6 = ["disabled"];
-    const _hoisted_4$3 = ["disabled"];
-    const _hoisted_5$1 = ["disabled"];
+    const _hoisted_4$4 = ["disabled"];
+    const _hoisted_5$2 = ["disabled"];
     const unit = "year";
     var panel_quarter_range_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "DatePickerQuarterRange",
@@ -32701,7 +32701,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 class: normalizeClass(unref(ppNs).e("shortcut")),
                 disabled: unref(quarterRangeDisabled),
                 onClick: ($event) => unref(handleShortcutClick)(shortcut)
-              }, toDisplayString(shortcut.text), 11, _hoisted_1$m);
+              }, toDisplayString(shortcut.text), 11, _hoisted_1$p);
             }), 128))], 2)) : createCommentVNode("v-if", true),
             createBaseVNode("div", { class: normalizeClass(unref(ppNs).e("body")) }, [createBaseVNode("div", { class: normalizeClass([
               unref(ppNs).e("content"),
@@ -32716,7 +32716,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "prev-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_left_default))]),
                 _: 1
-              })])], 10, _hoisted_2$c),
+              })])], 10, _hoisted_2$i),
               _ctx.unlinkPanels || _ctx.singlePanel ? (openBlock(), createElementBlock("button", {
                 key: 0,
                 type: "button",
@@ -32763,7 +32763,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "prev-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_left_default))]),
                 _: 1
-              })])], 10, _hoisted_4$3)) : createCommentVNode("v-if", true),
+              })])], 10, _hoisted_4$4)) : createCommentVNode("v-if", true),
               createBaseVNode("button", {
                 type: "button",
                 class: normalizeClass([unref(ppNs).e("icon-btn"), "d-arrow-right"]),
@@ -32772,7 +32772,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "next-year", {}, () => [createVNode(unref(ElIcon), null, {
                 default: withCtx(() => [createVNode(unref(d_arrow_right_default))]),
                 _: 1
-              })])], 10, _hoisted_5$1),
+              })])], 10, _hoisted_5$2),
               createBaseVNode("div", null, toDisplayString(unref(rightLabel)), 1)
             ], 2), createVNode(basic_quarter_table_default, {
               "selection-mode": "range",
@@ -33546,8 +33546,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         });
       };
     };
-    const _hoisted_1$l = ["aria-level"];
-    const _hoisted_2$b = ["aria-label"];
+    const _hoisted_1$o = ["aria-level"];
+    const _hoisted_2$h = ["aria-label"];
     const _hoisted_3$5 = ["id"];
     var dialog_content_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "ElDialogContent",
@@ -33594,7 +33594,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               role: "heading",
               "aria-level": __props.ariaLevel,
               class: normalizeClass(unref(ns).e("title"))
-            }, toDisplayString(__props.title), 11, _hoisted_1$l)]), __props.showClose ? (openBlock(), createElementBlock("button", {
+            }, toDisplayString(__props.title), 11, _hoisted_1$o)]), __props.showClose ? (openBlock(), createElementBlock("button", {
               key: 0,
               "aria-label": unref(t)("el.dialog.close"),
               class: normalizeClass(unref(ns).e("headerbtn")),
@@ -33603,7 +33603,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             }, [createVNode(unref(ElIcon), { class: normalizeClass(unref(ns).e("close")) }, {
               default: withCtx(() => [(openBlock(), createBlock(resolveDynamicComponent(__props.closeIcon || unref(Close))))]),
               _: 1
-            }, 8, ["class"])], 10, _hoisted_2$b)) : createCommentVNode("v-if", true)], 2),
+            }, 8, ["class"])], 10, _hoisted_2$h)) : createCommentVNode("v-if", true)], 2),
             createBaseVNode("div", {
               id: unref(bodyId),
               class: normalizeClass([unref(ns).e("body"), __props.bodyClass])
@@ -33617,7 +33617,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     var dialog_content_default = dialog_content_vue_vue_type_script_setup_true_lang_default;
-    const _hoisted_1$k = [
+    const _hoisted_1$n = [
       "aria-label",
       "aria-labelledby",
       "aria-describedby"
@@ -33752,7 +33752,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 "onFocusAfterReleased",
                 "onFocusoutPrevented",
                 "onReleaseRequested"
-              ])], 46, _hoisted_1$k)]),
+              ])], 46, _hoisted_1$n)]),
               _: 3
             }, 8, [
               "mask",
@@ -33786,16 +33786,16 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         default: ""
       }
     });
-    const _hoisted_1$j = {
+    const _hoisted_1$m = {
       viewBox: "0 0 79 86",
       version: "1.1",
       xmlns: "http://www.w3.org/2000/svg",
       "xmlns:xlink": "http://www.w3.org/1999/xlink"
     };
-    const _hoisted_2$a = ["id"];
+    const _hoisted_2$g = ["id"];
     const _hoisted_3$4 = ["stop-color"];
-    const _hoisted_4$2 = ["stop-color"];
-    const _hoisted_5 = ["id"];
+    const _hoisted_4$3 = ["stop-color"];
+    const _hoisted_5$1 = ["id"];
     const _hoisted_6 = ["stop-color"];
     const _hoisted_7 = ["stop-color"];
     const _hoisted_8 = ["id"];
@@ -33826,7 +33826,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         const ns = useNamespace("empty");
         const id = useId();
         return (_ctx, _cache) => {
-          return openBlock(), createElementBlock("svg", _hoisted_1$j, [createBaseVNode("defs", null, [
+          return openBlock(), createElementBlock("svg", _hoisted_1$m, [createBaseVNode("defs", null, [
             createBaseVNode("linearGradient", {
               id: `linearGradient-1-${unref(id)}`,
               x1: "38.8503086%",
@@ -33839,7 +33839,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             }, null, 8, _hoisted_3$4), createBaseVNode("stop", {
               "stop-color": `var(${unref(ns).cssVarBlockName("fill-color-4")})`,
               offset: "100%"
-            }, null, 8, _hoisted_4$2)], 8, _hoisted_2$a),
+            }, null, 8, _hoisted_4$3)], 8, _hoisted_2$g),
             createBaseVNode("linearGradient", {
               id: `linearGradient-2-${unref(id)}`,
               x1: "0%",
@@ -33852,7 +33852,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             }, null, 8, _hoisted_6), createBaseVNode("stop", {
               "stop-color": `var(${unref(ns).cssVarBlockName("fill-color-6")})`,
               offset: "100%"
-            }, null, 8, _hoisted_7)], 8, _hoisted_5),
+            }, null, 8, _hoisted_7)], 8, _hoisted_5$1),
             createBaseVNode("rect", {
               id: `path-3-${unref(id)}`,
               x: "0",
@@ -33921,8 +33921,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     var img_empty_default = img_empty_vue_vue_type_script_setup_true_lang_default;
-    const _hoisted_1$i = ["src"];
-    const _hoisted_2$9 = { key: 1 };
+    const _hoisted_1$l = ["src"];
+    const _hoisted_2$f = { key: 1 };
     var empty_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "ElEmpty",
       __name: "empty",
@@ -33942,8 +33942,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               key: 0,
               src: __props.image,
               ondragstart: "return false"
-            }, null, 8, _hoisted_1$i)) : renderSlot(_ctx.$slots, "image", { key: 1 }, () => [createVNode(img_empty_default)])], 6),
-            createBaseVNode("div", { class: normalizeClass(unref(ns).e("description")) }, [_ctx.$slots.description ? renderSlot(_ctx.$slots, "description", { key: 0 }) : (openBlock(), createElementBlock("p", _hoisted_2$9, toDisplayString(emptyDescription.value), 1))], 2),
+            }, null, 8, _hoisted_1$l)) : renderSlot(_ctx.$slots, "image", { key: 1 }, () => [createVNode(img_empty_default)])], 6),
+            createBaseVNode("div", { class: normalizeClass(unref(ns).e("description")) }, [_ctx.$slots.description ? renderSlot(_ctx.$slots, "description", { key: 0 }) : (openBlock(), createElementBlock("p", _hoisted_2$f, toDisplayString(emptyDescription.value), 1))], 2),
             _ctx.$slots.default ? (openBlock(), createElementBlock("div", {
               key: 0,
               class: normalizeClass(unref(ns).e("bottom"))
@@ -34097,8 +34097,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       [INPUT_EVENT]: (val) => isNumber(val) || isNil(val),
       [UPDATE_MODEL_EVENT]: (val) => isNumber(val) || isNil(val)
     };
-    const _hoisted_1$h = ["aria-label"];
-    const _hoisted_2$8 = ["aria-label"];
+    const _hoisted_1$k = ["aria-label"];
+    const _hoisted_2$e = ["aria-label"];
     var input_number_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "ElInputNumber",
       __name: "input-number",
@@ -34325,7 +34325,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             }, [renderSlot(_ctx.$slots, "decrease-icon", {}, () => [createVNode(unref(ElIcon), null, {
               default: withCtx(() => [controlsAtRight.value ? (openBlock(), createBlock(unref(arrow_down_default), { key: 0 })) : (openBlock(), createBlock(unref(minus_default), { key: 1 }))]),
               _: 1
-            })])], 42, _hoisted_1$h)), [[unref(vRepeatClick), decrease]]) : createCommentVNode("v-if", true),
+            })])], 42, _hoisted_1$k)), [[unref(vRepeatClick), decrease]]) : createCommentVNode("v-if", true),
             __props.controls ? withDirectives((openBlock(), createElementBlock("span", {
               key: 1,
               role: "button",
@@ -34335,7 +34335,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             }, [renderSlot(_ctx.$slots, "increase-icon", {}, () => [createVNode(unref(ElIcon), null, {
               default: withCtx(() => [controlsAtRight.value ? (openBlock(), createBlock(unref(arrow_up_default), { key: 0 })) : (openBlock(), createBlock(unref(plus_default), { key: 1 }))]),
               _: 1
-            })])], 42, _hoisted_2$8)), [[unref(vRepeatClick), increase]]) : createCommentVNode("v-if", true),
+            })])], 42, _hoisted_2$e)), [[unref(vRepeatClick), increase]]) : createCommentVNode("v-if", true),
             createVNode(unref(ElInput), {
               id: __props.id,
               ref_key: "input",
@@ -36373,14 +36373,14 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _hoisted_1$g = ["disabled"];
-    const _hoisted_2$7 = ["tabindex", "aria-checked"];
+    const _hoisted_1$j = ["disabled"];
+    const _hoisted_2$d = ["tabindex", "aria-checked"];
     const _hoisted_3$3 = [
       "tabindex",
       "aria-checked",
       "onClick"
     ];
-    const _hoisted_4$1 = ["aria-label"];
+    const _hoisted_4$2 = ["aria-label"];
     function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
       const _component_el_checkbox = resolveComponent("el-checkbox");
       const _component_el_checkbox_group = resolveComponent("el-checkbox-group");
@@ -36434,7 +36434,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           disabled: _ctx.filteredValue.length === 0,
           type: "button",
           onClick: _cache[1] || (_cache[1] = (...args) => _ctx.handleConfirm && _ctx.handleConfirm(...args))
-        }, toDisplayString(_ctx.t("el.table.confirmFilter")), 11, _hoisted_1$g), createBaseVNode("button", {
+        }, toDisplayString(_ctx.t("el.table.confirmFilter")), 11, _hoisted_1$j), createBaseVNode("button", {
           type: "button",
           onClick: _cache[2] || (_cache[2] = (...args) => _ctx.handleReset && _ctx.handleReset(...args))
         }, toDisplayString(_ctx.t("el.table.resetFilter")), 1)], 2)], 2)) : (openBlock(), createElementBlock("ul", {
@@ -36450,7 +36450,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           tabindex: _ctx.checkedIndex === 0 ? 0 : -1,
           "aria-checked": _ctx.isPropAbsent(_ctx.filterValue),
           onClick: _cache[3] || (_cache[3] = ($event) => _ctx.handleSelect(null, 0))
-        }, toDisplayString(_ctx.t("el.table.clearFilter")), 11, _hoisted_2$7), (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.filters, (filter, idx) => {
+        }, toDisplayString(_ctx.t("el.table.clearFilter")), 11, _hoisted_2$d), (openBlock(true), createElementBlock(Fragment, null, renderList(_ctx.filters, (filter, idx) => {
           return openBlock(), createElementBlock("li", {
             key: filter.value,
             role: "radio",
@@ -36467,7 +36467,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         }, [createVNode(_component_el_icon, null, {
           default: withCtx(() => [renderSlot(_ctx.$slots, "filter-icon", {}, () => [_ctx.column?.filterOpened ? (openBlock(), createBlock(_component_arrow_up, { key: 0 })) : (openBlock(), createBlock(_component_arrow_down, { key: 1 }))])]),
           _: 3
-        })], 10, _hoisted_4$1)]),
+        })], 10, _hoisted_4$2)]),
         _: 3
       }, 8, [
         "placement",
@@ -37096,7 +37096,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         getColspanRealWidth
       };
     }
-    const _hoisted_1$f = ["colspan", "rowspan"];
+    const _hoisted_1$i = ["colspan", "rowspan"];
     var td_wrapper_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "TableTdWrapper",
       __name: "td-wrapper",
@@ -37115,7 +37115,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           return openBlock(), createElementBlock("td", {
             colspan: __props.colspan,
             rowspan: __props.rowspan
-          }, [renderSlot(_ctx.$slots, "default")], 8, _hoisted_1$f);
+          }, [renderSlot(_ctx.$slots, "default")], 8, _hoisted_1$i);
         };
       }
     });
@@ -37799,8 +37799,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         setScrollLeft
       };
     };
-    const _hoisted_1$e = ["data-prefix"];
-    const _hoisted_2$6 = {
+    const _hoisted_1$h = ["data-prefix"];
+    const _hoisted_2$c = {
       ref: "hiddenColumns",
       class: "hidden-columns"
     };
@@ -37996,7 +37996,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             ref: "tableInnerWrapper",
             class: normalizeClass(unref(ns).e("inner-wrapper"))
           }, [
-            createBaseVNode("div", _hoisted_2$6, [renderSlot(_ctx.$slots, "default")], 512),
+            createBaseVNode("div", _hoisted_2$c, [renderSlot(_ctx.$slots, "default")], 512),
             __props.showHeader && unref(tableLayout) === "fixed" ? withDirectives((openBlock(), createElementBlock("div", {
               key: 0,
               ref: "headerWrapper",
@@ -38162,7 +38162,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           ], 2), withDirectives(createBaseVNode("div", {
             ref: "resizeProxy",
             class: normalizeClass(unref(ns).e("column-resize-proxy"))
-          }, null, 2), [[vShow, unref(resizeProxyVisible)]])], 46, _hoisted_1$e);
+          }, null, 2), [[vShow, unref(resizeProxyVisible)]])], 46, _hoisted_1$h);
         };
       }
     });
@@ -39457,7 +39457,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       */
       lazy: Boolean
     });
-    const _hoisted_1$d = [
+    const _hoisted_1$g = [
       "id",
       "aria-hidden",
       "aria-labelledby"
@@ -39515,7 +39515,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             role: "tabpanel",
             "aria-hidden": !active.value,
             "aria-labelledby": `tab-${paneName.value}`
-          }, [renderSlot(_ctx.$slots, "default")], 10, _hoisted_1$d)), [[vShow, active.value]]) : createCommentVNode("v-if", true);
+          }, [renderSlot(_ctx.$slots, "default")], 10, _hoisted_1$g)), [[vShow, active.value]]) : createCommentVNode("v-if", true);
         };
       }
     });
@@ -39698,8 +39698,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
     const getOffsetOrSpace = (id, offset, placement) => {
       return (placementInstances[placement] || []).findIndex((instance) => instance.id === id) > 0 ? 16 : offset;
     };
-    const _hoisted_1$c = ["id"];
-    const _hoisted_2$5 = ["innerHTML"];
+    const _hoisted_1$f = ["id"];
+    const _hoisted_2$b = ["innerHTML"];
     var message_vue_vue_type_script_setup_true_lang_default = /* @__PURE__ */ defineComponent({
       name: "ElMessage",
       __name: "message",
@@ -39826,7 +39826,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [renderSlot(_ctx.$slots, "default", {}, () => [createTextVNode(toDisplayString(__props.message), 1)])], 2)) : (openBlock(), createElementBlock(Fragment, { key: 3 }, [createCommentVNode(" Caution here, message could've been compromised, never use user's input as message "), createBaseVNode("p", {
                 class: normalizeClass(unref(ns).e("content")),
                 innerHTML: __props.message
-              }, null, 10, _hoisted_2$5)], 2112)),
+              }, null, 10, _hoisted_2$b)], 2112)),
               __props.showClose ? (openBlock(), createBlock(unref(ElIcon), {
                 key: 4,
                 class: normalizeClass(unref(ns).e("closeBtn")),
@@ -39835,7 +39835,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 default: withCtx(() => [createVNode(unref(Close))]),
                 _: 1
               }, 8, ["class"])) : createCommentVNode("v-if", true)
-            ], 46, _hoisted_1$c), [[vShow, visible.value]])]),
+            ], 46, _hoisted_1$f), [[vShow, visible.value]])]),
             _: 3
           }, 8, ["name", "onBeforeLeave"]);
         };
@@ -40189,8 +40189,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _hoisted_1$b = ["aria-label", "aria-describedby"];
-    const _hoisted_2$4 = ["aria-label"];
+    const _hoisted_1$e = ["aria-label", "aria-describedby"];
+    const _hoisted_2$a = ["aria-label"];
     const _hoisted_3$2 = ["id"];
     function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       const _component_el_icon = resolveComponent("el-icon");
@@ -40258,7 +40258,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, [createVNode(_component_el_icon, { class: normalizeClass(_ctx.ns.e("close")) }, {
                 default: withCtx(() => [(openBlock(), createBlock(resolveDynamicComponent(_ctx.closeIcon || "close")))]),
                 _: 1
-              }, 8, ["class"])], 42, _hoisted_2$4)) : createCommentVNode("v-if", true)], 2)) : createCommentVNode("v-if", true),
+              }, 8, ["class"])], 42, _hoisted_2$a)) : createCommentVNode("v-if", true)], 2)) : createCommentVNode("v-if", true),
               createBaseVNode("div", {
                 id: _ctx.contentId,
                 class: normalizeClass(_ctx.ns.e("content"))
@@ -40358,7 +40358,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             "focus-trap-el",
             "focus-start-el",
             "onReleaseRequested"
-          ])], 42, _hoisted_1$b)]),
+          ])], 42, _hoisted_1$e)]),
           _: 3
         }, 8, [
           "z-index",
@@ -40709,6 +40709,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       async function load() {
         const data = await window.storage.read(FILE_NAMES.SCHEDULES);
         weeks.value = data?.weeks ?? {};
+        const expired = expirePastWeeks();
+        if (expired.length > 0) await persist();
       }
       async function persist() {
         await window.storage.write(FILE_NAMES.SCHEDULES, { version: 1, weeks: weeks.value });
@@ -40744,7 +40746,76 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         weeks.value = next;
         await persist();
       }
-      return { weeks, load, persist, getWeek, upsertWeek, updateDetail, removeWeek };
+      async function publishWeek(weekKey) {
+        const week = weeks.value[weekKey];
+        if (!week) return;
+        week.status = "published";
+        await persist();
+      }
+      async function unpublishWeek(weekKey) {
+        const week = weeks.value[weekKey];
+        if (!week) return;
+        week.status = "draft";
+        await persist();
+      }
+      function expirePastWeeks() {
+        const today = dayjs().startOf("day");
+        const changed = [];
+        for (const [key, week] of Object.entries(weeks.value)) {
+          if (week.status === "expired") continue;
+          if (dayjs(week.weekEnd).isBefore(today, "day")) {
+            week.status = "expired";
+            changed.push(key);
+          }
+        }
+        return changed;
+      }
+      return {
+        weeks,
+        load,
+        persist,
+        getWeek,
+        upsertWeek,
+        updateDetail,
+        removeWeek,
+        publishWeek,
+        unpublishWeek,
+        expirePastWeeks
+      };
+    });
+    const useDemandStore = /* @__PURE__ */ defineStore("demand", () => {
+      const list = /* @__PURE__ */ ref([]);
+      async function load() {
+        const data = await window.storage.read(FILE_NAMES.DEMANDS);
+        list.value = data?.list ?? [];
+      }
+      async function persist() {
+        await window.storage.write(FILE_NAMES.DEMANDS, { version: 1, list: list.value });
+      }
+      async function add(demand) {
+        const now2 = (/* @__PURE__ */ new Date()).toISOString();
+        list.value.push({ ...demand, id: crypto.randomUUID(), createdAt: now2, updatedAt: now2 });
+        await persist();
+      }
+      async function update(id, patch) {
+        const idx = list.value.findIndex((d2) => d2.id === id);
+        if (idx < 0) return;
+        list.value[idx] = { ...list.value[idx], ...patch, updatedAt: (/* @__PURE__ */ new Date()).toISOString() };
+        await persist();
+      }
+      async function markMet(ids) {
+        const now2 = (/* @__PURE__ */ new Date()).toISOString();
+        const set2 = new Set(ids);
+        list.value = list.value.map(
+          (d2) => set2.has(d2.id) ? { ...d2, status: "met", updatedAt: now2 } : d2
+        );
+        await persist();
+      }
+      async function remove2(id) {
+        list.value = list.value.filter((d2) => d2.id !== id);
+        await persist();
+      }
+      return { list, load, persist, add, update, markMet, remove: remove2 };
     });
     const useStaffStore = /* @__PURE__ */ defineStore("staff", () => {
       const list = /* @__PURE__ */ ref([]);
@@ -40766,11 +40837,92 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         list.value[idx] = { ...list.value[idx], ...patch, updatedAt: (/* @__PURE__ */ new Date()).toISOString() };
         await persist();
       }
+      async function clearPostReference(postId) {
+        const affected = list.value.filter((s2) => s2.postId === postId);
+        if (affected.length === 0) return 0;
+        const now2 = (/* @__PURE__ */ new Date()).toISOString();
+        for (const staff of affected) {
+          const idx = list.value.findIndex((s2) => s2.id === staff.id);
+          if (idx >= 0) list.value[idx] = { ...list.value[idx], postId: null, updatedAt: now2 };
+        }
+        await persist();
+        return affected.length;
+      }
       async function remove2(id) {
         list.value = list.value.filter((s2) => s2.id !== id);
+        const scheduleStore = useScheduleStore();
+        const demandStore = useDemandStore();
+        let scheduleTouched = false;
+        for (const week of Object.values(scheduleStore.weeks)) {
+          const before = week.details.length;
+          week.details = week.details.filter((d2) => d2.staffId !== id);
+          if (week.details.length !== before) scheduleTouched = true;
+        }
+        const demandTouched = demandStore.list.some((d2) => d2.staffId === id);
+        if (demandTouched) {
+          demandStore.list = demandStore.list.filter((d2) => d2.staffId !== id);
+        }
+        const jobs = [persist()];
+        if (scheduleTouched) jobs.push(scheduleStore.persist());
+        if (demandTouched) jobs.push(demandStore.persist());
+        await Promise.all(jobs);
+      }
+      return { list, load, persist, add, update, clearPostReference, remove: remove2 };
+    });
+    const useNightRuleStore = /* @__PURE__ */ defineStore("nightRule", () => {
+      const rules2 = /* @__PURE__ */ ref([]);
+      async function load() {
+        const data = await window.storage.read(FILE_NAMES.NIGHT_RULES);
+        rules2.value = (data?.rules ?? []).sort(
+          (a2, b2) => a2.sortOrder - b2.sortOrder
+        );
+      }
+      async function persist() {
+        await window.storage.write(FILE_NAMES.NIGHT_RULES, { version: 1, rules: rules2.value });
+      }
+      async function add(shiftId) {
+        const maxOrder = rules2.value.reduce((m2, r) => Math.max(m2, r.sortOrder), 0);
+        rules2.value.push({
+          id: crypto.randomUUID(),
+          shiftId,
+          sortOrder: maxOrder + 1
+        });
         await persist();
       }
-      return { list, load, persist, add, update, remove: remove2 };
+      async function remove2(id) {
+        rules2.value = rules2.value.filter((r) => r.id !== id);
+        rules2.value.forEach((r, i) => {
+          r.sortOrder = i + 1;
+        });
+        await persist();
+      }
+      async function reorder(next) {
+        rules2.value = next.map((r, i) => ({ ...r, sortOrder: i + 1 }));
+        await persist();
+      }
+      return { rules: rules2, load, persist, add, remove: remove2, reorder };
+    });
+    const emptySettings = {
+      version: 1,
+      assistNightShiftId: null,
+      weekdayRequiredShiftIds: [],
+      weekendRequiredShiftIds: [],
+      lastBackupAt: null
+    };
+    const useSettingsStore = /* @__PURE__ */ defineStore("settings", () => {
+      const settings = /* @__PURE__ */ ref({ ...emptySettings });
+      async function load() {
+        const data = await window.storage.read(FILE_NAMES.SETTINGS);
+        settings.value = { ...emptySettings, ...data ?? {} };
+      }
+      async function persist() {
+        await window.storage.write(FILE_NAMES.SETTINGS, settings.value);
+      }
+      async function update(patch) {
+        settings.value = { ...settings.value, ...patch };
+        await persist();
+      }
+      return { settings, load, persist, update };
     });
     const useShiftStore = /* @__PURE__ */ defineStore("shift", () => {
       const list = /* @__PURE__ */ ref([]);
@@ -40794,7 +40946,67 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
       async function remove2(id) {
         list.value = list.value.filter((s2) => s2.id !== id);
+        const scheduleStore = useScheduleStore();
+        const nightRuleStore = useNightRuleStore();
+        const settingsStore = useSettingsStore();
+        let scheduleTouched = false;
+        for (const week of Object.values(scheduleStore.weeks)) {
+          for (const detail of week.details) {
+            if (detail.shiftId === id) {
+              detail.shiftId = null;
+              scheduleTouched = true;
+            }
+          }
+        }
+        const ruleTouched = nightRuleStore.rules.some((r) => r.shiftId === id);
+        if (ruleTouched) {
+          nightRuleStore.rules = nightRuleStore.rules.filter((r) => r.shiftId !== id);
+          nightRuleStore.rules.forEach((r, i) => {
+            r.sortOrder = i + 1;
+          });
+        }
+        const settings = settingsStore.settings;
+        const settingsTouched = settings.assistNightShiftId === id || settings.weekdayRequiredShiftIds.includes(id) || settings.weekendRequiredShiftIds.includes(id);
+        if (settingsTouched) {
+          await settingsStore.update({
+            assistNightShiftId: settings.assistNightShiftId === id ? null : settings.assistNightShiftId,
+            weekdayRequiredShiftIds: settings.weekdayRequiredShiftIds.filter((sid) => sid !== id),
+            weekendRequiredShiftIds: settings.weekendRequiredShiftIds.filter((sid) => sid !== id)
+          });
+        }
+        const jobs = [persist()];
+        if (scheduleTouched) jobs.push(scheduleStore.persist());
+        if (ruleTouched) jobs.push(nightRuleStore.persist());
+        await Promise.all(jobs);
+      }
+      return { list, load, persist, add, update, remove: remove2 };
+    });
+    const usePostStore = /* @__PURE__ */ defineStore("post", () => {
+      const list = /* @__PURE__ */ ref([]);
+      async function load() {
+        const data = await window.storage.read(FILE_NAMES.POSTS);
+        list.value = data?.list ?? [];
+      }
+      async function persist() {
+        await window.storage.write(FILE_NAMES.POSTS, { version: 1, list: list.value });
+      }
+      async function add(name) {
+        const now2 = (/* @__PURE__ */ new Date()).toISOString();
+        list.value.push({ id: crypto.randomUUID(), name, createdAt: now2, updatedAt: now2 });
         await persist();
+      }
+      async function update(id, patch) {
+        const idx = list.value.findIndex((p2) => p2.id === id);
+        if (idx < 0) return;
+        list.value[idx] = { ...list.value[idx], ...patch, updatedAt: (/* @__PURE__ */ new Date()).toISOString() };
+        await persist();
+      }
+      async function remove2(id) {
+        list.value = list.value.filter((p2) => p2.id !== id);
+        const staffStore = useStaffStore();
+        const affected = await staffStore.clearPostReference(id);
+        await persist();
+        return affected;
       }
       return { list, load, persist, add, update, remove: remove2 };
     });
@@ -40828,6 +41040,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
     var isoWeekExports = isoWeek$1.exports;
     const isoWeek = /* @__PURE__ */ getDefaultExportFromCjs(isoWeekExports);
     dayjs.extend(isoWeek);
+    const TEMPORARY_STATUSES = /* @__PURE__ */ new Set([
+      "leave",
+      "training",
+      "suspended"
+    ]);
     function todayStr() {
       return dayjs().format("YYYY-MM-DD");
     }
@@ -40845,8 +41062,9 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
     function getNextWeekKey() {
       return getWeekRange(dayjs().add(1, "week").toDate()).weekKey;
     }
-    function getLastWeekKey() {
-      return getWeekRange(dayjs().subtract(1, "week").toDate()).weekKey;
+    function getPreviousWeekKey(targetWeekKey) {
+      const { weekStart } = parseWeekKey(targetWeekKey);
+      return getWeekRange(dayjs(weekStart).subtract(1, "week").toDate()).weekKey;
     }
     function getWeekDates(weekStart) {
       const start = dayjs(weekStart);
@@ -40856,10 +41074,13 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       const day = dayjs(date).day();
       return day === 0 || day === 6;
     }
-    function formatColumnLabel(date) {
-      const d2 = dayjs(date);
+    function weekdayName(date) {
       const names2 = ["日", "一", "二", "三", "四", "五", "六"];
-      return `${d2.format("MM-DD")} 周${names2[d2.day()]}`;
+      return names2[dayjs(date).day()];
+    }
+    function monthDay(date) {
+      const d2 = dayjs(date);
+      return `${d2.month() + 1}.${d2.date()}`;
     }
     function canDeleteWeek(weekStart) {
       return dayjs(weekStart).isAfter(dayjs(), "day");
@@ -40868,14 +41089,12 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       return !dayjs(date).isBefore(dayjs(), "day");
     }
     function isStaffAvailableOnDate(staff, date) {
-      if (staff.status !== "active") return false;
-      if (staff.statusStartTime && dayjs(staff.statusStartTime).isAfter(dayjs(date), "day")) {
-        return false;
-      }
-      if (staff.statusEndTime && dayjs(staff.statusEndTime).isBefore(dayjs(date), "day")) {
-        return false;
-      }
-      return true;
+      const day = dayjs(date).startOf("day");
+      const start = staff.statusStartTime ? dayjs(staff.statusStartTime).startOf("day") : null;
+      const end = staff.statusEndTime ? dayjs(staff.statusEndTime).startOf("day") : null;
+      if (start && start.isAfter(day)) return false;
+      if (end && end.isBefore(day) && TEMPORARY_STATUSES.has(staff.status)) return true;
+      return staff.status === "active";
     }
     function isStaffAvailable(staff, start, end) {
       let cursor = dayjs(start);
@@ -40886,49 +41105,56 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
       return false;
     }
+    const WEEK_KEY_PATTERN = /^(\d{4}-\d{2}-\d{2})-(\d{4}-\d{2}-\d{2})$/;
     function parseWeekKey(weekKey) {
+      const matched = WEEK_KEY_PATTERN.exec(weekKey);
+      if (matched) return { weekStart: matched[1], weekEnd: matched[2] };
       return {
         weekStart: weekKey.slice(0, 10),
         weekEnd: weekKey.slice(11)
       };
     }
+    const REST_RULE_SHIFT_ID = "__rest__";
     function toMinutes(hhmm) {
       const [h2, m2] = hhmm.split(":").map(Number);
+      if (Number.isNaN(h2) || Number.isNaN(m2)) return Number.NaN;
       return h2 * 60 + m2;
     }
-    function rangesOverlap(aStart, aEnd, bStart, bEnd) {
-      const aWrap = aEnd <= aStart;
-      const bWrap = bEnd <= bStart;
-      const aEndAdj = aWrap ? aEnd + 24 * 60 : aEnd;
-      const bEndAdj = bWrap ? bEnd + 24 * 60 : bEnd;
-      return aStart < bEndAdj && bStart < aEndAdj;
+    function toAbsInterval(shift, date) {
+      const startMinutes = toMinutes(shift.startTime);
+      let endMinutes = toMinutes(shift.endTime);
+      if (Number.isNaN(startMinutes) || Number.isNaN(endMinutes)) return null;
+      if (endMinutes <= startMinutes) endMinutes += 24 * 60;
+      const dayBase = dayjs(date).startOf("day").valueOf() / 6e4;
+      return { start: dayBase + startMinutes, end: dayBase + endMinutes };
     }
-    function findTimeConflicts(details, shifts) {
+    function findTimeConflicts(details, shifts, staffList = []) {
       const shiftMap = new Map(shifts.map((s2) => [s2.id, s2]));
+      const staffNameMap = new Map(staffList.map((s2) => [s2.id, s2.name]));
       const warnings = [];
-      const byStaffDate = /* @__PURE__ */ new Map();
-      for (const d2 of details) {
-        if (!d2.shiftId || d2.isRest) continue;
-        const key = `${d2.staffId}|${d2.date}`;
-        const arr = byStaffDate.get(key) ?? [];
-        arr.push(d2);
-        byStaffDate.set(key, arr);
+      const byStaff = /* @__PURE__ */ new Map();
+      for (const detail of details) {
+        if (!detail.shiftId || detail.isRest) continue;
+        const shift = shiftMap.get(detail.shiftId);
+        if (!shift) continue;
+        const interval = toAbsInterval(shift, detail.date);
+        if (!interval) continue;
+        const arr = byStaff.get(detail.staffId) ?? [];
+        arr.push({ detail, interval });
+        byStaff.set(detail.staffId, arr);
       }
-      for (const [key, arr] of byStaffDate) {
-        if (arr.length < 2) continue;
-        for (let i = 0; i < arr.length; i++) {
-          for (let j = i + 1; j < arr.length; j++) {
-            const sa = shiftMap.get(arr[i].shiftId);
-            const sb = shiftMap.get(arr[j].shiftId);
-            if (!sa || !sb) continue;
-            if (rangesOverlap(
-              toMinutes(sa.startTime),
-              toMinutes(sa.endTime),
-              toMinutes(sb.startTime),
-              toMinutes(sb.endTime)
-            )) {
-              const [staffId, date] = key.split("|");
-              warnings.push(`${date} 人员 ${staffId} 班次时间冲突：${sa.name} / ${sb.name}`);
+      for (const [staffId, items] of byStaff) {
+        for (let i = 0; i < items.length; i++) {
+          for (let j = i + 1; j < items.length; j++) {
+            const a2 = items[i];
+            const b2 = items[j];
+            if (a2.interval.start < b2.interval.end && b2.interval.start < a2.interval.end) {
+              const shiftA = shiftMap.get(a2.detail.shiftId);
+              const shiftB = shiftMap.get(b2.detail.shiftId);
+              if (!shiftA || !shiftB) continue;
+              const name = staffNameMap.get(staffId) ?? staffId;
+              const dateLabel = a2.detail.date === b2.detail.date ? a2.detail.date : `${a2.detail.date} / ${b2.detail.date}`;
+              warnings.push(`${dateLabel} ${name} 班次时间冲突：${shiftA.name} / ${shiftB.name}`);
             }
           }
         }
@@ -40990,28 +41216,33 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
     function findDetail(details, staffId, date) {
       return details.find((d2) => d2.staffId === staffId && d2.date === date);
     }
-    function applyDemands(details, demands, dates, availableStaff) {
+    function applyDemands(details, demands, dates, availableStaff, shifts) {
       const dateSet = new Set(dates);
       const staffSet = new Set(availableStaff.map((s2) => s2.id));
+      const shiftIdSet = new Set(shifts.map((s2) => s2.id));
       const metDemandIds = [];
       for (const demand of demands) {
         if (demand.status === "rejected") continue;
         if (!dateSet.has(demand.date)) continue;
         if (!staffSet.has(demand.staffId)) continue;
+        const staff = availableStaff.find((s2) => s2.id === demand.staffId);
+        if (staff && !isStaffAvailableOnDate(staff, demand.date)) continue;
         const detail = findDetail(details, demand.staffId, demand.date);
         if (!detail) continue;
         if (demand.type === "rest") {
           detail.isRest = true;
           detail.shiftId = null;
-        } else if (demand.shiftId) {
+        } else if (demand.shiftId && shiftIdSet.has(demand.shiftId)) {
           detail.isRest = false;
           detail.shiftId = demand.shiftId;
+        } else {
+          continue;
         }
         metDemandIds.push(demand.id);
       }
       return metDemandIds;
     }
-    function copyNonNightFromLastWeek(details, lastWeek, nightShiftIds, demands) {
+    function copyNonNightFromLastWeek(details, lastWeek, nightShiftIds, demands, staffList) {
       const lastDates = getWeekDates(lastWeek.weekStart);
       const targetDates = [...new Set(details.map((d2) => d2.date))].sort();
       if (targetDates.length !== 7 || lastDates.length !== 7) return;
@@ -41022,6 +41253,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         for (const lastDetail of lastDayDetails) {
           if (lastDetail.shiftId && nightShiftIds.has(lastDetail.shiftId)) continue;
           if (hasDemandOnDate(demands, lastDetail.staffId, date)) continue;
+          const staff = staffList.find((s2) => s2.id === lastDetail.staffId);
+          if (staff && !isStaffAvailableOnDate(staff, date)) continue;
           const detail = findDetail(details, lastDetail.staffId, date);
           if (!detail) continue;
           if (detail.shiftId || detail.isRest) continue;
@@ -41065,7 +41298,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         }
       }
       const cursor = { index: startIndex };
-      for (const date of dates) {
+      dates.forEach((date, dayIndex) => {
+        cursor.index = (startIndex + dayIndex) % rules2.length;
         for (const staff of nightStaff) {
           if (!isStaffAvailableOnDate(staff, date)) continue;
           const detail = findDetail(details, staff.id, date);
@@ -41073,14 +41307,19 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           if (detail.isRest || detail.shiftId) continue;
           const shiftId = nextNightShiftId(rules2, cursor, date, assistNightShiftId);
           if (!shiftId) continue;
-          detail.shiftId = shiftId;
-          detail.isRest = false;
+          if (shiftId === REST_RULE_SHIFT_ID) {
+            detail.shiftId = null;
+            detail.isRest = true;
+          } else {
+            detail.shiftId = shiftId;
+            detail.isRest = false;
+          }
         }
-      }
+      });
     }
     function fillRequiredShifts(details, dates, staffList, settings) {
       const dayStaff = staffList.filter((s2) => s2.groupType === "day").sort((a2, b2) => a2.employeeNo.localeCompare(b2.employeeNo) || a2.name.localeCompare(b2.name));
-      let poll = 0;
+      const lastPicked = /* @__PURE__ */ new Map();
       for (const date of dates) {
         const requiredIds = isWeekend(date) ? settings.weekendRequiredShiftIds : settings.weekdayRequiredShiftIds;
         for (const shiftId of requiredIds) {
@@ -41093,8 +41332,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             return !detail2.isRest && !detail2.shiftId;
           });
           if (candidates.length === 0) continue;
-          const staff = candidates[poll % candidates.length];
-          poll += 1;
+          const previous = lastPicked.get(shiftId);
+          let index2 = candidates.findIndex((staff2) => staff2.id !== previous);
+          if (index2 < 0) index2 = 0;
+          const staff = candidates[index2];
+          lastPicked.set(shiftId, staff.id);
           const detail = findDetail(details, staff.id, date);
           if (!detail) continue;
           detail.shiftId = shiftId;
@@ -41120,10 +41362,10 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           });
         }
       }
-      const metDemandIds = applyDemands(details, demands, dates, availableStaff);
+      const metDemandIds = applyDemands(details, demands, dates, availableStaff, shifts);
       const nightShiftIds = new Set(nightRules.map((r) => r.shiftId));
       if (lastWeek) {
-        copyNonNightFromLastWeek(details, lastWeek, nightShiftIds, demands);
+        copyNonNightFromLastWeek(details, lastWeek, nightShiftIds, demands, staffList);
       }
       generateNightShifts(details, dates, availableStaff, nightRules, lastWeek, settings.assistNightShiftId);
       fillRequiredShifts(details, dates, availableStaff, settings);
@@ -41133,7 +41375,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         staffList,
         settings
       });
-      warnings.push(...findTimeConflicts(details, shifts));
+      warnings.push(...findTimeConflicts(details, shifts, staffList));
       return {
         week: {
           weekKey: targetWeekKey,
@@ -41149,24 +41391,50 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       };
     }
     function copyLastWeekSchedule(params) {
-      const { targetWeekKey, lastWeek, staffList } = params;
+      const { targetWeekKey, lastWeek, staffList, shifts } = params;
+      const demands = params.demands ?? [];
+      const settings = params.settings;
       const { weekStart: ws, weekEnd: we2 } = parseWeekKey(targetWeekKey);
       const dates = getWeekDates(ws);
       const lastDates = getWeekDates(lastWeek.weekStart);
       const availableStaff = staffList.filter((s2) => isStaffAvailable(s2, ws, we2));
+      const shiftIdSet = new Set(shifts.map((s2) => s2.id));
       const details = [];
       for (const staff of availableStaff) {
         for (let i = 0; i < 7; i++) {
           const date = dates[i];
           const lastDate = lastDates[i];
           const lastDetail = lastWeek.details.find((d2) => d2.staffId === staff.id && d2.date === lastDate);
+          let shiftId = null;
+          let isRest = false;
+          let remark = "";
+          const demand = demands.find(
+            (d2) => d2.staffId === staff.id && d2.date === date && d2.status !== "rejected"
+          );
+          const availableOnDate = isStaffAvailableOnDate(staff, date);
+          if (demand && availableOnDate) {
+            if (demand.type === "rest") {
+              isRest = true;
+            } else if (demand.shiftId && shiftIdSet.has(demand.shiftId)) {
+              shiftId = demand.shiftId;
+            }
+            remark = demand.remark ?? "";
+          } else if (availableOnDate && lastDetail) {
+            shiftId = lastDetail.shiftId;
+            isRest = lastDetail.isRest;
+            remark = lastDetail.remark ?? "";
+            if (isWeekend(date) && settings?.assistNightShiftId && shiftId === settings.assistNightShiftId) {
+              shiftId = null;
+              isRest = false;
+            }
+          }
           details.push({
             id: crypto.randomUUID(),
             staffId: staff.id,
             date,
-            shiftId: lastDetail?.shiftId ?? null,
-            isRest: lastDetail?.isRest ?? false,
-            remark: lastDetail?.remark ?? ""
+            shiftId,
+            isRest,
+            remark
           });
         }
       }
@@ -41205,7 +41473,105 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         details
       };
     }
-    const _sfc_main$k = /* @__PURE__ */ defineComponent({
+    function appendStaffToWeek(week, staffList) {
+      const dates = getWeekDates(week.weekStart);
+      const existing = new Set(week.details.map((d2) => d2.staffId));
+      const additions = [];
+      for (const staff of staffList) {
+        if (existing.has(staff.id)) continue;
+        if (!isStaffAvailable(staff, week.weekStart, week.weekEnd)) continue;
+        for (const date of dates) {
+          additions.push({
+            id: crypto.randomUUID(),
+            staffId: staff.id,
+            date,
+            shiftId: null,
+            isRest: false,
+            remark: ""
+          });
+        }
+      }
+      if (additions.length === 0) return week;
+      return { ...week, details: [...week.details, ...additions] };
+    }
+    function escapeCsvCell(value) {
+      return `"${value.replace(/"/g, '""')}"`;
+    }
+    function exportWeekToCsv(week, staffList, shifts, posts) {
+      const dates = getWeekDates(week.weekStart);
+      const shiftMap = new Map(shifts.map((s2) => [s2.id, s2.name]));
+      const postMap = new Map(posts.map((p2) => [p2.id, p2.name]));
+      const header = [
+        "工号",
+        "姓名",
+        "能级/职称",
+        "岗位",
+        "管床",
+        "年假",
+        "积休",
+        ...dates.map((d2) => `${d2} 周${weekdayName(d2)}`)
+      ];
+      const rows = staffList.filter((s2) => week.details.some((d2) => d2.staffId === s2.id)).map((s2) => {
+        const cells = dates.map((date) => {
+          const detail = week.details.find((d2) => d2.staffId === s2.id && d2.date === date);
+          if (!detail) return "";
+          if (detail.isRest) return "休";
+          if (!detail.shiftId) return "";
+          return shiftMap.get(detail.shiftId) ?? detail.shiftId;
+        });
+        return [
+          s2.employeeNo,
+          s2.name,
+          s2.title,
+          s2.postId ? postMap.get(s2.postId) ?? "" : "",
+          s2.bedManagement ?? "",
+          String(s2.annualLeave),
+          String(s2.accumulatedLeave),
+          ...cells
+        ];
+      });
+      const csv = ["\uFEFF", [header, ...rows].map((r) => r.map(escapeCsvCell).join(",")).join("\r\n")].join("");
+      const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `排班表-${week.weekKey}.csv`;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+    function useNowTick() {
+      const tick = /* @__PURE__ */ ref(Date.now());
+      let timer;
+      onMounted(() => {
+        timer = setInterval(() => {
+          tick.value = Date.now();
+        }, 6e4);
+      });
+      onUnmounted(() => {
+        if (timer) clearInterval(timer);
+      });
+      return tick;
+    }
+    async function confirmAction(message2, title = "删除确认", type = "warning") {
+      try {
+        await ElMessageBox.confirm(message2, title, { type });
+        return true;
+      } catch {
+        return false;
+      }
+    }
+    function reportError(action, error) {
+      console.error(`${action}失败`, error);
+      ElMessage.error(`${action}失败，请重试`);
+    }
+    const _hoisted_1$d = ["title"];
+    const _hoisted_2$9 = {
+      key: 0,
+      class: "remark-flag"
+    };
+    const _sfc_main$l = /* @__PURE__ */ defineComponent({
       __name: "ScheduleCell",
       props: {
         detail: {},
@@ -41227,12 +41593,24 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               "is-empty": !__props.detail?.shiftId && !__props.detail?.isRest,
               "is-disabled": !__props.editable
             }]),
+            title: __props.detail?.remark || "",
             onClick: _cache[0] || (_cache[0] = ($event) => __props.editable && _ctx.$emit("click"))
-          }, toDisplayString(text.value), 3);
+          }, [
+            createTextVNode(toDisplayString(text.value) + " ", 1),
+            __props.detail?.remark ? (openBlock(), createElementBlock("span", _hoisted_2$9)) : createCommentVNode("", true)
+          ], 10, _hoisted_1$d);
         };
       }
     });
-    const _sfc_main$j = /* @__PURE__ */ defineComponent({
+    const _export_sfc = (sfc, props) => {
+      const target = sfc.__vccOpts || sfc;
+      for (const [key, val] of props) {
+        target[key] = val;
+      }
+      return target;
+    };
+    const ScheduleCell = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["__scopeId", "data-v-afd05213"]]);
+    const _sfc_main$k = /* @__PURE__ */ defineComponent({
       __name: "ShiftSelectDialog",
       props: {
         modelValue: { type: Boolean },
@@ -41248,51 +41626,57 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           set: (v2) => emit2("update:modelValue", v2)
         });
         const selected = /* @__PURE__ */ ref("empty");
+        const remark = /* @__PURE__ */ ref("");
         watch(
           () => [props.modelValue, props.current],
           () => {
             if (props.current?.isRest) selected.value = "rest";
             else if (props.current?.shiftId) selected.value = props.current.shiftId;
             else selected.value = "empty";
+            remark.value = props.current?.remark ?? "";
           },
           { immediate: true }
         );
         function onConfirm() {
           if (selected.value === "rest") {
-            emit2("confirm", { shiftId: null, isRest: true });
+            emit2("confirm", { shiftId: null, isRest: true, remark: remark.value.trim() });
           } else if (selected.value === "empty") {
-            emit2("confirm", { shiftId: null, isRest: false });
+            emit2("confirm", { shiftId: null, isRest: false, remark: remark.value.trim() });
           } else {
-            emit2("confirm", { shiftId: selected.value, isRest: false });
+            emit2("confirm", { shiftId: selected.value, isRest: false, remark: remark.value.trim() });
           }
           visible.value = false;
         }
         function onClear() {
           selected.value = "empty";
+          remark.value = "";
           onConfirm();
         }
         return (_ctx, _cache) => {
           const _component_el_radio = ElRadio;
           const _component_el_radio_group = ElRadioGroup;
+          const _component_el_input = ElInput;
+          const _component_el_form_item = ElFormItem;
+          const _component_el_form = ElForm;
           const _component_el_button = ElButton;
           const _component_el_dialog = ElDialog;
           return openBlock(), createBlock(_component_el_dialog, {
             modelValue: visible.value,
-            "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => visible.value = $event),
+            "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => visible.value = $event),
             title: "选择班次",
             width: "420px"
           }, {
             footer: withCtx(() => [
               createVNode(_component_el_button, { onClick: onClear }, {
-                default: withCtx(() => [..._cache[4] || (_cache[4] = [
+                default: withCtx(() => [..._cache[5] || (_cache[5] = [
                   createTextVNode("清空", -1)
                 ])]),
                 _: 1
               }),
               createVNode(_component_el_button, {
-                onClick: _cache[1] || (_cache[1] = ($event) => visible.value = false)
+                onClick: _cache[2] || (_cache[2] = ($event) => visible.value = false)
               }, {
-                default: withCtx(() => [..._cache[5] || (_cache[5] = [
+                default: withCtx(() => [..._cache[6] || (_cache[6] = [
                   createTextVNode("取消", -1)
                 ])]),
                 _: 1
@@ -41301,7 +41685,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 type: "primary",
                 onClick: onConfirm
               }, {
-                default: withCtx(() => [..._cache[6] || (_cache[6] = [
+                default: withCtx(() => [..._cache[7] || (_cache[7] = [
                   createTextVNode("确定", -1)
                 ])]),
                 _: 1
@@ -41315,7 +41699,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }, {
                 default: withCtx(() => [
                   createVNode(_component_el_radio, { label: "rest" }, {
-                    default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                    default: withCtx(() => [..._cache[4] || (_cache[4] = [
                       createTextVNode("休息", -1)
                     ])]),
                     _: 1
@@ -41333,28 +41717,50 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   }), 128))
                 ]),
                 _: 1
-              }, 8, ["modelValue"])
+              }, 8, ["modelValue"]),
+              createVNode(_component_el_form, {
+                "label-width": "56px",
+                style: { "margin-top": "12px" }
+              }, {
+                default: withCtx(() => [
+                  createVNode(_component_el_form_item, { label: "备注" }, {
+                    default: withCtx(() => [
+                      createVNode(_component_el_input, {
+                        modelValue: remark.value,
+                        "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => remark.value = $event),
+                        type: "textarea",
+                        rows: 2,
+                        placeholder: "可选，如换班原因、临时事项"
+                      }, null, 8, ["modelValue"])
+                    ]),
+                    _: 1
+                  })
+                ]),
+                _: 1
+              })
             ]),
             _: 1
           }, 8, ["modelValue"]);
         };
       }
     });
-    const _export_sfc = (sfc, props) => {
-      const target = sfc.__vccOpts || sfc;
-      for (const [key, val] of props) {
-        target[key] = val;
-      }
-      return target;
+    const ShiftSelectDialog = /* @__PURE__ */ _export_sfc(_sfc_main$k, [["__scopeId", "data-v-2fb500e5"]]);
+    const _hoisted_1$c = { class: "schedule-wrap" };
+    const _hoisted_2$8 = {
+      key: 0,
+      class: "schedule-title"
     };
-    const ShiftSelectDialog = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["__scopeId", "data-v-ee7ba85f"]]);
-    const _hoisted_1$a = { class: "sub" };
-    const _sfc_main$i = /* @__PURE__ */ defineComponent({
+    const _hoisted_3$1 = { class: "day-head" };
+    const _hoisted_4$1 = { class: "day-name" };
+    const _hoisted_5 = { class: "day-date" };
+    const _sfc_main$j = /* @__PURE__ */ defineComponent({
       __name: "ScheduleTable",
       props: {
         week: {},
         staffList: {},
         shiftList: {},
+        postList: {},
+        title: {},
         editable: { type: [Boolean, Function] }
       },
       emits: ["cell-change"],
@@ -41366,12 +41772,16 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           const ids = new Set(props.week.details.map((d2) => d2.staffId));
           return props.staffList.filter((s2) => ids.has(s2.id));
         });
+        const postMap = computed(() => new Map((props.postList ?? []).map((p2) => [p2.id, p2.name])));
         const tableData = computed(
           () => staffInWeek.value.map((s2) => ({
             staffId: s2.id,
             staffName: s2.name,
-            employeeNo: s2.employeeNo,
-            groupType: s2.groupType
+            title: s2.title,
+            annualLeave: s2.annualLeave,
+            accumulatedLeave: s2.accumulatedLeave,
+            bedManagement: s2.bedManagement ?? "",
+            postName: s2.postId ? postMap.value.get(s2.postId) ?? "" : ""
           }))
         );
         function getDetail(staffId, date) {
@@ -41382,6 +41792,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           return props.shiftList.find((s2) => s2.id === shiftId);
         }
         function isEditable(date) {
+          if (props.week.status !== "draft") return false;
           if (typeof props.editable === "function") return props.editable(date);
           return props.editable !== false;
         }
@@ -41399,39 +41810,43 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           emit2("cell-change", {
             staffId: currentStaffId.value,
             date: currentDate.value,
-            ...payload
+            shiftId: payload.shiftId,
+            isRest: payload.isRest,
+            remark: payload.remark ?? ""
           });
         }
         return (_ctx, _cache) => {
           const _component_el_table_column = ElTableColumn;
           const _component_el_table = ElTable;
-          return openBlock(), createElementBlock(Fragment, null, [
+          return openBlock(), createElementBlock("div", _hoisted_1$c, [
+            __props.title ? (openBlock(), createElementBlock("h3", _hoisted_2$8, toDisplayString(__props.title), 1)) : createCommentVNode("", true),
             createVNode(_component_el_table, {
               data: tableData.value,
               border: "",
-              height: "calc(100vh - 220px)"
+              class: "schedule-table"
             }, {
               default: withCtx(() => [
                 createVNode(_component_el_table_column, {
                   prop: "staffName",
-                  label: "人员",
-                  fixed: "",
-                  width: "180"
-                }, {
-                  default: withCtx(({ row }) => [
-                    createBaseVNode("div", null, toDisplayString(row.staffName), 1),
-                    createBaseVNode("div", _hoisted_1$a, toDisplayString(row.employeeNo) + " · " + toDisplayString(unref(GROUP_TYPE_LABEL)[row.groupType]), 1)
-                  ]),
-                  _: 1
+                  label: "姓名",
+                  width: "84",
+                  fixed: "left",
+                  align: "center"
                 }),
                 (openBlock(true), createElementBlock(Fragment, null, renderList(weekDates.value, (date) => {
                   return openBlock(), createBlock(_component_el_table_column, {
                     key: date,
-                    label: unref(formatColumnLabel)(date),
-                    "min-width": "120"
+                    "min-width": "108",
+                    align: "center"
                   }, {
+                    header: withCtx(() => [
+                      createBaseVNode("div", _hoisted_3$1, [
+                        createBaseVNode("div", _hoisted_4$1, "星期" + toDisplayString(unref(weekdayName)(date)), 1),
+                        createBaseVNode("div", _hoisted_5, toDisplayString(unref(monthDay)(date)), 1)
+                      ])
+                    ]),
                     default: withCtx(({ row }) => [
-                      createVNode(_sfc_main$k, {
+                      createVNode(ScheduleCell, {
                         detail: getDetail(row.staffId, date),
                         shift: getShift(getDetail(row.staffId, date)?.shiftId),
                         editable: isEditable(date),
@@ -41439,7 +41854,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       }, null, 8, ["detail", "shift", "editable", "onClick"])
                     ]),
                     _: 2
-                  }, 1032, ["label"]);
+                  }, 1024);
                 }), 128))
               ]),
               _: 1
@@ -41451,250 +41866,635 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               current: currentDetail.value,
               onConfirm: onDialogConfirm
             }, null, 8, ["modelValue", "shifts", "current"])
-          ], 64);
+          ]);
         };
       }
     });
-    const _hoisted_1$9 = { class: "toolbar" };
-    const _hoisted_2$3 = { class: "hint" };
+    const ScheduleTable = /* @__PURE__ */ _export_sfc(_sfc_main$j, [["__scopeId", "data-v-e55b9f4f"]]);
+    const _hoisted_1$b = {
+      key: 1,
+      class: "result-list"
+    };
+    const _hoisted_2$7 = {
+      key: 3,
+      class: "result-list"
+    };
+    const _sfc_main$i = /* @__PURE__ */ defineComponent({
+      __name: "GenerateResultDialog",
+      props: {
+        modelValue: { type: Boolean },
+        result: {},
+        shiftList: {}
+      },
+      emits: ["update:modelValue"],
+      setup(__props, { emit: __emit }) {
+        const props = __props;
+        const emit2 = __emit;
+        const visible = computed({
+          get: () => props.modelValue,
+          set: (v2) => emit2("update:modelValue", v2)
+        });
+        function shiftName(id) {
+          return props.shiftList.find((s2) => s2.id === id)?.name ?? id;
+        }
+        return (_ctx, _cache) => {
+          const _component_el_alert = ElAlert;
+          const _component_el_button = ElButton;
+          const _component_el_dialog = ElDialog;
+          return openBlock(), createBlock(_component_el_dialog, {
+            modelValue: visible.value,
+            "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => visible.value = $event),
+            title: "生成结果校验",
+            width: "560px"
+          }, {
+            footer: withCtx(() => [
+              createVNode(_component_el_button, {
+                type: "primary",
+                onClick: _cache[0] || (_cache[0] = ($event) => visible.value = false)
+              }, {
+                default: withCtx(() => [..._cache[2] || (_cache[2] = [
+                  createTextVNode("知道了", -1)
+                ])]),
+                _: 1
+              })
+            ]),
+            default: withCtx(() => [
+              __props.result ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [
+                __props.result.missingRequired.length === 0 && __props.result.warnings.length === 0 ? (openBlock(), createBlock(_component_el_alert, {
+                  key: 0,
+                  type: "success",
+                  closable: false,
+                  title: "校验通过：必备班次齐全，未发现问题。"
+                })) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [
+                  __props.result.missingRequired.length ? (openBlock(), createBlock(_component_el_alert, {
+                    key: 0,
+                    type: "error",
+                    closable: false,
+                    title: "缺失的必备班次："
+                  })) : createCommentVNode("", true),
+                  __props.result.missingRequired.length ? (openBlock(), createElementBlock("ul", _hoisted_1$b, [
+                    (openBlock(true), createElementBlock(Fragment, null, renderList(__props.result.missingRequired, (m2, i) => {
+                      return openBlock(), createElementBlock("li", { key: i }, toDisplayString(m2.date) + " 缺少班次「" + toDisplayString(shiftName(m2.shiftId)) + "」（需要 " + toDisplayString(m2.need) + "，实际 " + toDisplayString(m2.actual) + "） ", 1);
+                    }), 128))
+                  ])) : createCommentVNode("", true),
+                  __props.result.warnings.length ? (openBlock(), createBlock(_component_el_alert, {
+                    key: 2,
+                    type: "warning",
+                    closable: false,
+                    title: "警告："
+                  })) : createCommentVNode("", true),
+                  __props.result.warnings.length ? (openBlock(), createElementBlock("ul", _hoisted_2$7, [
+                    (openBlock(true), createElementBlock(Fragment, null, renderList(__props.result.warnings, (w2, i) => {
+                      return openBlock(), createElementBlock("li", { key: i }, toDisplayString(w2), 1);
+                    }), 128))
+                  ])) : createCommentVNode("", true)
+                ], 64))
+              ], 64)) : createCommentVNode("", true)
+            ]),
+            _: 1
+          }, 8, ["modelValue"]);
+        };
+      }
+    });
+    const GenerateResultDialog = /* @__PURE__ */ _export_sfc(_sfc_main$i, [["__scopeId", "data-v-6c36bbcc"]]);
+    const _hoisted_1$a = { class: "picker-toolbar" };
+    const _hoisted_2$6 = { class: "hint" };
     const _sfc_main$h = /* @__PURE__ */ defineComponent({
+      __name: "StaffPickerDialog",
+      props: {
+        modelValue: { type: Boolean },
+        candidates: {},
+        title: {}
+      },
+      emits: ["update:modelValue", "confirm"],
+      setup(__props, { emit: __emit }) {
+        const props = __props;
+        const emit2 = __emit;
+        const visible = computed({
+          get: () => props.modelValue,
+          set: (v2) => emit2("update:modelValue", v2)
+        });
+        const selectedIds = /* @__PURE__ */ ref([]);
+        const allSelected = computed(
+          () => props.candidates.length > 0 && selectedIds.value.length === props.candidates.length
+        );
+        function toggleAll() {
+          selectedIds.value = allSelected.value ? [] : props.candidates.map((s2) => s2.id);
+        }
+        function onSubmit() {
+          if (selectedIds.value.length === 0) return;
+          emit2("confirm", selectedIds.value);
+          selectedIds.value = [];
+          visible.value = false;
+        }
+        function onClose() {
+          selectedIds.value = [];
+          visible.value = false;
+        }
+        return (_ctx, _cache) => {
+          const _component_el_empty = ElEmpty;
+          const _component_el_checkbox = ElCheckbox;
+          const _component_el_checkbox_group = ElCheckboxGroup;
+          const _component_el_button = ElButton;
+          const _component_el_dialog = ElDialog;
+          return openBlock(), createBlock(_component_el_dialog, {
+            modelValue: visible.value,
+            "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => visible.value = $event),
+            title: __props.title ?? "添加人员",
+            width: "480px",
+            onClosed: _cache[2] || (_cache[2] = ($event) => selectedIds.value = [])
+          }, {
+            footer: withCtx(() => [
+              createVNode(_component_el_button, { onClick: onClose }, {
+                default: withCtx(() => [..._cache[4] || (_cache[4] = [
+                  createTextVNode("取消", -1)
+                ])]),
+                _: 1
+              }),
+              createVNode(_component_el_button, {
+                type: "primary",
+                disabled: selectedIds.value.length === 0,
+                onClick: onSubmit
+              }, {
+                default: withCtx(() => [..._cache[5] || (_cache[5] = [
+                  createTextVNode(" 添加 ", -1)
+                ])]),
+                _: 1
+              }, 8, ["disabled"])
+            ]),
+            default: withCtx(() => [
+              __props.candidates.length === 0 ? (openBlock(), createBlock(_component_el_empty, {
+                key: 0,
+                description: "没有可添加的人员",
+                "image-size": 60
+              })) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [
+                createBaseVNode("div", _hoisted_1$a, [
+                  createVNode(_component_el_checkbox, {
+                    "model-value": allSelected.value,
+                    onChange: toggleAll
+                  }, {
+                    default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                      createTextVNode("全选", -1)
+                    ])]),
+                    _: 1
+                  }, 8, ["model-value"]),
+                  createBaseVNode("span", _hoisted_2$6, "已选 " + toDisplayString(selectedIds.value.length) + " / " + toDisplayString(__props.candidates.length) + " 人", 1)
+                ]),
+                createVNode(_component_el_checkbox_group, {
+                  modelValue: selectedIds.value,
+                  "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => selectedIds.value = $event),
+                  class: "picker-list"
+                }, {
+                  default: withCtx(() => [
+                    (openBlock(true), createElementBlock(Fragment, null, renderList(__props.candidates, (s2) => {
+                      return openBlock(), createBlock(_component_el_checkbox, {
+                        key: s2.id,
+                        value: s2.id,
+                        class: "picker-item"
+                      }, {
+                        default: withCtx(() => [
+                          createTextVNode(toDisplayString(s2.name) + "（" + toDisplayString(s2.employeeNo) + "） ", 1)
+                        ]),
+                        _: 2
+                      }, 1032, ["value"]);
+                    }), 128))
+                  ]),
+                  _: 1
+                }, 8, ["modelValue"])
+              ], 64))
+            ]),
+            _: 1
+          }, 8, ["modelValue", "title"]);
+        };
+      }
+    });
+    const StaffPickerDialog = /* @__PURE__ */ _export_sfc(_sfc_main$h, [["__scopeId", "data-v-6b64fd2d"]]);
+    const _hoisted_1$9 = { class: "toolbar" };
+    const _hoisted_2$5 = { class: "hint" };
+    const _sfc_main$g = /* @__PURE__ */ defineComponent({
       __name: "CurrentWeekView",
       setup(__props) {
         const scheduleStore = useScheduleStore();
         const staffStore = useStaffStore();
         const shiftStore = useShiftStore();
-        const weekKey = getCurrentWeekKey();
-        const today = todayStr();
+        const postStore = usePostStore();
+        const nightRuleStore = useNightRuleStore();
+        const demandStore = useDemandStore();
+        const settingsStore = useSettingsStore();
+        const tick = useNowTick();
+        const weekKey = computed(() => {
+          void tick.value;
+          return getCurrentWeekKey();
+        });
+        const today = computed(() => {
+          void tick.value;
+          return todayStr();
+        });
         const week = computed(
-          () => scheduleStore.getWeek(weekKey) ?? buildEmptyWeek(weekKey, staffStore.list)
+          () => scheduleStore.getWeek(weekKey.value) ?? buildEmptyWeek(weekKey.value, staffStore.list)
         );
+        const storedWeek = computed(() => scheduleStore.getWeek(weekKey.value));
         const editable = (date) => canEditDate(date);
+        const addPickerVisible = /* @__PURE__ */ ref(false);
+        const resultVisible = /* @__PURE__ */ ref(false);
+        const genResult = /* @__PURE__ */ ref(null);
+        const addableStaff = computed(
+          () => staffStore.list.filter(
+            (s2) => !week.value?.details.some((d2) => d2.staffId === s2.id)
+          )
+        );
         async function onCellChange(payload) {
-          if (!scheduleStore.getWeek(weekKey)) {
-            await scheduleStore.upsertWeek(buildEmptyWeek(weekKey, staffStore.list));
+          try {
+            if (!scheduleStore.getWeek(weekKey.value)) {
+              await scheduleStore.upsertWeek(buildEmptyWeek(weekKey.value, staffStore.list));
+            }
+            const patch = {
+              shiftId: payload.shiftId,
+              isRest: payload.isRest
+            };
+            if (payload.remark !== void 0) patch.remark = payload.remark;
+            await scheduleStore.updateDetail(weekKey.value, payload.staffId, payload.date, patch);
+          } catch (e) {
+            reportError("保存排班", e);
           }
-          await scheduleStore.updateDetail(weekKey, payload.staffId, payload.date, {
-            shiftId: payload.shiftId,
-            isRest: payload.isRest
-          });
+        }
+        async function onAddStaff(staffIds) {
+          try {
+            const base = scheduleStore.getWeek(weekKey.value) ?? buildEmptyWeek(weekKey.value, staffStore.list);
+            const next = appendStaffToWeek(
+              base,
+              staffStore.list.filter((s2) => staffIds.includes(s2.id))
+            );
+            await scheduleStore.upsertWeek(next);
+            ElMessage.success(`已添加 ${staffIds.length} 名人员到本周`);
+          } catch (e) {
+            reportError("添加人员", e);
+          }
+        }
+        async function onGenerate() {
+          const ok = await confirmAction(
+            "生成本周排班会覆盖当前周已有排班（含历史日期），确定继续？",
+            "生成确认"
+          );
+          if (!ok) return;
+          try {
+            const lastWeek = scheduleStore.getWeek(getPreviousWeekKey(weekKey.value));
+            const res = generateSchedule({
+              targetWeekKey: weekKey.value,
+              staffList: staffStore.list,
+              shifts: shiftStore.list,
+              nightRules: nightRuleStore.rules,
+              demands: demandStore.list,
+              settings: settingsStore.settings,
+              lastWeek
+            });
+            await scheduleStore.upsertWeek(res.week);
+            if (res.metDemandIds.length) {
+              await demandStore.markMet(res.metDemandIds);
+            }
+            genResult.value = res;
+            resultVisible.value = true;
+          } catch (e) {
+            reportError("生成排班", e);
+          }
+        }
+        async function onPublish() {
+          try {
+            if (!storedWeek.value) {
+              ElMessage.warning("本周尚未排班，无法发布");
+              return;
+            }
+            await scheduleStore.publishWeek(weekKey.value);
+            ElMessage.success("已发布，排班发布后为只读");
+          } catch (e) {
+            reportError("发布排班", e);
+          }
+        }
+        async function onUnpublish() {
+          try {
+            await scheduleStore.unpublishWeek(weekKey.value);
+            ElMessage.success("已撤销发布，可继续编辑");
+          } catch (e) {
+            reportError("撤销发布", e);
+          }
+        }
+        function onExportCsv() {
+          try {
+            if (!week.value) return;
+            exportWeekToCsv(week.value, staffStore.list, shiftStore.list, postStore.list);
+            ElMessage.success("已导出 CSV 文件");
+          } catch (e) {
+            reportError("导出 CSV", e);
+          }
         }
         return (_ctx, _cache) => {
           const _component_el_tag = ElTag;
+          const _component_el_button = ElButton;
           const _component_el_empty = ElEmpty;
           return openBlock(), createElementBlock("div", null, [
             createBaseVNode("div", _hoisted_1$9, [
-              createBaseVNode("span", null, "本周：" + toDisplayString(unref(weekKey)), 1),
-              !unref(scheduleStore).getWeek(unref(weekKey)) ? (openBlock(), createBlock(_component_el_tag, {
+              createBaseVNode("span", null, "本周：" + toDisplayString(weekKey.value), 1),
+              !storedWeek.value ? (openBlock(), createBlock(_component_el_tag, {
                 key: 0,
                 type: "warning"
               }, {
-                default: withCtx(() => [..._cache[0] || (_cache[0] = [
+                default: withCtx(() => [..._cache[3] || (_cache[3] = [
                   createTextVNode("本周尚未排班", -1)
                 ])]),
                 _: 1
+              })) : week.value?.status === "published" ? (openBlock(), createBlock(_component_el_tag, {
+                key: 1,
+                type: "success"
+              }, {
+                default: withCtx(() => [..._cache[4] || (_cache[4] = [
+                  createTextVNode("已发布", -1)
+                ])]),
+                _: 1
+              })) : week.value?.status === "expired" ? (openBlock(), createBlock(_component_el_tag, {
+                key: 2,
+                type: "info"
+              }, {
+                default: withCtx(() => [..._cache[5] || (_cache[5] = [
+                  createTextVNode("已过期", -1)
+                ])]),
+                _: 1
               })) : createCommentVNode("", true),
-              createBaseVNode("span", _hoisted_2$3, "今天：" + toDisplayString(unref(today)) + "（历史日期只读）", 1)
+              createBaseVNode("span", _hoisted_2$5, "今天：" + toDisplayString(today.value) + "（历史日期只读）", 1),
+              _cache[11] || (_cache[11] = createBaseVNode("span", { class: "toolbar-spacer" }, null, -1)),
+              createVNode(_component_el_button, {
+                disabled: addableStaff.value.length === 0,
+                onClick: _cache[0] || (_cache[0] = ($event) => addPickerVisible.value = true)
+              }, {
+                default: withCtx(() => [..._cache[6] || (_cache[6] = [
+                  createTextVNode(" 添加人员 ", -1)
+                ])]),
+                _: 1
+              }, 8, ["disabled"]),
+              createVNode(_component_el_button, {
+                type: "primary",
+                plain: "",
+                onClick: onGenerate
+              }, {
+                default: withCtx(() => [..._cache[7] || (_cache[7] = [
+                  createTextVNode("生成排班", -1)
+                ])]),
+                _: 1
+              }),
+              createVNode(_component_el_button, { onClick: onExportCsv }, {
+                default: withCtx(() => [..._cache[8] || (_cache[8] = [
+                  createTextVNode("导出 CSV", -1)
+                ])]),
+                _: 1
+              }),
+              week.value?.status === "published" ? (openBlock(), createBlock(_component_el_button, {
+                key: 3,
+                onClick: onUnpublish
+              }, {
+                default: withCtx(() => [..._cache[9] || (_cache[9] = [
+                  createTextVNode("撤销发布", -1)
+                ])]),
+                _: 1
+              })) : (openBlock(), createBlock(_component_el_button, {
+                key: 4,
+                type: "success",
+                plain: "",
+                disabled: !storedWeek.value,
+                onClick: onPublish
+              }, {
+                default: withCtx(() => [..._cache[10] || (_cache[10] = [
+                  createTextVNode(" 发布排班 ", -1)
+                ])]),
+                _: 1
+              }, 8, ["disabled"]))
             ]),
-            week.value ? (openBlock(), createBlock(_sfc_main$i, {
+            week.value ? (openBlock(), createBlock(ScheduleTable, {
               key: 0,
+              title: "护士排班表",
               week: week.value,
               "staff-list": unref(staffStore).list,
               "shift-list": unref(shiftStore).list,
+              "post-list": unref(postStore).list,
               editable,
               onCellChange
-            }, null, 8, ["week", "staff-list", "shift-list"])) : (openBlock(), createBlock(_component_el_empty, {
+            }, null, 8, ["week", "staff-list", "shift-list", "post-list"])) : (openBlock(), createBlock(_component_el_empty, {
               key: 1,
               description: "暂无数据"
-            }))
+            })),
+            createVNode(StaffPickerDialog, {
+              modelValue: addPickerVisible.value,
+              "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => addPickerVisible.value = $event),
+              candidates: addableStaff.value,
+              title: "添加人员到本周",
+              onConfirm: onAddStaff
+            }, null, 8, ["modelValue", "candidates"]),
+            createVNode(GenerateResultDialog, {
+              modelValue: resultVisible.value,
+              "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => resultVisible.value = $event),
+              result: genResult.value,
+              "shift-list": unref(shiftStore).list
+            }, null, 8, ["modelValue", "result", "shift-list"])
           ]);
         };
       }
     });
-    const useNightRuleStore = /* @__PURE__ */ defineStore("nightRule", () => {
-      const rules2 = /* @__PURE__ */ ref([]);
-      async function load() {
-        const data = await window.storage.read(FILE_NAMES.NIGHT_RULES);
-        rules2.value = (data?.rules ?? []).sort(
-          (a2, b2) => a2.sortOrder - b2.sortOrder
-        );
-      }
-      async function persist() {
-        await window.storage.write(FILE_NAMES.NIGHT_RULES, { version: 1, rules: rules2.value });
-      }
-      async function add(shiftId) {
-        const maxOrder = rules2.value.reduce((m2, r) => Math.max(m2, r.sortOrder), 0);
-        rules2.value.push({
-          id: crypto.randomUUID(),
-          shiftId,
-          sortOrder: maxOrder + 1
-        });
-        await persist();
-      }
-      async function remove2(id) {
-        rules2.value = rules2.value.filter((r) => r.id !== id);
-        rules2.value.forEach((r, i) => {
-          r.sortOrder = i + 1;
-        });
-        await persist();
-      }
-      async function reorder(next) {
-        rules2.value = next.map((r, i) => ({ ...r, sortOrder: i + 1 }));
-        await persist();
-      }
-      return { rules: rules2, load, persist, add, remove: remove2, reorder };
-    });
-    const useDemandStore = /* @__PURE__ */ defineStore("demand", () => {
-      const list = /* @__PURE__ */ ref([]);
-      async function load() {
-        const data = await window.storage.read(FILE_NAMES.DEMANDS);
-        list.value = data?.list ?? [];
-      }
-      async function persist() {
-        await window.storage.write(FILE_NAMES.DEMANDS, { version: 1, list: list.value });
-      }
-      async function add(demand) {
-        const now2 = (/* @__PURE__ */ new Date()).toISOString();
-        list.value.push({ ...demand, id: crypto.randomUUID(), createdAt: now2, updatedAt: now2 });
-        await persist();
-      }
-      async function update(id, patch) {
-        const idx = list.value.findIndex((d2) => d2.id === id);
-        if (idx < 0) return;
-        list.value[idx] = { ...list.value[idx], ...patch, updatedAt: (/* @__PURE__ */ new Date()).toISOString() };
-        await persist();
-      }
-      async function markMet(ids) {
-        const now2 = (/* @__PURE__ */ new Date()).toISOString();
-        const set2 = new Set(ids);
-        list.value = list.value.map(
-          (d2) => set2.has(d2.id) ? { ...d2, status: "met", updatedAt: now2 } : d2
-        );
-        await persist();
-      }
-      async function remove2(id) {
-        list.value = list.value.filter((d2) => d2.id !== id);
-        await persist();
-      }
-      return { list, load, persist, add, update, markMet, remove: remove2 };
-    });
-    const emptySettings = {
-      version: 1,
-      assistNightShiftId: null,
-      weekdayRequiredShiftIds: [],
-      weekendRequiredShiftIds: [],
-      lastBackupAt: null
-    };
-    const useSettingsStore = /* @__PURE__ */ defineStore("settings", () => {
-      const settings = /* @__PURE__ */ ref({ ...emptySettings });
-      async function load() {
-        const data = await window.storage.read(FILE_NAMES.SETTINGS);
-        settings.value = { ...emptySettings, ...data ?? {} };
-      }
-      async function persist() {
-        await window.storage.write(FILE_NAMES.SETTINGS, settings.value);
-      }
-      async function update(patch) {
-        settings.value = { ...settings.value, ...patch };
-        await persist();
-      }
-      function needsSetup() {
-        return !settings.value.assistNightShiftId && settings.value.weekdayRequiredShiftIds.length === 0 && settings.value.weekendRequiredShiftIds.length === 0;
-      }
-      return { settings, load, persist, update, needsSetup };
-    });
+    const CurrentWeekView = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["__scopeId", "data-v-8aeb980b"]]);
     const _hoisted_1$8 = { class: "toolbar" };
-    const _hoisted_2$2 = {
-      key: 1,
-      class: "result-list"
-    };
-    const _hoisted_3$1 = {
-      key: 3,
-      class: "result-list"
-    };
-    const _sfc_main$g = /* @__PURE__ */ defineComponent({
+    const _hoisted_2$4 = { class: "hint" };
+    const _sfc_main$f = /* @__PURE__ */ defineComponent({
       __name: "NextWeekView",
       setup(__props) {
         const scheduleStore = useScheduleStore();
         const staffStore = useStaffStore();
         const shiftStore = useShiftStore();
+        const postStore = usePostStore();
         const nightRuleStore = useNightRuleStore();
         const demandStore = useDemandStore();
         const settingsStore = useSettingsStore();
-        const weekKey = getNextWeekKey();
+        const tick = useNowTick();
+        const weekKey = computed(() => {
+          void tick.value;
+          return getNextWeekKey();
+        });
+        const sourceWeekKey = computed(() => {
+          void tick.value;
+          return getPreviousWeekKey(weekKey.value);
+        });
         const week = computed(
-          () => scheduleStore.getWeek(weekKey) ?? buildEmptyWeek(weekKey, staffStore.list)
+          () => scheduleStore.getWeek(weekKey.value) ?? buildEmptyWeek(weekKey.value, staffStore.list)
         );
+        const storedWeek = computed(() => scheduleStore.getWeek(weekKey.value));
         const resultVisible = /* @__PURE__ */ ref(false);
         const genResult = /* @__PURE__ */ ref(null);
-        function shiftName(id) {
-          return shiftStore.list.find((s2) => s2.id === id)?.name ?? id;
-        }
+        const addPickerVisible = /* @__PURE__ */ ref(false);
+        const addableStaff = computed(
+          () => staffStore.list.filter((s2) => !week.value?.details.some((d2) => d2.staffId === s2.id))
+        );
         async function onCellChange(payload) {
-          if (!scheduleStore.getWeek(weekKey)) {
-            await scheduleStore.upsertWeek(buildEmptyWeek(weekKey, staffStore.list));
+          try {
+            if (!scheduleStore.getWeek(weekKey.value)) {
+              await scheduleStore.upsertWeek(buildEmptyWeek(weekKey.value, staffStore.list));
+            }
+            const patch = {
+              shiftId: payload.shiftId,
+              isRest: payload.isRest
+            };
+            if (payload.remark !== void 0) patch.remark = payload.remark;
+            await scheduleStore.updateDetail(weekKey.value, payload.staffId, payload.date, patch);
+          } catch (e) {
+            reportError("保存排班", e);
           }
-          await scheduleStore.updateDetail(weekKey, payload.staffId, payload.date, {
-            shiftId: payload.shiftId,
-            isRest: payload.isRest
-          });
+        }
+        async function onAddStaff(staffIds) {
+          try {
+            const base = scheduleStore.getWeek(weekKey.value) ?? buildEmptyWeek(weekKey.value, staffStore.list);
+            const next = appendStaffToWeek(
+              base,
+              staffStore.list.filter((s2) => staffIds.includes(s2.id))
+            );
+            await scheduleStore.upsertWeek(next);
+            ElMessage.success(`已添加 ${staffIds.length} 名人员到下周`);
+          } catch (e) {
+            reportError("添加人员", e);
+          }
         }
         async function onCopyLastWeek() {
-          const lastWeek = scheduleStore.getWeek(getLastWeekKey());
-          if (!lastWeek) {
-            ElMessage.warning("上周排班不存在，无法复制");
+          const sourceWeek = scheduleStore.getWeek(sourceWeekKey.value);
+          if (!sourceWeek) {
+            ElMessage.warning("本周排班不存在，无法复制");
             return;
           }
-          const newWeek = copyLastWeekSchedule({
-            targetWeekKey: weekKey,
-            lastWeek,
-            staffList: staffStore.list,
-            shifts: shiftStore.list
-          });
-          await scheduleStore.upsertWeek(newWeek);
-          ElMessage.success("已复制上周排班");
+          const ok = await confirmAction(
+            `将把本周（${sourceWeekKey.value}）的排班复制到下周，会覆盖下周已有排班，确定继续？（需求与周末助夜班规则会一并处理）`,
+            "复制确认"
+          );
+          if (!ok) return;
+          try {
+            const newWeek = copyLastWeekSchedule({
+              targetWeekKey: weekKey.value,
+              lastWeek: sourceWeek,
+              staffList: staffStore.list,
+              shifts: shiftStore.list,
+              demands: demandStore.list,
+              settings: settingsStore.settings
+            });
+            await scheduleStore.upsertWeek(newWeek);
+            ElMessage.success("已复制本周排班");
+          } catch (e) {
+            reportError("复制本周排班", e);
+          }
         }
         async function onGenerate() {
-          const lastWeek = scheduleStore.getWeek(getLastWeekKey());
-          const res = generateSchedule({
-            targetWeekKey: weekKey,
-            staffList: staffStore.list,
-            shifts: shiftStore.list,
-            nightRules: nightRuleStore.rules,
-            demands: demandStore.list,
-            settings: settingsStore.settings,
-            lastWeek
-          });
-          await scheduleStore.upsertWeek(res.week);
-          if (res.metDemandIds.length) {
-            await demandStore.markMet(res.metDemandIds);
+          const ok = await confirmAction(
+            "生成排班会覆盖下周已有排班，确定继续？",
+            "生成确认"
+          );
+          if (!ok) return;
+          try {
+            const lastWeek = scheduleStore.getWeek(sourceWeekKey.value);
+            const res = generateSchedule({
+              targetWeekKey: weekKey.value,
+              staffList: staffStore.list,
+              shifts: shiftStore.list,
+              nightRules: nightRuleStore.rules,
+              demands: demandStore.list,
+              settings: settingsStore.settings,
+              lastWeek
+            });
+            await scheduleStore.upsertWeek(res.week);
+            if (res.metDemandIds.length) {
+              await demandStore.markMet(res.metDemandIds);
+            }
+            genResult.value = res;
+            resultVisible.value = true;
+          } catch (e) {
+            reportError("生成排班", e);
           }
-          genResult.value = res;
-          resultVisible.value = true;
         }
         async function onDeleteWeek() {
-          if (!scheduleStore.getWeek(weekKey)) {
+          if (!scheduleStore.getWeek(weekKey.value)) {
             ElMessage.info("下周尚未排班");
             return;
           }
-          if (!canDeleteWeek(weekKey.slice(0, 10))) {
+          if (!canDeleteWeek(weekKey.value.slice(0, 10))) {
             ElMessage.warning("已开始或过期的排班不可删除");
             return;
           }
-          await ElMessageBox.confirm("确认删除下周排班？", "删除确认", { type: "warning" });
-          await scheduleStore.removeWeek(weekKey);
-          ElMessage.success("已删除");
+          const ok = await confirmAction("确认删除下周排班？", "删除确认");
+          if (!ok) return;
+          try {
+            await scheduleStore.removeWeek(weekKey.value);
+            ElMessage.success("已删除");
+          } catch (e) {
+            reportError("删除排班", e);
+          }
+        }
+        async function onPublish() {
+          try {
+            if (!storedWeek.value) {
+              ElMessage.warning("下周尚未排班，无法发布");
+              return;
+            }
+            await scheduleStore.publishWeek(weekKey.value);
+            ElMessage.success("已发布，排班发布后为只读");
+          } catch (e) {
+            reportError("发布排班", e);
+          }
+        }
+        async function onUnpublish() {
+          try {
+            await scheduleStore.unpublishWeek(weekKey.value);
+            ElMessage.success("已撤销发布，可继续编辑");
+          } catch (e) {
+            reportError("撤销发布", e);
+          }
+        }
+        function onExportCsv() {
+          try {
+            if (!week.value) return;
+            exportWeekToCsv(week.value, staffStore.list, shiftStore.list, postStore.list);
+            ElMessage.success("已导出 CSV 文件");
+          } catch (e) {
+            reportError("导出 CSV", e);
+          }
         }
         return (_ctx, _cache) => {
+          const _component_el_tag = ElTag;
           const _component_el_button = ElButton;
           const _component_el_empty = ElEmpty;
-          const _component_el_alert = ElAlert;
-          const _component_el_dialog = ElDialog;
           return openBlock(), createElementBlock("div", null, [
             createBaseVNode("div", _hoisted_1$8, [
-              createBaseVNode("span", null, "下周：" + toDisplayString(unref(weekKey)), 1),
+              createBaseVNode("span", null, "下周：" + toDisplayString(weekKey.value), 1),
+              week.value?.status === "published" ? (openBlock(), createBlock(_component_el_tag, {
+                key: 0,
+                type: "success"
+              }, {
+                default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                  createTextVNode("已发布", -1)
+                ])]),
+                _: 1
+              })) : week.value?.status === "expired" ? (openBlock(), createBlock(_component_el_tag, {
+                key: 1,
+                type: "info"
+              }, {
+                default: withCtx(() => [..._cache[4] || (_cache[4] = [
+                  createTextVNode("已过期", -1)
+                ])]),
+                _: 1
+              })) : createCommentVNode("", true),
+              createBaseVNode("span", _hoisted_2$4, "数据来源：本周 " + toDisplayString(sourceWeekKey.value), 1),
+              _cache[12] || (_cache[12] = createBaseVNode("span", { class: "toolbar-spacer" }, null, -1)),
+              createVNode(_component_el_button, {
+                disabled: addableStaff.value.length === 0,
+                onClick: _cache[0] || (_cache[0] = ($event) => addPickerVisible.value = true)
+              }, {
+                default: withCtx(() => [..._cache[5] || (_cache[5] = [
+                  createTextVNode(" 添加人员 ", -1)
+                ])]),
+                _: 1
+              }, 8, ["disabled"]),
               createVNode(_component_el_button, { onClick: onCopyLastWeek }, {
-                default: withCtx(() => [..._cache[2] || (_cache[2] = [
-                  createTextVNode("复制上周排班", -1)
+                default: withCtx(() => [..._cache[6] || (_cache[6] = [
+                  createTextVNode("复制本周排班", -1)
                 ])]),
                 _: 1
               }),
@@ -41702,117 +42502,122 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 type: "primary",
                 onClick: onGenerate
               }, {
-                default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                default: withCtx(() => [..._cache[7] || (_cache[7] = [
                   createTextVNode("生成排班", -1)
                 ])]),
                 _: 1
               }),
+              createVNode(_component_el_button, { onClick: onExportCsv }, {
+                default: withCtx(() => [..._cache[8] || (_cache[8] = [
+                  createTextVNode("导出 CSV", -1)
+                ])]),
+                _: 1
+              }),
+              week.value?.status === "published" ? (openBlock(), createBlock(_component_el_button, {
+                key: 2,
+                onClick: onUnpublish
+              }, {
+                default: withCtx(() => [..._cache[9] || (_cache[9] = [
+                  createTextVNode("撤销发布", -1)
+                ])]),
+                _: 1
+              })) : (openBlock(), createBlock(_component_el_button, {
+                key: 3,
+                type: "success",
+                plain: "",
+                disabled: !storedWeek.value,
+                onClick: onPublish
+              }, {
+                default: withCtx(() => [..._cache[10] || (_cache[10] = [
+                  createTextVNode(" 发布排班 ", -1)
+                ])]),
+                _: 1
+              }, 8, ["disabled"])),
               createVNode(_component_el_button, {
                 type: "danger",
                 plain: "",
                 onClick: onDeleteWeek
               }, {
-                default: withCtx(() => [..._cache[4] || (_cache[4] = [
+                default: withCtx(() => [..._cache[11] || (_cache[11] = [
                   createTextVNode("删除排班", -1)
                 ])]),
                 _: 1
               })
             ]),
-            week.value ? (openBlock(), createBlock(_sfc_main$i, {
+            week.value ? (openBlock(), createBlock(ScheduleTable, {
               key: 0,
+              title: "护士排班表",
               week: week.value,
               "staff-list": unref(staffStore).list,
               "shift-list": unref(shiftStore).list,
+              "post-list": unref(postStore).list,
               editable: true,
               onCellChange
-            }, null, 8, ["week", "staff-list", "shift-list"])) : (openBlock(), createBlock(_component_el_empty, {
+            }, null, 8, ["week", "staff-list", "shift-list", "post-list"])) : (openBlock(), createBlock(_component_el_empty, {
               key: 1,
               description: "暂无数据"
             })),
-            createVNode(_component_el_dialog, {
+            createVNode(StaffPickerDialog, {
+              modelValue: addPickerVisible.value,
+              "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => addPickerVisible.value = $event),
+              candidates: addableStaff.value,
+              title: "添加人员到下周",
+              onConfirm: onAddStaff
+            }, null, 8, ["modelValue", "candidates"]),
+            createVNode(GenerateResultDialog, {
               modelValue: resultVisible.value,
-              "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => resultVisible.value = $event),
-              title: "生成结果校验",
-              width: "560px"
-            }, {
-              footer: withCtx(() => [
-                createVNode(_component_el_button, {
-                  type: "primary",
-                  onClick: _cache[0] || (_cache[0] = ($event) => resultVisible.value = false)
-                }, {
-                  default: withCtx(() => [..._cache[5] || (_cache[5] = [
-                    createTextVNode("知道了", -1)
-                  ])]),
-                  _: 1
-                })
-              ]),
-              default: withCtx(() => [
-                genResult.value ? (openBlock(), createElementBlock(Fragment, { key: 0 }, [
-                  genResult.value.missingRequired.length === 0 && genResult.value.warnings.length === 0 ? (openBlock(), createBlock(_component_el_alert, {
-                    key: 0,
-                    type: "success",
-                    closable: false,
-                    title: "校验通过：必备班次齐全，未发现问题。"
-                  })) : (openBlock(), createElementBlock(Fragment, { key: 1 }, [
-                    genResult.value.missingRequired.length ? (openBlock(), createBlock(_component_el_alert, {
-                      key: 0,
-                      type: "error",
-                      closable: false,
-                      title: "缺失的必备班次："
-                    })) : createCommentVNode("", true),
-                    genResult.value.missingRequired.length ? (openBlock(), createElementBlock("ul", _hoisted_2$2, [
-                      (openBlock(true), createElementBlock(Fragment, null, renderList(genResult.value.missingRequired, (m2, i) => {
-                        return openBlock(), createElementBlock("li", { key: i }, toDisplayString(m2.date) + " 缺少班次「" + toDisplayString(shiftName(m2.shiftId)) + "」（需要 " + toDisplayString(m2.need) + "，实际 " + toDisplayString(m2.actual) + "） ", 1);
-                      }), 128))
-                    ])) : createCommentVNode("", true),
-                    genResult.value.warnings.length ? (openBlock(), createBlock(_component_el_alert, {
-                      key: 2,
-                      type: "warning",
-                      closable: false,
-                      title: "警告："
-                    })) : createCommentVNode("", true),
-                    genResult.value.warnings.length ? (openBlock(), createElementBlock("ul", _hoisted_3$1, [
-                      (openBlock(true), createElementBlock(Fragment, null, renderList(genResult.value.warnings, (w2, i) => {
-                        return openBlock(), createElementBlock("li", { key: i }, toDisplayString(w2), 1);
-                      }), 128))
-                    ])) : createCommentVNode("", true)
-                  ], 64))
-                ], 64)) : createCommentVNode("", true)
-              ]),
-              _: 1
-            }, 8, ["modelValue"])
+              "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => resultVisible.value = $event),
+              result: genResult.value,
+              "shift-list": unref(shiftStore).list
+            }, null, 8, ["modelValue", "result", "shift-list"])
           ]);
         };
       }
     });
-    const NextWeekView = /* @__PURE__ */ _export_sfc(_sfc_main$g, [["__scopeId", "data-v-9346f9e0"]]);
-    const usePostStore = /* @__PURE__ */ defineStore("post", () => {
-      const list = /* @__PURE__ */ ref([]);
-      async function load() {
-        const data = await window.storage.read(FILE_NAMES.POSTS);
-        list.value = data?.list ?? [];
+    const NextWeekView = /* @__PURE__ */ _export_sfc(_sfc_main$f, [["__scopeId", "data-v-a631c75f"]]);
+    function countShiftReferences(shiftId, weeks, nightRules, settings) {
+      let details = 0;
+      for (const week of Object.values(weeks)) {
+        for (const d2 of week.details) {
+          if (d2.shiftId === shiftId) details += 1;
+        }
       }
-      async function persist() {
-        await window.storage.write(FILE_NAMES.POSTS, { version: 1, list: list.value });
+      const rules2 = nightRules.filter((r) => r.shiftId === shiftId).length;
+      const settingsCount = (settings.assistNightShiftId === shiftId ? 1 : 0) + settings.weekdayRequiredShiftIds.filter((id) => id === shiftId).length + settings.weekendRequiredShiftIds.filter((id) => id === shiftId).length;
+      return { details, rules: rules2, settings: settingsCount };
+    }
+    function countPostReferences(postId, staffList) {
+      return staffList.filter((s2) => s2.postId === postId).length;
+    }
+    function countStaffReferences(staffId, weeks, demandCount) {
+      let details = 0;
+      for (const week of Object.values(weeks)) {
+        for (const d2 of week.details) {
+          if (d2.staffId === staffId) details += 1;
+        }
       }
-      async function add(name) {
-        const now2 = (/* @__PURE__ */ new Date()).toISOString();
-        list.value.push({ id: crypto.randomUUID(), name, createdAt: now2, updatedAt: now2 });
-        await persist();
-      }
-      async function update(id, patch) {
-        const idx = list.value.findIndex((p2) => p2.id === id);
-        if (idx < 0) return;
-        list.value[idx] = { ...list.value[idx], ...patch, updatedAt: (/* @__PURE__ */ new Date()).toISOString() };
-        await persist();
-      }
-      async function remove2(id) {
-        list.value = list.value.filter((p2) => p2.id !== id);
-        await persist();
-      }
-      return { list, load, persist, add, update, remove: remove2 };
-    });
-    const _sfc_main$f = /* @__PURE__ */ defineComponent({
+      return { details, demands: demandCount };
+    }
+    function buildShiftDeleteWarning(shiftName, count) {
+      const parts = [];
+      if (count.details > 0) parts.push(`${count.details} 条排班记录`);
+      if (count.rules > 0) parts.push(`${count.rules} 条夜班循环规则`);
+      if (count.settings > 0) parts.push(`${count.settings} 处系统设置`);
+      if (parts.length === 0) return `确认删除班次「${shiftName}」？`;
+      return `确认删除班次「${shiftName}」？该班次正被${parts.join("、")}引用，删除后将自动清空这些引用。`;
+    }
+    function buildPostDeleteWarning(postName, count) {
+      if (count === 0) return `确认删除岗位「${postName}」？`;
+      return `确认删除岗位「${postName}」？有 ${count} 名人员属于该岗位，删除后这些人员的岗位将被清空。`;
+    }
+    function buildStaffDeleteWarning(staffName, count) {
+      const parts = [];
+      if (count.details > 0) parts.push(`${count.details} 条排班记录`);
+      if (count.demands > 0) parts.push(`${count.demands} 条需求`);
+      if (parts.length === 0) return `确认删除人员「${staffName}」？`;
+      return `确认删除人员「${staffName}」？将同时删除该人员的${parts.join("和")}。`;
+    }
+    const _sfc_main$e = /* @__PURE__ */ defineComponent({
       __name: "StaffFormDialog",
       props: {
         modelValue: { type: Boolean },
@@ -41823,6 +42628,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         const props = __props;
         const emit2 = __emit;
         const postStore = usePostStore();
+        const staffStore = useStaffStore();
         const visible = computed({
           get: () => props.modelValue,
           set: (v2) => emit2("update:modelValue", v2)
@@ -41867,7 +42673,19 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         const formRef = /* @__PURE__ */ ref();
         async function onSubmit() {
           await formRef.value?.validate();
-          emit2("submit", { ...form });
+          const employeeNo = form.employeeNo.trim();
+          if (!employeeNo) {
+            ElMessage.warning("请输入工号");
+            return;
+          }
+          const duplicated = staffStore.list.some(
+            (s2) => s2.employeeNo.trim() === employeeNo && s2.id !== props.staff?.id
+          );
+          if (duplicated) {
+            ElMessage.warning(`工号「${employeeNo}」已被其他人员使用`);
+            return;
+          }
+          emit2("submit", { ...form, employeeNo, name: form.name.trim() });
           visible.value = false;
         }
         return (_ctx, _cache) => {
@@ -41892,7 +42710,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               createVNode(_component_el_button, {
                 onClick: _cache[12] || (_cache[12] = ($event) => visible.value = false)
               }, {
-                default: withCtx(() => [..._cache[16] || (_cache[16] = [
+                default: withCtx(() => [..._cache[17] || (_cache[17] = [
                   createTextVNode("取消", -1)
                 ])]),
                 _: 1
@@ -41901,7 +42719,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 type: "primary",
                 onClick: onSubmit
               }, {
-                default: withCtx(() => [..._cache[17] || (_cache[17] = [
+                default: withCtx(() => [..._cache[18] || (_cache[18] = [
                   createTextVNode("保存", -1)
                 ])]),
                 _: 1
@@ -41999,7 +42817,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                         modelValue: form.statusStartTime,
                         "onUpdate:modelValue": _cache[5] || (_cache[5] = ($event) => form.statusStartTime = $event),
                         type: "datetime",
-                        "value-format": "YYYY-MM-DDTHH:mm:ss.SSS[Z]",
+                        "value-format": "YYYY-MM-DDTHH:mm:ss",
                         clearable: "",
                         style: { "width": "100%" }
                       }, null, 8, ["modelValue"])
@@ -42012,10 +42830,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                         modelValue: form.statusEndTime,
                         "onUpdate:modelValue": _cache[6] || (_cache[6] = ($event) => form.statusEndTime = $event),
                         type: "datetime",
-                        "value-format": "YYYY-MM-DDTHH:mm:ss.SSS[Z]",
+                        "value-format": "YYYY-MM-DDTHH:mm:ss",
                         clearable: "",
                         style: { "width": "100%" }
-                      }, null, 8, ["modelValue"])
+                      }, null, 8, ["modelValue"]),
+                      _cache[14] || (_cache[14] = createBaseVNode("div", { class: "field-hint" }, " 休假 / 进修 / 停职为临时状态，到期后自动恢复可排班；离职为永久状态。 ", -1))
                     ]),
                     _: 1
                   }),
@@ -42080,13 +42899,13 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       }, {
                         default: withCtx(() => [
                           createVNode(_component_el_radio, { value: "day" }, {
-                            default: withCtx(() => [..._cache[14] || (_cache[14] = [
+                            default: withCtx(() => [..._cache[15] || (_cache[15] = [
                               createTextVNode("白班组", -1)
                             ])]),
                             _: 1
                           }),
                           createVNode(_component_el_radio, { value: "night" }, {
-                            default: withCtx(() => [..._cache[15] || (_cache[15] = [
+                            default: withCtx(() => [..._cache[16] || (_cache[16] = [
                               createTextVNode("夜班组", -1)
                             ])]),
                             _: 1
@@ -42106,15 +42925,29 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
+    const StaffFormDialog = /* @__PURE__ */ _export_sfc(_sfc_main$e, [["__scopeId", "data-v-1afd4ab7"]]);
     const _hoisted_1$7 = { class: "toolbar" };
-    const _sfc_main$e = /* @__PURE__ */ defineComponent({
+    const _hoisted_2$3 = { class: "hint" };
+    const _sfc_main$d = /* @__PURE__ */ defineComponent({
       __name: "StaffList",
       setup(__props) {
         const staffStore = useStaffStore();
         const postStore = usePostStore();
+        const scheduleStore = useScheduleStore();
+        const demandStore = useDemandStore();
         const dialogVisible = /* @__PURE__ */ ref(false);
         const editing = /* @__PURE__ */ ref(null);
+        const keyword = /* @__PURE__ */ ref("");
+        const statusFilter = /* @__PURE__ */ ref("");
         const postName = (id) => postStore.list.find((p2) => p2.id === id)?.name ?? "-";
+        const rows = computed(() => {
+          const kw = keyword.value.trim().toLowerCase();
+          return staffStore.list.filter((s2) => {
+            if (statusFilter.value && s2.status !== statusFilter.value) return false;
+            if (!kw) return true;
+            return s2.name.toLowerCase().includes(kw) || s2.employeeNo.toLowerCase().includes(kw) || (s2.title ?? "").toLowerCase().includes(kw);
+          });
+        });
         function openAdd() {
           editing.value = null;
           dialogVisible.value = true;
@@ -42124,22 +42957,38 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           dialogVisible.value = true;
         }
         async function onSubmit(payload) {
-          if (editing.value) {
-            await staffStore.update(editing.value.id, payload);
-            ElMessage.success("已更新");
-          } else {
-            await staffStore.add(payload);
-            ElMessage.success("已新增");
+          try {
+            if (editing.value) {
+              await staffStore.update(editing.value.id, payload);
+              ElMessage.success("已更新");
+            } else {
+              await staffStore.add(payload);
+              ElMessage.success("已新增");
+            }
+          } catch (e) {
+            reportError("保存人员", e);
           }
         }
         async function onRemove(row) {
-          await ElMessageBox.confirm(`确认删除人员「${row.name}」？`, "删除确认", { type: "warning" });
-          await staffStore.remove(row.id);
-          ElMessage.success("已删除");
+          const count = countStaffReferences(
+            row.id,
+            scheduleStore.weeks,
+            demandStore.list.filter((d2) => d2.staffId === row.id).length
+          );
+          const ok = await confirmAction(buildStaffDeleteWarning(row.name, count));
+          if (!ok) return;
+          try {
+            await staffStore.remove(row.id);
+            ElMessage.success("已删除");
+          } catch (e) {
+            reportError("删除人员", e);
+          }
         }
-        const rows = computed(() => staffStore.list);
         return (_ctx, _cache) => {
           const _component_el_button = ElButton;
+          const _component_el_input = ElInput;
+          const _component_el_option = ElOption;
+          const _component_el_select = ElSelect;
           const _component_el_table_column = ElTableColumn;
           const _component_el_table = ElTable;
           return openBlock(), createElementBlock("div", null, [
@@ -42148,11 +42997,37 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 type: "primary",
                 onClick: openAdd
               }, {
-                default: withCtx(() => [..._cache[1] || (_cache[1] = [
+                default: withCtx(() => [..._cache[3] || (_cache[3] = [
                   createTextVNode("新增", -1)
                 ])]),
                 _: 1
-              })
+              }),
+              createVNode(_component_el_input, {
+                modelValue: keyword.value,
+                "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => keyword.value = $event),
+                placeholder: "搜索姓名 / 工号 / 职称",
+                clearable: "",
+                style: { "width": "220px" }
+              }, null, 8, ["modelValue"]),
+              createVNode(_component_el_select, {
+                modelValue: statusFilter.value,
+                "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => statusFilter.value = $event),
+                clearable: "",
+                placeholder: "按状态筛选",
+                style: { "width": "150px" }
+              }, {
+                default: withCtx(() => [
+                  (openBlock(true), createElementBlock(Fragment, null, renderList(unref(STAFF_STATUS_LABEL), (label, value) => {
+                    return openBlock(), createBlock(_component_el_option, {
+                      key: value,
+                      label,
+                      value
+                    }, null, 8, ["label", "value"]);
+                  }), 128))
+                ]),
+                _: 1
+              }, 8, ["modelValue"]),
+              createBaseVNode("span", _hoisted_2$3, "共 " + toDisplayString(rows.value.length) + " 人", 1)
             ]),
             createVNode(_component_el_table, {
               data: rows.value,
@@ -42162,12 +43037,14 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 createVNode(_component_el_table_column, {
                   prop: "name",
                   label: "姓名",
-                  width: "120"
+                  width: "120",
+                  sortable: ""
                 }),
                 createVNode(_component_el_table_column, {
                   prop: "employeeNo",
                   label: "工号",
-                  width: "100"
+                  width: "100",
+                  sortable: ""
                 }),
                 createVNode(_component_el_table_column, {
                   prop: "title",
@@ -42209,12 +43086,14 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 createVNode(_component_el_table_column, {
                   prop: "annualLeave",
                   label: "年假",
-                  width: "80"
+                  width: "80",
+                  sortable: ""
                 }),
                 createVNode(_component_el_table_column, {
                   prop: "accumulatedLeave",
                   label: "积休",
-                  width: "80"
+                  width: "80",
+                  sortable: ""
                 }),
                 createVNode(_component_el_table_column, {
                   prop: "remark",
@@ -42231,7 +43110,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       type: "primary",
                       onClick: ($event) => openEdit(row)
                     }, {
-                      default: withCtx(() => [..._cache[2] || (_cache[2] = [
+                      default: withCtx(() => [..._cache[4] || (_cache[4] = [
                         createTextVNode("编辑", -1)
                       ])]),
                       _: 1
@@ -42241,7 +43120,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       type: "danger",
                       onClick: ($event) => onRemove(row)
                     }, {
-                      default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                      default: withCtx(() => [..._cache[5] || (_cache[5] = [
                         createTextVNode("删除", -1)
                       ])]),
                       _: 1
@@ -42252,9 +43131,9 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               ]),
               _: 1
             }, 8, ["data"]),
-            createVNode(_sfc_main$f, {
+            createVNode(StaffFormDialog, {
               modelValue: dialogVisible.value,
-              "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => dialogVisible.value = $event),
+              "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => dialogVisible.value = $event),
               staff: editing.value,
               onSubmit
             }, null, 8, ["modelValue", "staff"])
@@ -42262,19 +43141,20 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _sfc_main$d = /* @__PURE__ */ defineComponent({
+    const _sfc_main$c = /* @__PURE__ */ defineComponent({
       __name: "StaffView",
       setup(__props) {
         return (_ctx, _cache) => {
-          return openBlock(), createBlock(_sfc_main$e);
+          return openBlock(), createBlock(_sfc_main$d);
         };
       }
     });
     const _hoisted_1$6 = { class: "toolbar" };
-    const _sfc_main$c = /* @__PURE__ */ defineComponent({
+    const _sfc_main$b = /* @__PURE__ */ defineComponent({
       __name: "PostList",
       setup(__props) {
         const postStore = usePostStore();
+        const staffStore = useStaffStore();
         const dialogVisible = /* @__PURE__ */ ref(false);
         const name = /* @__PURE__ */ ref("");
         const editingId = /* @__PURE__ */ ref(null);
@@ -42289,23 +43169,39 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           dialogVisible.value = true;
         }
         async function onSave() {
-          if (!name.value.trim()) {
+          const trimmed = name.value.trim();
+          if (!trimmed) {
             ElMessage.warning("请输入岗位名称");
             return;
           }
-          if (editingId.value) {
-            await postStore.update(editingId.value, { name: name.value.trim() });
-            ElMessage.success("已更新");
-          } else {
-            await postStore.add(name.value.trim());
-            ElMessage.success("已新增");
+          const duplicated = postStore.list.some((p2) => p2.name.trim() === trimmed && p2.id !== editingId.value);
+          if (duplicated) {
+            ElMessage.warning(`岗位名称「${trimmed}」已存在`);
+            return;
           }
-          dialogVisible.value = false;
+          try {
+            if (editingId.value) {
+              await postStore.update(editingId.value, { name: trimmed });
+              ElMessage.success("已更新");
+            } else {
+              await postStore.add(trimmed);
+              ElMessage.success("已新增");
+            }
+            dialogVisible.value = false;
+          } catch (e) {
+            reportError("保存岗位", e);
+          }
         }
         async function onRemove(id, current) {
-          await ElMessageBox.confirm(`确认删除岗位「${current}」？`, "删除确认", { type: "warning" });
-          await postStore.remove(id);
-          ElMessage.success("已删除");
+          const count = countPostReferences(id, staffStore.list);
+          const ok = await confirmAction(buildPostDeleteWarning(current, count));
+          if (!ok) return;
+          try {
+            await postStore.remove(id);
+            ElMessage.success("已删除");
+          } catch (e) {
+            reportError("删除岗位", e);
+          }
         }
         return (_ctx, _cache) => {
           const _component_el_button = ElButton;
@@ -42323,7 +43219,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   createTextVNode("新增", -1)
                 ])]),
                 _: 1
-              })
+              }),
+              _cache[4] || (_cache[4] = createBaseVNode("span", { class: "hint" }, "删除岗位会清空引用该岗位的人员的岗位信息", -1))
             ]),
             createVNode(_component_el_table, {
               data: unref(postStore).list,
@@ -42332,7 +43229,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               default: withCtx(() => [
                 createVNode(_component_el_table_column, {
                   prop: "name",
-                  label: "岗位名称"
+                  label: "岗位名称",
+                  sortable: ""
                 }),
                 createVNode(_component_el_table_column, {
                   prop: "updatedAt",
@@ -42349,7 +43247,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       type: "primary",
                       onClick: ($event) => openEdit(row.id, row.name)
                     }, {
-                      default: withCtx(() => [..._cache[4] || (_cache[4] = [
+                      default: withCtx(() => [..._cache[5] || (_cache[5] = [
                         createTextVNode("编辑", -1)
                       ])]),
                       _: 1
@@ -42359,7 +43257,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       type: "danger",
                       onClick: ($event) => onRemove(row.id, row.name)
                     }, {
-                      default: withCtx(() => [..._cache[5] || (_cache[5] = [
+                      default: withCtx(() => [..._cache[6] || (_cache[6] = [
                         createTextVNode("删除", -1)
                       ])]),
                       _: 1
@@ -42380,7 +43278,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 createVNode(_component_el_button, {
                   onClick: _cache[1] || (_cache[1] = ($event) => dialogVisible.value = false)
                 }, {
-                  default: withCtx(() => [..._cache[6] || (_cache[6] = [
+                  default: withCtx(() => [..._cache[7] || (_cache[7] = [
                     createTextVNode("取消", -1)
                   ])]),
                   _: 1
@@ -42389,7 +43287,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   type: "primary",
                   onClick: onSave
                 }, {
-                  default: withCtx(() => [..._cache[7] || (_cache[7] = [
+                  default: withCtx(() => [..._cache[8] || (_cache[8] = [
                     createTextVNode("保存", -1)
                   ])]),
                   _: 1
@@ -42399,7 +43297,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 createVNode(_component_el_input, {
                   modelValue: name.value,
                   "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => name.value = $event),
-                  placeholder: "岗位名称"
+                  placeholder: "岗位名称",
+                  onKeyup: withKeys(onSave, ["enter"])
                 }, null, 8, ["modelValue"])
               ]),
               _: 1
@@ -42408,15 +43307,15 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _sfc_main$b = /* @__PURE__ */ defineComponent({
+    const _sfc_main$a = /* @__PURE__ */ defineComponent({
       __name: "PostView",
       setup(__props) {
         return (_ctx, _cache) => {
-          return openBlock(), createBlock(_sfc_main$c);
+          return openBlock(), createBlock(_sfc_main$b);
         };
       }
     });
-    const _sfc_main$a = /* @__PURE__ */ defineComponent({
+    const _sfc_main$9 = /* @__PURE__ */ defineComponent({
       __name: "ShiftFormDialog",
       props: {
         modelValue: { type: Boolean },
@@ -42426,6 +43325,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       setup(__props, { emit: __emit }) {
         const props = __props;
         const emit2 = __emit;
+        const shiftStore = useShiftStore();
         const visible = computed({
           get: () => props.modelValue,
           set: (v2) => emit2("update:modelValue", v2)
@@ -42448,8 +43348,19 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         );
         const formRef = /* @__PURE__ */ ref();
         async function onSubmit() {
-          if (!form.name.trim()) return;
-          emit2("submit", { ...form, name: form.name.trim() });
+          const name = form.name.trim();
+          if (!name) {
+            ElMessage.warning("请输入班次名称");
+            return;
+          }
+          const duplicated = shiftStore.list.some(
+            (s2) => s2.name.trim() === name && s2.id !== props.shift?.id
+          );
+          if (duplicated) {
+            ElMessage.warning(`班次名称「${name}」已存在`);
+            return;
+          }
+          emit2("submit", { ...form, name });
           visible.value = false;
         }
         return (_ctx, _cache) => {
@@ -42548,10 +43459,13 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     const _hoisted_1$5 = { class: "toolbar" };
-    const _sfc_main$9 = /* @__PURE__ */ defineComponent({
+    const _sfc_main$8 = /* @__PURE__ */ defineComponent({
       __name: "ShiftList",
       setup(__props) {
         const shiftStore = useShiftStore();
+        const scheduleStore = useScheduleStore();
+        const nightRuleStore = useNightRuleStore();
+        const settingsStore = useSettingsStore();
         const dialogVisible = /* @__PURE__ */ ref(false);
         const editing = /* @__PURE__ */ ref(null);
         function openAdd() {
@@ -42563,18 +43477,33 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           dialogVisible.value = true;
         }
         async function onSubmit(payload) {
-          if (editing.value) {
-            await shiftStore.update(editing.value.id, payload);
-            ElMessage.success("已更新");
-          } else {
-            await shiftStore.add(payload);
-            ElMessage.success("已新增");
+          try {
+            if (editing.value) {
+              await shiftStore.update(editing.value.id, payload);
+              ElMessage.success("已更新");
+            } else {
+              await shiftStore.add(payload);
+              ElMessage.success("已新增");
+            }
+          } catch (e) {
+            reportError("保存班次", e);
           }
         }
         async function onRemove(row) {
-          await ElMessageBox.confirm(`确认删除班次「${row.name}」？`, "删除确认", { type: "warning" });
-          await shiftStore.remove(row.id);
-          ElMessage.success("已删除");
+          const count = countShiftReferences(
+            row.id,
+            scheduleStore.weeks,
+            nightRuleStore.rules,
+            settingsStore.settings
+          );
+          const ok = await confirmAction(buildShiftDeleteWarning(row.name, count));
+          if (!ok) return;
+          try {
+            await shiftStore.remove(row.id);
+            ElMessage.success("已删除，相关引用已清理");
+          } catch (e) {
+            reportError("删除班次", e);
+          }
         }
         return (_ctx, _cache) => {
           const _component_el_button = ElButton;
@@ -42590,7 +43519,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                   createTextVNode("新增", -1)
                 ])]),
                 _: 1
-              })
+              }),
+              _cache[2] || (_cache[2] = createBaseVNode("span", { class: "hint" }, "删除班次会自动清理排班、夜班规则与系统设置中的引用", -1))
             ]),
             createVNode(_component_el_table, {
               data: unref(shiftStore).list,
@@ -42599,7 +43529,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               default: withCtx(() => [
                 createVNode(_component_el_table_column, {
                   prop: "name",
-                  label: "班次名称"
+                  label: "班次名称",
+                  sortable: ""
                 }),
                 createVNode(_component_el_table_column, {
                   prop: "startTime",
@@ -42625,7 +43556,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       type: "primary",
                       onClick: ($event) => openEdit(row)
                     }, {
-                      default: withCtx(() => [..._cache[2] || (_cache[2] = [
+                      default: withCtx(() => [..._cache[3] || (_cache[3] = [
                         createTextVNode("编辑", -1)
                       ])]),
                       _: 1
@@ -42635,7 +43566,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       type: "danger",
                       onClick: ($event) => onRemove(row)
                     }, {
-                      default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                      default: withCtx(() => [..._cache[4] || (_cache[4] = [
                         createTextVNode("删除", -1)
                       ])]),
                       _: 1
@@ -42646,7 +43577,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               ]),
               _: 1
             }, 8, ["data"]),
-            createVNode(_sfc_main$a, {
+            createVNode(_sfc_main$9, {
               modelValue: dialogVisible.value,
               "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => dialogVisible.value = $event),
               shift: editing.value,
@@ -42656,11 +43587,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _sfc_main$8 = /* @__PURE__ */ defineComponent({
+    const _sfc_main$7 = /* @__PURE__ */ defineComponent({
       __name: "ShiftView",
       setup(__props) {
         return (_ctx, _cache) => {
-          return openBlock(), createBlock(_sfc_main$9);
+          return openBlock(), createBlock(_sfc_main$8);
         };
       }
     });
@@ -49394,10 +50325,10 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
     var vuedraggable_umdExports = vuedraggable_umd.exports;
     const draggable = /* @__PURE__ */ getDefaultExportFromCjs(vuedraggable_umdExports);
     const _hoisted_1$4 = { class: "night-rule-item" };
-    const _hoisted_2$1 = { class: "order" };
+    const _hoisted_2$2 = { class: "order" };
     const _hoisted_3 = { class: "name" };
     const _hoisted_4 = { class: "time" };
-    const _sfc_main$7 = /* @__PURE__ */ defineComponent({
+    const _sfc_main$6 = /* @__PURE__ */ defineComponent({
       __name: "NightRuleEditor",
       props: {
         modelValue: {},
@@ -49412,9 +50343,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           set: (v2) => emit2("update:modelValue", v2)
         });
         function shiftName(id) {
+          if (id === REST_RULE_SHIFT_ID) return "休息";
           return props.shiftList.find((s2) => s2.id === id)?.name ?? id;
         }
         function shiftTime(id) {
+          if (id === REST_RULE_SHIFT_ID) return "";
           const s2 = props.shiftList.find((x2) => x2.id === id);
           return s2 ? `${s2.startTime} - ${s2.endTime}` : "";
         }
@@ -49430,7 +50363,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             item: withCtx(({ element }) => [
               createBaseVNode("div", _hoisted_1$4, [
                 _cache[2] || (_cache[2] = createBaseVNode("span", { class: "drag-handle" }, "⠿", -1)),
-                createBaseVNode("span", _hoisted_2$1, toDisplayString(element.sortOrder), 1),
+                createBaseVNode("span", _hoisted_2$2, toDisplayString(element.sortOrder), 1),
                 createBaseVNode("span", _hoisted_3, toDisplayString(shiftName(element.shiftId)), 1),
                 createBaseVNode("span", _hoisted_4, toDisplayString(shiftTime(element.shiftId)), 1),
                 createVNode(_component_el_button, {
@@ -49450,9 +50383,9 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const NightRuleEditor = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-ac951ad3"]]);
+    const NightRuleEditor = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-e9a154cd"]]);
     const _hoisted_1$3 = { class: "toolbar" };
-    const _sfc_main$6 = /* @__PURE__ */ defineComponent({
+    const _sfc_main$5 = /* @__PURE__ */ defineComponent({
       __name: "NightRuleView",
       setup(__props) {
         const nightRuleStore = useNightRuleStore();
@@ -49462,9 +50395,13 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         const rulesClone = computed(
           () => nightRuleStore.rules.map((r) => ({ ...r }))
         );
-        const availableShifts = computed(
-          () => shiftStore.list.filter((s2) => !nightRuleStore.rules.some((r) => r.shiftId === s2.id))
-        );
+        const shiftOptions = computed(() => [
+          ...shiftStore.list.map((s2) => ({
+            id: s2.id,
+            label: `${s2.name}（${s2.startTime || "-"}-${s2.endTime || "-"}）`
+          })),
+          { id: REST_RULE_SHIFT_ID, label: "休息" }
+        ]);
         async function onReorder(rules2) {
           await nightRuleStore.reorder(rules2);
         }
@@ -49536,15 +50473,15 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 createVNode(_component_el_select, {
                   modelValue: selectedShift.value,
                   "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => selectedShift.value = $event),
-                  placeholder: "选择班次",
+                  placeholder: "选择班次或休息",
                   style: { "width": "100%" }
                 }, {
                   default: withCtx(() => [
-                    (openBlock(true), createElementBlock(Fragment, null, renderList(availableShifts.value, (s2) => {
+                    (openBlock(true), createElementBlock(Fragment, null, renderList(shiftOptions.value, (opt) => {
                       return openBlock(), createBlock(_component_el_option, {
-                        key: s2.id,
-                        label: `${s2.name}（${s2.startTime}-${s2.endTime}）`,
-                        value: s2.id
+                        key: opt.id,
+                        label: opt.label,
+                        value: opt.id
                       }, null, 8, ["label", "value"]);
                     }), 128))
                   ]),
@@ -49557,7 +50494,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _sfc_main$5 = /* @__PURE__ */ defineComponent({
+    const _sfc_main$4 = /* @__PURE__ */ defineComponent({
       __name: "DemandList",
       props: {
         rows: {}
@@ -49576,9 +50513,43 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           return shiftStore.list.find((s2) => s2.id === id)?.name ?? id;
         }
         async function onRemove(row) {
-          await ElMessageBox.confirm("确认删除该需求？", "删除确认", { type: "warning" });
-          await demandStore.remove(row.id);
-          ElMessage.success("已删除");
+          const ok = await confirmAction("确认删除该需求？", "删除确认");
+          if (!ok) return;
+          try {
+            await demandStore.remove(row.id);
+            ElMessage.success("已删除");
+          } catch (e) {
+            reportError("删除需求", e);
+          }
+        }
+        async function onMarkMet(row) {
+          try {
+            await demandStore.update(row.id, { status: "met" });
+            ElMessage.success("已标记为已满足");
+          } catch (e) {
+            reportError("标记需求", e);
+          }
+        }
+        async function onReject(row) {
+          const ok = await confirmAction(
+            `确认拒绝「${staffName(row.staffId)} ${row.date}」的需求？`,
+            "拒绝确认"
+          );
+          if (!ok) return;
+          try {
+            await demandStore.update(row.id, { status: "rejected" });
+            ElMessage.success("已拒绝");
+          } catch (e) {
+            reportError("拒绝需求", e);
+          }
+        }
+        async function onReopen(row) {
+          try {
+            await demandStore.update(row.id, { status: "pending" });
+            ElMessage.success("已恢复为待处理");
+          } catch (e) {
+            reportError("恢复需求", e);
+          }
         }
         return (_ctx, _cache) => {
           const _component_el_table_column = ElTableColumn;
@@ -49602,7 +50573,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               createVNode(_component_el_table_column, {
                 prop: "date",
                 label: "日期",
-                width: "140"
+                width: "140",
+                sortable: ""
               }),
               createVNode(_component_el_table_column, {
                 label: "类型",
@@ -49644,7 +50616,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               }),
               createVNode(_component_el_table_column, {
                 label: "操作",
-                width: "160",
+                width: "260",
                 fixed: "right"
               }, {
                 default: withCtx(({ row }) => [
@@ -49658,12 +50630,45 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                     ])]),
                     _: 1
                   }, 8, ["onClick"]),
+                  row.status !== "met" ? (openBlock(), createBlock(_component_el_button, {
+                    key: 0,
+                    link: "",
+                    type: "success",
+                    onClick: ($event) => onMarkMet(row)
+                  }, {
+                    default: withCtx(() => [..._cache[1] || (_cache[1] = [
+                      createTextVNode(" 标记满足 ", -1)
+                    ])]),
+                    _: 1
+                  }, 8, ["onClick"])) : createCommentVNode("", true),
+                  row.status !== "rejected" ? (openBlock(), createBlock(_component_el_button, {
+                    key: 1,
+                    link: "",
+                    type: "warning",
+                    onClick: ($event) => onReject(row)
+                  }, {
+                    default: withCtx(() => [..._cache[2] || (_cache[2] = [
+                      createTextVNode(" 拒绝 ", -1)
+                    ])]),
+                    _: 1
+                  }, 8, ["onClick"])) : createCommentVNode("", true),
+                  row.status !== "pending" ? (openBlock(), createBlock(_component_el_button, {
+                    key: 2,
+                    link: "",
+                    type: "info",
+                    onClick: ($event) => onReopen(row)
+                  }, {
+                    default: withCtx(() => [..._cache[3] || (_cache[3] = [
+                      createTextVNode(" 恢复待处理 ", -1)
+                    ])]),
+                    _: 1
+                  }, 8, ["onClick"])) : createCommentVNode("", true),
                   createVNode(_component_el_button, {
                     link: "",
                     type: "danger",
                     onClick: ($event) => onRemove(row)
                   }, {
-                    default: withCtx(() => [..._cache[1] || (_cache[1] = [
+                    default: withCtx(() => [..._cache[4] || (_cache[4] = [
                       createTextVNode("删除", -1)
                     ])]),
                     _: 1
@@ -49677,7 +50682,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _sfc_main$4 = /* @__PURE__ */ defineComponent({
+    const _sfc_main$3 = /* @__PURE__ */ defineComponent({
       __name: "DemandFormDialog",
       props: {
         modelValue: { type: Boolean },
@@ -49713,7 +50718,16 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           }
         );
         async function onSubmit() {
-          if (!form.staffId || !form.date) {
+          if (!form.staffId) {
+            ElMessage.warning("请选择人员");
+            return;
+          }
+          if (!form.date) {
+            ElMessage.warning("请选择日期");
+            return;
+          }
+          if (form.type === "shift" && !form.shiftId) {
+            ElMessage.warning("请选择要指定的班次");
             return;
           }
           const payload = {
@@ -49722,7 +50736,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             type: form.type,
             shiftId: form.type === "shift" ? form.shiftId : null,
             remark: form.remark,
-            status: "pending"
+            status: props.demand?.status ?? "pending"
           };
           emit2("submit", payload);
           visible.value = false;
@@ -49881,7 +50895,8 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
       }
     });
     const _hoisted_1$2 = { class: "toolbar" };
-    const _sfc_main$3 = /* @__PURE__ */ defineComponent({
+    const _hoisted_2$1 = { class: "hint" };
+    const _sfc_main$2 = /* @__PURE__ */ defineComponent({
       __name: "DemandView",
       setup(__props) {
         const demandStore = useDemandStore();
@@ -49889,10 +50904,12 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         const dialogVisible = /* @__PURE__ */ ref(false);
         const editing = /* @__PURE__ */ ref(null);
         const filterStaff = /* @__PURE__ */ ref("");
+        const filterStatus = /* @__PURE__ */ ref("");
         const filterDateRange = /* @__PURE__ */ ref(null);
         const filtered = computed(() => {
           return demandStore.list.filter((d2) => {
             if (filterStaff.value && d2.staffId !== filterStaff.value) return false;
+            if (filterStatus.value && d2.status !== filterStatus.value) return false;
             if (filterDateRange.value) {
               const [start, end] = filterDateRange.value;
               if (d2.date < start || d2.date > end) return false;
@@ -49909,12 +50926,16 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
           dialogVisible.value = true;
         }
         async function onSubmit(payload) {
-          if (editing.value) {
-            await demandStore.update(editing.value.id, payload);
-            ElMessage.success("已更新");
-          } else {
-            await demandStore.add(payload);
-            ElMessage.success("已新增");
+          try {
+            if (editing.value) {
+              await demandStore.update(editing.value.id, payload);
+              ElMessage.success("已更新");
+            } else {
+              await demandStore.add(payload);
+              ElMessage.success("已新增");
+            }
+          } catch (e) {
+            reportError("保存需求", e);
           }
         }
         return (_ctx, _cache) => {
@@ -49928,7 +50949,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 type: "primary",
                 onClick: openAdd
               }, {
-                default: withCtx(() => [..._cache[4] || (_cache[4] = [
+                default: withCtx(() => [..._cache[5] || (_cache[5] = [
                   createTextVNode("新增需求", -1)
                 ])]),
                 _: 1
@@ -49952,9 +50973,27 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 ]),
                 _: 1
               }, 8, ["modelValue"]),
+              createVNode(_component_el_select, {
+                modelValue: filterStatus.value,
+                "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => filterStatus.value = $event),
+                clearable: "",
+                placeholder: "按状态筛选",
+                style: { "width": "150px" }
+              }, {
+                default: withCtx(() => [
+                  (openBlock(true), createElementBlock(Fragment, null, renderList(unref(DEMAND_STATUS_LABEL), (label, value) => {
+                    return openBlock(), createBlock(_component_el_option, {
+                      key: value,
+                      label,
+                      value
+                    }, null, 8, ["label", "value"]);
+                  }), 128))
+                ]),
+                _: 1
+              }, 8, ["modelValue"]),
               createVNode(_component_el_date_picker, {
                 modelValue: filterDateRange.value,
-                "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => filterDateRange.value = $event),
+                "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => filterDateRange.value = $event),
                 type: "daterange",
                 "value-format": "YYYY-MM-DD",
                 "range-separator": "至",
@@ -49962,24 +51001,26 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                 "end-placeholder": "结束日期"
               }, null, 8, ["modelValue"]),
               createVNode(_component_el_button, {
-                onClick: _cache[2] || (_cache[2] = ($event) => {
+                onClick: _cache[3] || (_cache[3] = ($event) => {
                   filterStaff.value = "";
+                  filterStatus.value = "";
                   filterDateRange.value = null;
                 })
               }, {
-                default: withCtx(() => [..._cache[5] || (_cache[5] = [
+                default: withCtx(() => [..._cache[6] || (_cache[6] = [
                   createTextVNode("重置筛选", -1)
                 ])]),
                 _: 1
-              })
+              }),
+              createBaseVNode("span", _hoisted_2$1, "共 " + toDisplayString(filtered.value.length) + " 条", 1)
             ]),
-            createVNode(_sfc_main$5, {
+            createVNode(_sfc_main$4, {
               rows: filtered.value,
               onEdit: openEdit
             }, null, 8, ["rows"]),
-            createVNode(_sfc_main$4, {
+            createVNode(_sfc_main$3, {
               modelValue: dialogVisible.value,
-              "onUpdate:modelValue": _cache[3] || (_cache[3] = ($event) => dialogVisible.value = $event),
+              "onUpdate:modelValue": _cache[4] || (_cache[4] = ($event) => dialogVisible.value = $event),
               demand: editing.value,
               onSubmit
             }, null, 8, ["modelValue", "demand"])
@@ -49987,9 +51028,147 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
+    const SHIFT_DEFS = [
+      { id: "shift-a1", name: "A1", startTime: "07:30", endTime: "16:00", remark: "07:30-10:30, 12:00-16:00" },
+      { id: "shift-a2", name: "A2", startTime: "07:30", endTime: "16:00", remark: "07:30-10:30, 12:00-16:00" },
+      { id: "shift-a-fu", name: "A(服)", startTime: "07:30", endTime: "16:00", remark: "服侍班" },
+      { id: "shift-assist-night", name: "助夜", startTime: "16:00", endTime: "22:00", remark: "16:00-22:00" },
+      { id: "shift-p", name: "P", startTime: "16:00", endTime: "23:00", remark: "16:00-23:00" },
+      { id: "shift-n", name: "N", startTime: "23:00", endTime: "08:00", remark: "23:00-08:00" },
+      { id: "shift-zheng-yi", name: "正(医)", startTime: "08:00", endTime: "17:30", remark: "08:00-12:00、14:30-17:30" },
+      { id: "shift-zheng-12", name: "正(1+2)", startTime: "07:30", endTime: "17:00", remark: "07:30-12:00、14:30-17:00" },
+      { id: "shift-zheng-yifu", name: "正(医+服)", startTime: "07:30", endTime: "17:30", remark: "07:30-12:00, 14:30-17:30" },
+      { id: "shift-zheng", name: "正", startTime: "08:00", endTime: "17:30", remark: "正班" },
+      { id: "shift-rest-prn", name: "休(prn)", startTime: "", endTime: "", remark: "PRN 休息" }
+    ];
+    const SHIFT_ID_BY_CODE = {
+      A1: "shift-a1",
+      A2: "shift-a2",
+      "A(服)": "shift-a-fu",
+      P: "shift-p",
+      N: "shift-n",
+      助夜: "shift-assist-night",
+      "正(医)": "shift-zheng-yi",
+      "正(1+2)": "shift-zheng-12",
+      "正(医+服)": "shift-zheng-yifu",
+      正: "shift-zheng",
+      "休(prn)": "shift-rest-prn"
+    };
+    const POST_DEFS = [
+      { id: "post-nurse", name: "护士" },
+      { id: "post-charge", name: "主管护师" },
+      { id: "post-tcm", name: "中医护理门诊" },
+      { id: "post-ent", name: "耳鼻喉科门诊" },
+      { id: "post-eye", name: "眼科门诊" },
+      { id: "post-vice-head", name: "副护士长" },
+      { id: "post-training", name: "进修" }
+    ];
+    const STAFF_SEEDS = [
+      { name: "孙菲瑶", title: "N1", postId: "post-nurse", bedManagement: "原岗", annualLeave: 0, accumulatedLeave: 1.5 },
+      { name: "王铧", title: "N2", postId: "post-nurse", bedManagement: "原岗", annualLeave: 5, accumulatedLeave: 0 },
+      { name: "吴彤", title: "N0", postId: "post-nurse", bedManagement: "支撑", annualLeave: 0, accumulatedLeave: 0.5 },
+      { name: "何嘉华", title: "N0", postId: "post-nurse", bedManagement: "次责(一组)", annualLeave: 0, accumulatedLeave: 0 },
+      { name: "张玲", title: "N2", postId: "post-charge", bedManagement: "主责", annualLeave: 10, accumulatedLeave: 3 },
+      { name: "吴淇", title: "N3", postId: "post-charge", bedManagement: "主责", annualLeave: 10, accumulatedLeave: 2 },
+      { name: "吴秋萱", title: "N2", postId: "post-tcm", bedManagement: "中医", annualLeave: 10, accumulatedLeave: 4 },
+      { name: "陈榴", title: "N2", postId: "post-charge", bedManagement: "次责(一组)", annualLeave: 10, accumulatedLeave: 2.5 },
+      { name: "肖菁菁", title: "N2", postId: "post-nurse", bedManagement: "支撑", annualLeave: 5, accumulatedLeave: 1 },
+      { name: "黄霞", title: "N2", postId: "post-charge", bedManagement: "主责", annualLeave: 10, accumulatedLeave: 2 },
+      { name: "李兰静", title: "N2", postId: "post-nurse", bedManagement: "药疗(带班组长)", annualLeave: 5, accumulatedLeave: 1.5 },
+      { name: "匡瑞", title: "N2", postId: "post-charge", bedManagement: "医辅", annualLeave: 5, accumulatedLeave: 0.5 },
+      { name: "何蜜", title: "N0", postId: "post-nurse", bedManagement: "", annualLeave: 5, accumulatedLeave: 0 },
+      { name: "范永涛", title: "N3", postId: "post-tcm", bedManagement: "中医护理门诊", annualLeave: 10, accumulatedLeave: 3 },
+      { name: "刘璐", title: "N3", postId: "post-tcm", bedManagement: "中医护理门诊", annualLeave: 10, accumulatedLeave: 2 },
+      { name: "金金", title: "N2", postId: "post-ent", bedManagement: "", annualLeave: 5, accumulatedLeave: 1 },
+      { name: "林玉洁", title: "N3", postId: "post-eye", bedManagement: "", annualLeave: 10, accumulatedLeave: 2 },
+      { name: "贲卉", title: "N3", postId: "post-vice-head", bedManagement: "副护士长", annualLeave: 5, accumulatedLeave: 1 },
+      { name: "许丹", title: "主管护师", postId: "post-training", bedManagement: "进修", annualLeave: 5, accumulatedLeave: 0, status: "training" }
+    ];
+    const CODE_POOL = ["A1", "A2", "A(服)", "正(医)", "P", "N", "助夜", "正", "休(prn)", "休"];
+    function weeklyPattern(offset) {
+      return Array.from({ length: 7 }, (_2, day) => CODE_POOL[(day + offset) % CODE_POOL.length]);
+    }
+    function buildWeek(weekKey, staffList, weekIndex) {
+      const { weekStart, weekEnd } = parseWeekKey(weekKey);
+      const dates = getWeekDates(weekStart);
+      const details = [];
+      staffList.forEach((staff, index2) => {
+        const pattern = weeklyPattern(index2 + weekIndex * 3);
+        dates.forEach((date, day) => {
+          const code = pattern[day];
+          let shiftId = null;
+          let isRest = false;
+          if (code === "休") {
+            isRest = true;
+          } else {
+            shiftId = SHIFT_ID_BY_CODE[code];
+          }
+          details.push({
+            id: crypto.randomUUID(),
+            staffId: staff.id,
+            date,
+            shiftId,
+            isRest,
+            remark: ""
+          });
+        });
+      });
+      return {
+        weekKey,
+        weekStart,
+        weekEnd,
+        status: "draft",
+        generatedAt: (/* @__PURE__ */ new Date()).toISOString(),
+        details
+      };
+    }
+    function buildDemoData() {
+      const now2 = (/* @__PURE__ */ new Date()).toISOString();
+      const posts = POST_DEFS.map((p2) => ({
+        id: p2.id,
+        name: p2.name,
+        createdAt: now2,
+        updatedAt: now2
+      }));
+      const shifts = SHIFT_DEFS.map((s2) => ({ ...s2, createdAt: now2, updatedAt: now2 }));
+      const staff = STAFF_SEEDS.map((seed2, index2) => ({
+        id: `demo-staff-${index2 + 1}`,
+        name: seed2.name,
+        employeeNo: `D${String(index2 + 1).padStart(3, "0")}`,
+        title: seed2.title,
+        remark: "",
+        status: seed2.status ?? "active",
+        statusStartTime: null,
+        statusEndTime: null,
+        postId: seed2.postId,
+        bedManagement: seed2.bedManagement,
+        annualLeave: seed2.annualLeave,
+        accumulatedLeave: seed2.accumulatedLeave,
+        groupType: seed2.groupType ?? "day",
+        createdAt: now2,
+        updatedAt: now2
+      }));
+      const nightRules = [
+        { id: "demo-rule-1", shiftId: "shift-n", sortOrder: 1 },
+        { id: "demo-rule-2", shiftId: "shift-assist-night", sortOrder: 2 },
+        { id: "demo-rule-3", shiftId: REST_RULE_SHIFT_ID, sortOrder: 3 }
+      ];
+      const settings = {
+        version: 1,
+        assistNightShiftId: "shift-assist-night",
+        weekdayRequiredShiftIds: ["shift-a1", "shift-zheng-yi"],
+        weekendRequiredShiftIds: ["shift-a1"],
+        lastBackupAt: null
+      };
+      const weeks = [
+        buildWeek(getCurrentWeekKey(), staff, 0),
+        buildWeek(getNextWeekKey(), staff, 1)
+      ];
+      return { posts, shifts, staff, nightRules, settings, weeks };
+    }
     const _hoisted_1$1 = { class: "toolbar" };
     const _hoisted_2 = { class: "hint" };
-    const _sfc_main$2 = /* @__PURE__ */ defineComponent({
+    const _sfc_main$1 = /* @__PURE__ */ defineComponent({
       __name: "SettingsView",
       setup(__props) {
         const settingsStore = useSettingsStore();
@@ -50009,42 +51188,94 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         }
         watch(() => settingsStore.settings, syncForm, { immediate: true, deep: true });
         async function onSave() {
-          await settingsStore.update({
-            assistNightShiftId: assistNightShiftId.value,
-            weekdayRequiredShiftIds: weekdayRequiredShiftIds.value,
-            weekendRequiredShiftIds: weekendRequiredShiftIds.value
-          });
-          ElMessage.success("已保存");
+          try {
+            await settingsStore.update({
+              assistNightShiftId: assistNightShiftId.value,
+              weekdayRequiredShiftIds: weekdayRequiredShiftIds.value,
+              weekendRequiredShiftIds: weekendRequiredShiftIds.value
+            });
+            ElMessage.success("已保存");
+          } catch (e) {
+            reportError("保存配置", e);
+          }
         }
         async function onExport() {
-          const path = await window.storage.chooseExportFile();
-          if (!path) return;
-          await window.storage.export(path);
-          ElMessage.success("导出成功");
+          try {
+            const path = await window.storage.chooseExportFile();
+            if (!path) return;
+            await window.storage.export(path);
+            ElMessage.success("导出成功");
+          } catch (e) {
+            reportError("导出数据", e);
+          }
         }
         async function onImport() {
-          const path = await window.storage.chooseImportFile();
-          if (!path) return;
-          const ok = await window.storage.import(path);
-          if (!ok) {
-            ElMessage.error("导入失败");
-            return;
+          const ok = await confirmAction(
+            "导入会覆盖当前所有数据（导入前会自动备份），确定继续？",
+            "导入确认"
+          );
+          if (!ok) return;
+          try {
+            const path = await window.storage.chooseImportFile();
+            if (!path) return;
+            const success = await window.storage.import(path);
+            if (!success) {
+              ElMessage.error("导入失败：文件格式不正确或不是有效的排班数据包");
+              return;
+            }
+            await Promise.all([
+              staffStore.load(),
+              postStore.load(),
+              shiftStore.load(),
+              scheduleStore.load(),
+              nightRuleStore.load(),
+              demandStore.load(),
+              settingsStore.load()
+            ]);
+            ElMessage.success("导入成功，数据已重新加载");
+          } catch (e) {
+            reportError("导入数据", e);
           }
-          await Promise.all([
-            staffStore.load(),
-            postStore.load(),
-            shiftStore.load(),
-            scheduleStore.load(),
-            nightRuleStore.load(),
-            demandStore.load(),
-            settingsStore.load()
-          ]);
-          ElMessage.success("导入成功，数据已重新加载");
         }
         async function onBackup() {
-          await window.storage.backup();
-          await settingsStore.update({ lastBackupAt: (/* @__PURE__ */ new Date()).toISOString() });
-          ElMessage.success("已备份");
+          try {
+            const ok = await window.storage.backup();
+            await settingsStore.update({ lastBackupAt: (/* @__PURE__ */ new Date()).toISOString() });
+            if (ok) {
+              ElMessage.success("已备份");
+            } else {
+              ElMessage.warning("备份未成功完成，请检查数据目录权限");
+            }
+          } catch (e) {
+            reportError("备份数据", e);
+          }
+        }
+        async function onLoadDemo() {
+          const ok = await confirmAction(
+            "将覆盖当前的人员、班次、岗位、夜班规则、设置以及本周/下周排班，确定载入示例数据？",
+            "载入示例数据"
+          );
+          if (!ok) return;
+          try {
+            const demo = buildDemoData();
+            postStore.list = demo.posts;
+            shiftStore.list = demo.shifts;
+            staffStore.list = demo.staff;
+            nightRuleStore.rules = demo.nightRules;
+            settingsStore.settings = demo.settings;
+            scheduleStore.weeks = Object.fromEntries(demo.weeks.map((w2) => [w2.weekKey, w2]));
+            await Promise.all([
+              postStore.persist(),
+              shiftStore.persist(),
+              staffStore.persist(),
+              nightRuleStore.persist(),
+              settingsStore.persist(),
+              scheduleStore.persist()
+            ]);
+            ElMessage.success("示例数据已载入");
+          } catch (e) {
+            reportError("载入示例数据", e);
+          }
         }
         return (_ctx, _cache) => {
           const _component_el_button = ElButton;
@@ -50070,6 +51301,16 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
               createVNode(_component_el_button, { onClick: onBackup }, {
                 default: withCtx(() => [..._cache[5] || (_cache[5] = [
                   createTextVNode("立即备份", -1)
+                ])]),
+                _: 1
+              }),
+              createVNode(_component_el_button, {
+                type: "warning",
+                plain: "",
+                onClick: onLoadDemo
+              }, {
+                default: withCtx(() => [..._cache[6] || (_cache[6] = [
+                  createTextVNode("载入示例数据", -1)
                 ])]),
                 _: 1
               }),
@@ -50157,7 +51398,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                           type: "primary",
                           onClick: onSave
                         }, {
-                          default: withCtx(() => [..._cache[6] || (_cache[6] = [
+                          default: withCtx(() => [..._cache[7] || (_cache[7] = [
                             createTextVNode("保存配置", -1)
                           ])]),
                           _: 1
@@ -50175,150 +51416,11 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         };
       }
     });
-    const _sfc_main$1 = /* @__PURE__ */ defineComponent({
-      __name: "SetupWizard",
-      props: {
-        modelValue: { type: Boolean }
-      },
-      emits: ["update:modelValue"],
-      setup(__props, { emit: __emit }) {
-        const emit2 = __emit;
-        const settingsStore = useSettingsStore();
-        const shiftStore = useShiftStore();
-        const assistNightShiftId = /* @__PURE__ */ ref(settingsStore.settings.assistNightShiftId);
-        const weekdayRequiredShiftIds = /* @__PURE__ */ ref([...settingsStore.settings.weekdayRequiredShiftIds]);
-        const weekendRequiredShiftIds = /* @__PURE__ */ ref([...settingsStore.settings.weekendRequiredShiftIds]);
-        async function onFinish() {
-          await settingsStore.update({
-            assistNightShiftId: assistNightShiftId.value,
-            weekdayRequiredShiftIds: weekdayRequiredShiftIds.value,
-            weekendRequiredShiftIds: weekendRequiredShiftIds.value
-          });
-          ElMessage.success("初始化完成");
-          emit2("update:modelValue", false);
-        }
-        return (_ctx, _cache) => {
-          const _component_el_alert = ElAlert;
-          const _component_el_option = ElOption;
-          const _component_el_select = ElSelect;
-          const _component_el_form_item = ElFormItem;
-          const _component_el_form = ElForm;
-          const _component_el_button = ElButton;
-          const _component_el_dialog = ElDialog;
-          return openBlock(), createBlock(_component_el_dialog, {
-            "model-value": __props.modelValue,
-            title: "首次使用配置",
-            width: "560px",
-            "close-on-click-modal": false,
-            "close-on-press-escape": false,
-            "show-close": false
-          }, {
-            footer: withCtx(() => [
-              createVNode(_component_el_button, {
-                type: "primary",
-                onClick: onFinish
-              }, {
-                default: withCtx(() => [..._cache[3] || (_cache[3] = [
-                  createTextVNode("完成", -1)
-                ])]),
-                _: 1
-              })
-            ]),
-            default: withCtx(() => [
-              createVNode(_component_el_alert, {
-                type: "info",
-                closable: false,
-                title: "请先完成基础配置：必备班次、助夜班。夜班循环规则可在“夜班循环规则”页设置。"
-              }),
-              createVNode(_component_el_form, {
-                "label-width": "140px",
-                style: { "margin-top": "16px" }
-              }, {
-                default: withCtx(() => [
-                  createVNode(_component_el_form_item, { label: "助夜班" }, {
-                    default: withCtx(() => [
-                      createVNode(_component_el_select, {
-                        modelValue: assistNightShiftId.value,
-                        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => assistNightShiftId.value = $event),
-                        clearable: "",
-                        placeholder: "选择助夜班班次",
-                        style: { "width": "100%" }
-                      }, {
-                        default: withCtx(() => [
-                          (openBlock(true), createElementBlock(Fragment, null, renderList(unref(shiftStore).list, (s2) => {
-                            return openBlock(), createBlock(_component_el_option, {
-                              key: s2.id,
-                              label: s2.name,
-                              value: s2.id
-                            }, null, 8, ["label", "value"]);
-                          }), 128))
-                        ]),
-                        _: 1
-                      }, 8, ["modelValue"])
-                    ]),
-                    _: 1
-                  }),
-                  createVNode(_component_el_form_item, { label: "工作日必备班次" }, {
-                    default: withCtx(() => [
-                      createVNode(_component_el_select, {
-                        modelValue: weekdayRequiredShiftIds.value,
-                        "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => weekdayRequiredShiftIds.value = $event),
-                        multiple: "",
-                        placeholder: "可多选",
-                        style: { "width": "100%" }
-                      }, {
-                        default: withCtx(() => [
-                          (openBlock(true), createElementBlock(Fragment, null, renderList(unref(shiftStore).list, (s2) => {
-                            return openBlock(), createBlock(_component_el_option, {
-                              key: s2.id,
-                              label: s2.name,
-                              value: s2.id
-                            }, null, 8, ["label", "value"]);
-                          }), 128))
-                        ]),
-                        _: 1
-                      }, 8, ["modelValue"])
-                    ]),
-                    _: 1
-                  }),
-                  createVNode(_component_el_form_item, { label: "周末必备班次" }, {
-                    default: withCtx(() => [
-                      createVNode(_component_el_select, {
-                        modelValue: weekendRequiredShiftIds.value,
-                        "onUpdate:modelValue": _cache[2] || (_cache[2] = ($event) => weekendRequiredShiftIds.value = $event),
-                        multiple: "",
-                        placeholder: "可多选",
-                        style: { "width": "100%" }
-                      }, {
-                        default: withCtx(() => [
-                          (openBlock(true), createElementBlock(Fragment, null, renderList(unref(shiftStore).list, (s2) => {
-                            return openBlock(), createBlock(_component_el_option, {
-                              key: s2.id,
-                              label: s2.name,
-                              value: s2.id
-                            }, null, 8, ["label", "value"]);
-                          }), 128))
-                        ]),
-                        _: 1
-                      }, 8, ["modelValue"])
-                    ]),
-                    _: 1
-                  })
-                ]),
-                _: 1
-              })
-            ]),
-            _: 1
-          }, 8, ["model-value"]);
-        };
-      }
-    });
     const _hoisted_1 = { class: "app-container" };
     const _sfc_main = /* @__PURE__ */ defineComponent({
       __name: "App",
       setup(__props) {
         const activeTab = /* @__PURE__ */ ref("current");
-        const setupVisible = /* @__PURE__ */ ref(false);
         const staffStore = useStaffStore();
         const postStore = usePostStore();
         const shiftStore = useShiftStore();
@@ -50326,6 +51428,23 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
         const nightRuleStore = useNightRuleStore();
         const demandStore = useDemandStore();
         const settingsStore = useSettingsStore();
+        async function seedDemoData() {
+          const demo = buildDemoData();
+          staffStore.list = demo.staff;
+          postStore.list = demo.posts;
+          shiftStore.list = demo.shifts;
+          nightRuleStore.rules = demo.nightRules;
+          settingsStore.settings = demo.settings;
+          scheduleStore.weeks = Object.fromEntries(demo.weeks.map((w2) => [w2.weekKey, w2]));
+          await Promise.all([
+            staffStore.persist(),
+            postStore.persist(),
+            shiftStore.persist(),
+            nightRuleStore.persist(),
+            settingsStore.persist(),
+            scheduleStore.persist()
+          ]);
+        }
         onMounted(async () => {
           await Promise.all([
             staffStore.load(),
@@ -50336,15 +51455,22 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
             demandStore.load(),
             settingsStore.load()
           ]);
-          try {
-            await window.storage.backup();
-            await settingsStore.update({ lastBackupAt: (/* @__PURE__ */ new Date()).toISOString() });
-          } catch (e) {
-            console.error(e);
-            ElMessage.warning("自动备份失败");
+          if (staffStore.list.length === 0 && Object.keys(scheduleStore.weeks).length === 0) {
+            try {
+              await seedDemoData();
+            } catch (e) {
+              console.error("载入示例数据失败", e);
+            }
           }
-          if (settingsStore.needsSetup()) {
-            setupVisible.value = true;
+          try {
+            const ok = await window.storage.backup();
+            if (ok) {
+              await settingsStore.update({ lastBackupAt: (/* @__PURE__ */ new Date()).toISOString() });
+            } else {
+              console.warn("自动备份未成功完成（已忽略）");
+            }
+          } catch (e) {
+            console.error("自动备份失败", e);
           }
         });
         return (_ctx, _cache) => {
@@ -50365,7 +51491,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       name: "current"
                     }, {
                       default: withCtx(() => [
-                        createVNode(_sfc_main$h)
+                        createVNode(CurrentWeekView)
                       ]),
                       _: 1
                     }),
@@ -50383,7 +51509,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       name: "staff"
                     }, {
                       default: withCtx(() => [
-                        createVNode(_sfc_main$d)
+                        createVNode(_sfc_main$c)
                       ]),
                       _: 1
                     }),
@@ -50392,7 +51518,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       name: "post"
                     }, {
                       default: withCtx(() => [
-                        createVNode(_sfc_main$b)
+                        createVNode(_sfc_main$a)
                       ]),
                       _: 1
                     }),
@@ -50401,7 +51527,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       name: "shift"
                     }, {
                       default: withCtx(() => [
-                        createVNode(_sfc_main$8)
+                        createVNode(_sfc_main$7)
                       ]),
                       _: 1
                     }),
@@ -50410,7 +51536,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       name: "nightRule"
                     }, {
                       default: withCtx(() => [
-                        createVNode(_sfc_main$6)
+                        createVNode(_sfc_main$5)
                       ]),
                       _: 1
                     }),
@@ -50419,7 +51545,7 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       name: "demand"
                     }, {
                       default: withCtx(() => [
-                        createVNode(_sfc_main$3)
+                        createVNode(_sfc_main$2)
                       ]),
                       _: 1
                     }),
@@ -50428,17 +51554,13 @@ usage: app.provide(ZINDEX_INJECTION_KEY, { current: 0 })`);
                       name: "settings"
                     }, {
                       default: withCtx(() => [
-                        createVNode(_sfc_main$2)
+                        createVNode(_sfc_main$1)
                       ]),
                       _: 1
                     })
                   ]),
                   _: 1
-                }, 8, ["modelValue"]),
-                createVNode(_sfc_main$1, {
-                  modelValue: setupVisible.value,
-                  "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => setupVisible.value = $event)
-                }, null, 8, ["modelValue"])
+                }, 8, ["modelValue"])
               ])
             ]),
             _: 1

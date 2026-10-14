@@ -18,7 +18,9 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  'cell-change': [payload: { staffId: string; date: string; shiftId: string | null; isRest: boolean }]
+  'cell-change': [
+    payload: { staffId: string; date: string; shiftId: string | null; isRest: boolean; remark?: string }
+  ]
 }>()
 
 const weekDates = computed(() => getWeekDates(props.week.weekStart))
@@ -52,6 +54,8 @@ function getShift(shiftId?: string | null): Shift | undefined {
 }
 
 function isEditable(date: string): boolean {
+  // 已发布 / 已过期的排班整体只读，防止误改
+  if (props.week.status !== 'draft') return false
   if (typeof props.editable === 'function') return props.editable(date)
   return props.editable !== false
 }
@@ -68,11 +72,13 @@ function openDialog(staffId: string, date: string) {
   dialogVisible.value = true
 }
 
-function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean }) {
+function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; remark?: string }) {
   emit('cell-change', {
     staffId: currentStaffId.value,
     date: currentDate.value,
-    ...payload
+    shiftId: payload.shiftId,
+    isRest: payload.isRest,
+    remark: payload.remark ?? ''
   })
 }
 </script>
@@ -80,11 +86,13 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean }) {
 <template>
   <div class="schedule-wrap">
     <h3 v-if="title" class="schedule-title">{{ title }}</h3>
-    <el-table :data="tableData" border height="calc(100vh - 260px)" class="schedule-table">
+    <el-table :data="tableData" border class="schedule-table">
+      <!-- 以下列暂不展示，需要时取消注释即可恢复：
       <el-table-column prop="annualLeave" label="年假" width="56" fixed="left" align="center" />
       <el-table-column prop="title" label="能级/职称" width="90" fixed="left" align="center" />
       <el-table-column prop="postName" label="岗位" width="110" fixed="left" align="center" />
       <el-table-column prop="bedManagement" label="管床" width="110" fixed="left" />
+      -->
       <el-table-column prop="staffName" label="姓名" width="84" fixed="left" align="center" />
       <el-table-column v-for="date in weekDates" :key="date" min-width="108" align="center">
         <template #header>
@@ -102,7 +110,7 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean }) {
           />
         </template>
       </el-table-column>
-      <el-table-column prop="accumulatedLeave" label="积休" width="56" fixed="right" align="center" />
+      <!-- <el-table-column prop="accumulatedLeave" label="积休" width="56" fixed="right" align="center" /> -->
     </el-table>
 
     <ShiftSelectDialog

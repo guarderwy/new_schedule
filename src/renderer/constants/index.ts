@@ -8,12 +8,6 @@ export const FILE_NAMES = {
   SETTINGS: 'settings.json'
 } as const
 
-export const DEFAULT_ASSIST_NIGHT_SHIFT_ID = 'assist-night-shift'
-
-export const BACKUP_KEEP_DAYS = 7
-
-export const WEEK_KEY_FORMAT = 'YYYY-MM-DD-YYYY-MM-DD'
-
 export const STAFF_STATUS_LABEL: Record<string, string> = {
   active: '在职',
   leave: '休假',

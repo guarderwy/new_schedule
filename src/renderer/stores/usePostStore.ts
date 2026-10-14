@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import { FILE_NAMES } from '@renderer/constants'
+import { useStaffStore } from './useStaffStore'
 import type { Post } from '@renderer/types/post'
 
 export const usePostStore = defineStore('post', () => {
@@ -28,9 +29,13 @@ export const usePostStore = defineStore('post', () => {
     await persist()
   }
 
-  async function remove(id: string) {
+  /** 删除岗位，并清空引用该岗位的人员的 postId */
+  async function remove(id: string): Promise<number> {
     list.value = list.value.filter((p) => p.id !== id)
+    const staffStore = useStaffStore()
+    const affected = await staffStore.clearPostReference(id)
     await persist()
+    return affected
   }
 
   return { list, load, persist, add, update, remove }

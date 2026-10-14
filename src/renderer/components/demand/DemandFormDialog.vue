@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { reactive, ref, watch, computed } from 'vue'
+import { ElMessage } from 'element-plus'
 import type { Demand, DemandType } from '@renderer/types/demand'
 import { useStaffStore } from '@renderer/stores/useStaffStore'
 import { useShiftStore } from '@renderer/stores/useShiftStore'
@@ -44,16 +45,26 @@ watch(
 )
 
 async function onSubmit() {
-  if (!form.staffId || !form.date) {
+  if (!form.staffId) {
+    ElMessage.warning('请选择人员')
     return
   }
+  if (!form.date) {
+    ElMessage.warning('请选择日期')
+    return
+  }
+  if (form.type === 'shift' && !form.shiftId) {
+    ElMessage.warning('请选择要指定的班次')
+    return
+  }
+  // 编辑时保留原状态，避免“已满足 / 已拒绝”被重置为待处理
   const payload: Omit<Demand, 'id' | 'createdAt' | 'updatedAt'> = {
     staffId: form.staffId,
     date: form.date,
     type: form.type,
     shiftId: form.type === 'shift' ? form.shiftId : null,
     remark: form.remark,
-    status: 'pending'
+    status: props.demand?.status ?? 'pending'
   }
   emit('submit', payload)
   visible.value = false

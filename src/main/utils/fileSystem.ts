@@ -125,6 +125,29 @@ const DATA_FILE_NAMES = [
   'settings.json'
 ]
 
+/** 各数据文件期望的结构，用于导入前校验，避免脏数据污染现有数据 */
+const FILE_SHAPES: Record<string, 'list' | 'weeks' | 'rules' | 'object'> = {
+  'staff.json': 'list',
+  'posts.json': 'list',
+  'shifts.json': 'list',
+  'demands.json': 'list',
+  'schedules.json': 'weeks',
+  'night_shift_rules.json': 'rules',
+  'settings.json': 'object'
+}
+
+function isValidBundleFile(name: string, content: unknown): boolean {
+  const shape = FILE_SHAPES[name]
+  if (!shape || content == null || typeof content !== 'object') return false
+  if (shape === 'list') return Array.isArray((content as { list?: unknown }).list)
+  if (shape === 'weeks') {
+    const weeks = (content as { weeks?: unknown }).weeks
+    return typeof weeks === 'object' && weeks !== null
+  }
+  if (shape === 'rules') return Array.isArray((content as { rules?: unknown }).rules)
+  return true
+}
+
 export function exportDataBundle(dataDir: string, targetPath: string): boolean {
   const files: Record<string, unknown> = {}
   for (const name of DATA_FILE_NAMES) {
@@ -138,16 +161,32 @@ export function exportDataBundle(dataDir: string, targetPath: string): boolean {
   return true
 }
 
+/**
+ * 导入数据包：先做结构校验，通过后先自动备份再覆盖，
+ * 任一文件格式不符都会整体拒绝导入，避免污染现有数据。
+ */
 export function importDataBundle(dataDir: string, sourcePath: string): boolean {
   const payload = readJsonSafe(sourcePath) as {
     files?: Record<string, unknown>
   } | null
-  if (!payload?.files) return false
-  ensureDataFiles(dataDir)
-  for (const name of DATA_FILE_NAMES) {
-    if (payload.files[name] != null) {
-      atomicWriteJson(path.join(dataDir, name), payload.files[name])
+  if (!payload?.files || typeof payload.files !== 'object') return false
+
+  const entries = Object.entries(payload.files).filter(([name]) =>
+    DATA_FILE_NAMES.includes(name)
+  )
+  if (entries.length === 0) return false
+  for (const [name, content] of entries) {
+    if (!isValidBundleFile(name, content)) {
+      console.error('import rejected: invalid file in bundle', name)
+      return false
     }
+  }
+
+  // 导入前先备份当前数据，导入失败/不满意时可回滚
+  backupDataDir(dataDir)
+  ensureDataFiles(dataDir)
+  for (const [name, content] of entries) {
+    atomicWriteJson(path.join(dataDir, name), content)
   }
   return true
 }

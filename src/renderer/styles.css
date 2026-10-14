@@ -41,6 +41,7 @@ body,
 }
 
 .schedule-cell {
+  position: relative;
   min-height: 40px;
   display: flex;
   align-items: center;

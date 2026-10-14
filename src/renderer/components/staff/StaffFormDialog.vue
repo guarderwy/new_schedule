@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, reactive, ref, watch } from 'vue'
+import { ElMessage } from 'element-plus'
 import type { Staff, StaffStatus, GroupType } from '@renderer/types/staff'
 import { usePostStore } from '@renderer/stores/usePostStore'
+import { useStaffStore } from '@renderer/stores/useStaffStore'
 
 const props = defineProps<{
   modelValue: boolean
@@ -14,6 +16,7 @@ const emit = defineEmits<{
 }>()
 
 const postStore = usePostStore()
+const staffStore = useStaffStore()
 const visible = computed({
   get: () => props.modelValue,
   set: (v) => emit('update:modelValue', v)
@@ -63,7 +66,22 @@ const formRef = ref()
 
 async function onSubmit() {
   await formRef.value?.validate()
-  emit('submit', { ...form })
+
+  const employeeNo = form.employeeNo.trim()
+  if (!employeeNo) {
+    ElMessage.warning('请输入工号')
+    return
+  }
+  // 工号唯一性校验（编辑时排除自身）
+  const duplicated = staffStore.list.some(
+    (s) => s.employeeNo.trim() === employeeNo && s.id !== props.staff?.id
+  )
+  if (duplicated) {
+    ElMessage.warning(`工号「${employeeNo}」已被其他人员使用`)
+    return
+  }
+
+  emit('submit', { ...form, employeeNo, name: form.name.trim() })
   visible.value = false
 }
 </script>
@@ -96,7 +114,7 @@ async function onSubmit() {
         <el-date-picker
           v-model="form.statusStartTime"
           type="datetime"
-          value-format="YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+          value-format="YYYY-MM-DDTHH:mm:ss"
           clearable
           style="width: 100%"
         />
@@ -105,10 +123,13 @@ async function onSubmit() {
         <el-date-picker
           v-model="form.statusEndTime"
           type="datetime"
-          value-format="YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+          value-format="YYYY-MM-DDTHH:mm:ss"
           clearable
           style="width: 100%"
         />
+        <div class="field-hint">
+          休假 / 进修 / 停职为临时状态，到期后自动恢复可排班；离职为永久状态。
+        </div>
       </el-form-item>
       <el-form-item label="岗位">
         <el-select v-model="form.postId" clearable style="width: 100%">
@@ -137,3 +158,11 @@ async function onSubmit() {
     </template>
   </el-dialog>
 </template>
+
+<style scoped>
+.field-hint {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #909399;
+}
+</style>

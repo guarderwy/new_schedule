@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { reactive, ref, watch, computed } from 'vue'
+import { ElMessage } from 'element-plus'
 import type { Shift } from '@renderer/types/shift'
+import { useShiftStore } from '@renderer/stores/useShiftStore'
 
 const props = defineProps<{
   modelValue: boolean
@@ -11,6 +13,8 @@ const emit = defineEmits<{
   'update:modelValue': [value: boolean]
   submit: [payload: Omit<Shift, 'id' | 'createdAt' | 'updatedAt'>]
 }>()
+
+const shiftStore = useShiftStore()
 
 const visible = computed({
   get: () => props.modelValue,
@@ -38,8 +42,20 @@ watch(
 const formRef = ref()
 
 async function onSubmit() {
-  if (!form.name.trim()) return
-  emit('submit', { ...form, name: form.name.trim() })
+  const name = form.name.trim()
+  if (!name) {
+    ElMessage.warning('请输入班次名称')
+    return
+  }
+  // 班次名称唯一性校验（编辑时排除自身）
+  const duplicated = shiftStore.list.some(
+    (s) => s.name.trim() === name && s.id !== props.shift?.id
+  )
+  if (duplicated) {
+    ElMessage.warning(`班次名称「${name}」已存在`)
+    return
+  }
+  emit('submit', { ...form, name })
   visible.value = false
 }
 </script>

@@ -39,29 +39,46 @@ function isDirectory(filePath) {
   }
 }
 function backupDataDir(dataDir) {
-  if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
-  const backupRoot = path.join(dataDir, "backup");
-  if (!fs.existsSync(backupRoot)) fs.mkdirSync(backupRoot, { recursive: true });
-  const stamp = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
-  const target = path.join(backupRoot, stamp);
-  if (!fs.existsSync(target)) fs.mkdirSync(target, { recursive: true });
-  for (const f of fs.readdirSync(dataDir)) {
-    if (f === "backup") continue;
-    const src = path.join(dataDir, f);
-    if (isDirectory(src)) continue;
-    if (f.endsWith(".tmp")) continue;
-    fs.copyFileSync(src, path.join(target, f));
-  }
-  const cutoff = Date.now() - BACKUP_KEEP_DAYS * 24 * 60 * 60 * 1e3;
-  for (const name of fs.readdirSync(backupRoot)) {
-    const dir = path.join(backupRoot, name);
-    if (!isDirectory(dir)) continue;
-    const time = Date.parse(name);
-    if (!Number.isNaN(time) && time < cutoff) {
-      fs.rmSync(dir, { recursive: true, force: true });
+  try {
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+    const backupRoot = path.join(dataDir, "backup");
+    if (!fs.existsSync(backupRoot)) {
+      fs.mkdirSync(backupRoot, { recursive: true });
+    } else if (!isDirectory(backupRoot)) {
+      fs.rmSync(backupRoot, { recursive: true, force: true });
+      fs.mkdirSync(backupRoot, { recursive: true });
     }
+    const stamp = (/* @__PURE__ */ new Date()).toISOString().slice(0, 10);
+    const target = path.join(backupRoot, stamp);
+    if (fs.existsSync(target) && !isDirectory(target)) {
+      fs.rmSync(target, { recursive: true, force: true });
+    }
+    if (!fs.existsSync(target)) fs.mkdirSync(target, { recursive: true });
+    for (const f of fs.readdirSync(dataDir)) {
+      if (f === "backup") continue;
+      if (f.endsWith(".tmp") || f.endsWith(".bak")) continue;
+      const src = path.join(dataDir, f);
+      if (isDirectory(src)) continue;
+      try {
+        fs.copyFileSync(src, path.join(target, f));
+      } catch (copyErr) {
+        console.error("backup copy failed for", f, copyErr);
+      }
+    }
+    const cutoff = Date.now() - BACKUP_KEEP_DAYS * 24 * 60 * 60 * 1e3;
+    for (const name of fs.readdirSync(backupRoot)) {
+      const dir = path.join(backupRoot, name);
+      if (!isDirectory(dir)) continue;
+      const time = Date.parse(name);
+      if (!Number.isNaN(time) && time < cutoff) {
+        fs.rmSync(dir, { recursive: true, force: true });
+      }
+    }
+    return true;
+  } catch (e) {
+    console.error("backupDataDir failed", e);
+    return false;
   }
-  return true;
 }
 function ensureDataFiles(dataDir) {
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
@@ -96,6 +113,26 @@ const DATA_FILE_NAMES = [
   "demands.json",
   "settings.json"
 ];
+const FILE_SHAPES = {
+  "staff.json": "list",
+  "posts.json": "list",
+  "shifts.json": "list",
+  "demands.json": "list",
+  "schedules.json": "weeks",
+  "night_shift_rules.json": "rules",
+  "settings.json": "object"
+};
+function isValidBundleFile(name, content) {
+  const shape = FILE_SHAPES[name];
+  if (!shape || content == null || typeof content !== "object") return false;
+  if (shape === "list") return Array.isArray(content.list);
+  if (shape === "weeks") {
+    const weeks = content.weeks;
+    return typeof weeks === "object" && weeks !== null;
+  }
+  if (shape === "rules") return Array.isArray(content.rules);
+  return true;
+}
 function exportDataBundle(dataDir, targetPath) {
   const files = {};
   for (const name of DATA_FILE_NAMES) {
@@ -110,30 +147,63 @@ function exportDataBundle(dataDir, targetPath) {
 }
 function importDataBundle(dataDir, sourcePath) {
   const payload = readJsonSafe(sourcePath);
-  if (!payload?.files) return false;
-  ensureDataFiles(dataDir);
-  for (const name of DATA_FILE_NAMES) {
-    if (payload.files[name] != null) {
-      atomicWriteJson(path.join(dataDir, name), payload.files[name]);
+  if (!payload?.files || typeof payload.files !== "object") return false;
+  const entries = Object.entries(payload.files).filter(
+    ([name]) => DATA_FILE_NAMES.includes(name)
+  );
+  if (entries.length === 0) return false;
+  for (const [name, content] of entries) {
+    if (!isValidBundleFile(name, content)) {
+      console.error("import rejected: invalid file in bundle", name);
+      return false;
     }
   }
+  backupDataDir(dataDir);
+  ensureDataFiles(dataDir);
+  for (const [name, content] of entries) {
+    atomicWriteJson(path.join(dataDir, name), content);
+  }
   return true;
+}
+const ALLOWED_DATA_FILES = /* @__PURE__ */ new Set([
+  "staff.json",
+  "posts.json",
+  "shifts.json",
+  "schedules.json",
+  "night_shift_rules.json",
+  "demands.json",
+  "settings.json"
+]);
+function safeDataFileName(fileName) {
+  if (typeof fileName !== "string" || fileName.length === 0) return null;
+  const base = path.basename(fileName);
+  return ALLOWED_DATA_FILES.has(base) ? base : null;
 }
 function getDataDir() {
   return path.join(electron.app.getPath("userData"), "data");
 }
 function registerStorageIPC() {
   electron.ipcMain.handle("storage:read", async (_e, fileName) => {
-    return readJsonSafe(path.join(getDataDir(), fileName));
+    const safe = safeDataFileName(fileName);
+    if (!safe) return null;
+    return readJsonSafe(path.join(getDataDir(), safe));
   });
   electron.ipcMain.handle("storage:write", async (_e, fileName, data) => {
-    await Promise.resolve(atomicWriteJson(path.join(getDataDir(), fileName), data));
+    const safe = safeDataFileName(fileName);
+    if (!safe) return false;
+    await Promise.resolve(atomicWriteJson(path.join(getDataDir(), safe), data));
     return true;
   });
   electron.ipcMain.handle("storage:list", async () => {
     const dataDir = getDataDir();
     if (!fs.existsSync(dataDir)) return [];
-    return fs.readdirSync(dataDir);
+    return fs.readdirSync(dataDir).filter((name) => {
+      try {
+        return fs.statSync(path.join(dataDir, name)).isFile();
+      } catch {
+        return false;
+      }
+    });
   });
   electron.ipcMain.handle("storage:export", async (_e, targetPath) => {
     return exportDataBundle(getDataDir(), targetPath);

@@ -28,8 +28,22 @@ const text = computed(() => {
       'is-empty': !detail?.shiftId && !detail?.isRest,
       'is-disabled': !editable
     }"
+    :title="detail?.remark || ''"
     @click="editable && $emit('click')"
   >
     {{ text }}
+    <span v-if="detail?.remark" class="remark-flag" />
   </div>
 </template>
+
+<style scoped>
+.remark-flag {
+  position: absolute;
+  top: 2px;
+  right: 3px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #e6a23c;
+}
+</style>

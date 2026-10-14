@@ -11,7 +11,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'update:modelValue': [value: boolean]
-  confirm: [payload: { shiftId: string | null; isRest: boolean }]
+  confirm: [payload: { shiftId: string | null; isRest: boolean; remark: string }]
 }>()
 
 const visible = computed({
@@ -20,6 +20,7 @@ const visible = computed({
 })
 
 const selected = ref<string>('empty')
+const remark = ref('')
 
 watch(
   () => [props.modelValue, props.current] as const,
@@ -27,23 +28,25 @@ watch(
     if (props.current?.isRest) selected.value = 'rest'
     else if (props.current?.shiftId) selected.value = props.current.shiftId
     else selected.value = 'empty'
+    remark.value = props.current?.remark ?? ''
   },
   { immediate: true }
 )
 
 function onConfirm() {
   if (selected.value === 'rest') {
-    emit('confirm', { shiftId: null, isRest: true })
+    emit('confirm', { shiftId: null, isRest: true, remark: remark.value.trim() })
   } else if (selected.value === 'empty') {
-    emit('confirm', { shiftId: null, isRest: false })
+    emit('confirm', { shiftId: null, isRest: false, remark: remark.value.trim() })
   } else {
-    emit('confirm', { shiftId: selected.value, isRest: false })
+    emit('confirm', { shiftId: selected.value, isRest: false, remark: remark.value.trim() })
   }
   visible.value = false
 }
 
 function onClear() {
   selected.value = 'empty'
+  remark.value = ''
   onConfirm()
 }
 </script>
@@ -56,6 +59,11 @@ function onClear() {
         {{ shift.name }}（{{ shift.startTime }}-{{ shift.endTime }}）
       </el-radio>
     </el-radio-group>
+    <el-form label-width="56px" style="margin-top: 12px">
+      <el-form-item label="备注">
+        <el-input v-model="remark" type="textarea" :rows="2" placeholder="可选，如换班原因、临时事项" />
+      </el-form-item>
+    </el-form>
     <template #footer>
       <el-button @click="onClear">清空</el-button>
       <el-button @click="visible = false">取消</el-button>
