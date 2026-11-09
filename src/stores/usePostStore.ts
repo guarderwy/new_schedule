@@ -1,0 +1,43 @@
+import { defineStore } from 'pinia'
+import { ref } from 'vue'
+import { FILE_NAMES } from '@/constants'
+import { storage } from '@/storage'
+import { useStaffStore } from './useStaffStore'
+import type { Post } from '@/types/post'
+
+export const usePostStore = defineStore('post', () => {
+  const list = ref<Post[]>([])
+
+  async function load() {
+    const data = await storage.read(FILE_NAMES.POSTS)
+    list.value = data?.list ?? []
+  }
+
+  async function persist() {
+    await storage.write(FILE_NAMES.POSTS, { version: 1, list: list.value })
+  }
+
+  async function add(name: string) {
+    const now = new Date().toISOString()
+    list.value.push({ id: crypto.randomUUID(), name, createdAt: now, updatedAt: now })
+    await persist()
+  }
+
+  async function update(id: string, patch: Partial<Post>) {
+    const idx = list.value.findIndex((p) => p.id === id)
+    if (idx < 0) return
+    list.value[idx] = { ...list.value[idx], ...patch, updatedAt: new Date().toISOString() }
+    await persist()
+  }
+
+  /** 删除岗位，并清空引用该岗位的人员的 postId */
+  async function remove(id: string): Promise<number> {
+    list.value = list.value.filter((p) => p.id !== id)
+    const staffStore = useStaffStore()
+    const affected = await staffStore.clearPostReference(id)
+    await persist()
+    return affected
+  }
+
+  return { list, load, persist, add, update, remove }
+})

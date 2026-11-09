@@ -1,5 +1,6 @@
 node_modules
 dist
-release
+out
+*.tsbuildinfo
 *.log
 .DS_Store

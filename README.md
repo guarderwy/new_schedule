@@ -1,10 +1,10 @@
-# schedule-manager 排班管理系统
+# schedule-manager 排班管理系统（Web 版）
 
-医院 / 科室本地排班管理系统，基于 Electron 桌面端运行，数据全部保存在本地，无需联网。
+医院 / 科室排班管理系统，纯浏览器运行，无需 Electron 桌面端、无需后端服务，所有数据保存在浏览器本地。
 
 ## 技术栈
 
-- **Electron 30** + **electron-vite** —— 桌面运行时与构建工具
+- **Vite 5** —— 开发与构建工具
 - **Vue 3**（`<script setup>`）+ **TypeScript** —— 前端框架
 - **Pinia** —— 状态管理
 - **Element Plus** —— UI 组件库（按需自动引入）
@@ -48,7 +48,6 @@
 
 - Node.js 18+（建议 20 LTS）
 - npm 9+
-- Windows / macOS / Linux（Electron 跨平台）
 
 ## 开发 / 构建
 
@@ -56,13 +55,13 @@
 # 安装依赖
 npm install
 
-# 启动开发模式（带热重载）
+# 启动开发模式（默认 http://localhost:5173，带热重载）
 npm run dev
 
 # 类型检查
 npm run typecheck
 
-# 打包生产版本
+# 打包生产版本（输出 dist/，可直接部署到任意静态站点）
 npm run build
 
 # 预览生产构建
@@ -71,48 +70,36 @@ npm run preview
 
 ## 数据存储
 
-数据由 Electron **主进程**负责持久化，渲染进程通过预加载脚本暴露的 `window.storage` 接口访问，所有数据保存在本地文件，不上传任何服务器。
+数据保存在浏览器 `localStorage`，按数据文件分键存储，启动时自动初始化默认结构。
+`src/storage/index.ts` 对上层提供统一的 `storage` 接口：
 
-`window.storage` 提供的方法：
+- `read(fileName)` / `write(fileName, data)` —— 读写数据文件；写入前保留上一份副本，读取失败时自动回退
+- `backup()` —— 按日期保存快照，仅保留最近 7 天；应用启动时自动执行一次
+- `exportBundle()` —— 打包全部数据为 JSON 文件并触发浏览器下载
+- `importBundle()` —— 通过文件选择框读取 JSON，结构校验通过后先备份再覆盖现有数据
 
-- `read(fileName)` / `write(fileName, data)` —— 读写数据文件
-- `list()` —— 列出已有数据文件
-- `backup()` —— 自动备份
-- `export(targetPath)` / `import(sourcePath)` —— 导出 / 导入数据
-- `chooseExportFile()` / `chooseImportFile()` —— 弹出文件选择框
-
-> 备份动作会在应用启动时自动执行一次（见 `App.vue` 的 `onMounted`）。
-
-### 注意事项：IPC 边界的序列化
-
-Electron 的 IPC 使用结构化克隆，**Vue/Pinia 的响应式代理（Proxy）无法被克隆**（会抛
-`DataCloneError`）。因此 `window.storage.write` 的入参必须在预加载脚本中经
-`toPlain()`（见 `src/preload/toPlain.ts`）深度转换为纯对象后再发送。
-新增 IPC 方法时，凡是携带对象 / 数组入参的，都必须先过 `toPlain()`，
-否则写入会失败（旧版本就存在此问题：所有持久化均未生效，数据每次重启都会丢失）。
+> 数据只属于当前浏览器、当前站点：清除浏览器数据、更换浏览器或域名都会导致数据不可见。
+> 请定期使用「导出数据」保存 JSON 备份；`localStorage` 通常有约 5MB 容量限制。
 
 ## 项目结构
 
 ```
+index.html            # Vite 入口
+vite.config.ts        # 构建配置（@ 指向 src）
 src/
-├── main/                # Electron 主进程
-│   ├── index.ts         # 主进程入口
-│   ├── ipc/             # IPC 通信（storage.ts 数据读写，含文件名白名单校验）
-│   └── utils/           # 工具（fileSystem.ts 等）
-├── preload/             # 预加载脚本，向渲染进程暴露 window.storage
-└── renderer/            # Vue 渲染进程
-    ├── App.vue          # 入口与标签页布局
-    ├── main.ts          # 渲染进程入口
-    ├── styles.css       # 全局样式
-    ├── views/           # 各功能页（本周/下周排班、人员、岗位、班次…）
-    ├── components/      # 业务组件（列表、表单弹窗、排班表格等）
-    ├── core/            # 纯逻辑：排班生成、校验、冲突检测、CSV 导出、反馈封装
-    ├── stores/          # Pinia 状态（useStaffStore 等）
-    ├── types/           # TypeScript 类型定义
-    └── constants/       # 常量（状态、分组等枚举标签）
+├── main.ts           # 应用入口，初始化本地存储
+├── App.vue           # 标签页布局
+├── styles.css        # 全局样式
+├── storage/          # 浏览器持久化、备份、导入导出
+├── views/            # 各功能页（本周/下周排班、人员、岗位、班次…）
+├── components/       # 业务组件（列表、表单弹窗、排班表格等）
+├── core/             # 纯逻辑：排班生成、校验、冲突检测、CSV 导出、反馈封装
+├── stores/           # Pinia 状态（useStaffStore 等）
+├── types/            # TypeScript 类型定义
+└── constants/        # 常量（数据文件名、状态与分组等枚举标签）
 ```
 
 ## 说明
 
 - 组件与 API 经 `unplugin-vue-components` / `unplugin-auto-import` 按需自动引入，无需手动 `import` 组件。
-- 删除确认弹窗的居中样式与灰白风格在 `src/renderer/styles.css` 中统一配置（`#f5f7fa` 系统灰白底）。
+- 删除确认弹窗的居中样式与灰白风格在 `src/styles.css` 中统一配置（`#f5f7fa` 系统灰白底）。
