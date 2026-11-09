@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, reactive, ref, watch } from 'vue'
 import { ElMessage } from 'element-plus'
+import { STAFF_STATUS_LABEL } from '@/constants'
 import type { Staff, StaffStatus, GroupType } from '@/types/staff'
+import type { StaffInput } from '@/stores/useStaffStore'
 import { usePostStore } from '@/stores/usePostStore'
 import { useStaffStore } from '@/stores/useStaffStore'
 
@@ -12,7 +14,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   'update:modelValue': [value: boolean]
-  submit: [payload: Omit<Staff, 'id' | 'createdAt' | 'updatedAt'>]
+  submit: [payload: StaffInput]
 }>()
 
 const postStore = usePostStore()
@@ -28,6 +30,7 @@ const form = reactive({
   title: '',
   remark: '',
   status: 'active' as StaffStatus,
+  statusNote: '',
   statusStartTime: null as string | null,
   statusEndTime: null as string | null,
   postId: null as string | null,
@@ -47,6 +50,7 @@ watch(
     form.title = s?.title ?? ''
     form.remark = s?.remark ?? ''
     form.status = s?.status ?? 'active'
+    form.statusNote = s?.statusNote ?? ''
     form.statusStartTime = s?.statusStartTime ?? null
     form.statusEndTime = s?.statusEndTime ?? null
     form.postId = s?.postId ?? null
@@ -81,7 +85,12 @@ async function onSubmit() {
     return
   }
 
-  emit('submit', { ...form, employeeNo, name: form.name.trim() })
+  emit('submit', {
+    ...form,
+    employeeNo,
+    name: form.name.trim(),
+    statusNote: form.status === 'other' ? form.statusNote.trim() : ''
+  })
   visible.value = false
 }
 </script>
@@ -103,12 +112,16 @@ async function onSubmit() {
       </el-form-item>
       <el-form-item label="状态">
         <el-select v-model="form.status" style="width: 100%">
-          <el-option label="在职" value="active" />
-          <el-option label="休假" value="leave" />
-          <el-option label="离职" value="resigned" />
-          <el-option label="进修" value="training" />
-          <el-option label="停职" value="suspended" />
+          <el-option
+            v-for="(label, value) in STAFF_STATUS_LABEL"
+            :key="value"
+            :label="label"
+            :value="value"
+          />
         </el-select>
+      </el-form-item>
+      <el-form-item v-if="form.status === 'other'" label="状态说明">
+        <el-input v-model="form.statusNote" placeholder="如：产假、借调、外派…" clearable />
       </el-form-item>
       <el-form-item label="状态开始时间">
         <el-date-picker
@@ -128,7 +141,7 @@ async function onSubmit() {
           style="width: 100%"
         />
         <div class="field-hint">
-          休假 / 进修 / 停职为临时状态，到期后自动恢复可排班；离职为永久状态。
+          休假 / 进修 / 停职为临时状态，到期后自动恢复可排班；离职、其他为不可排班状态。
         </div>
       </el-form-item>
       <el-form-item label="岗位">

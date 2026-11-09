@@ -7,6 +7,7 @@ import {
   Calendar,
   Clock,
   Expand,
+  Files,
   Fold,
   Moon,
   Notebook,
@@ -15,6 +16,7 @@ import {
   Tickets,
   User
 } from '@element-plus/icons-vue'
+import HistoryView from './views/HistoryView.vue'
 import CurrentWeekView from './views/CurrentWeekView.vue'
 import NextWeekView from './views/NextWeekView.vue'
 import StaffView from './views/StaffView.vue'
@@ -31,6 +33,7 @@ import { useStaffStore } from './stores/useStaffStore'
 import { usePostStore } from './stores/usePostStore'
 import { useShiftStore } from './stores/useShiftStore'
 import { useScheduleStore } from './stores/useScheduleStore'
+import { useHistoryStore } from './stores/useHistoryStore'
 import { useNightRuleStore } from './stores/useNightRuleStore'
 import { useDemandStore } from './stores/useDemandStore'
 import { useSettingsStore } from './stores/useSettingsStore'
@@ -45,6 +48,7 @@ interface NavItem {
 const navItems: NavItem[] = [
   { key: 'current', label: '本周排班', desc: '查看、编辑并发布本周排班', icon: Calendar },
   { key: 'next', label: '下周排班', desc: '生成下周计划并承接本周数据', icon: Notebook },
+  { key: 'history', label: '历史排班', desc: '按时间查看已保存的排班记录', icon: Files },
   { key: 'staff', label: '人员管理', desc: '维护人员档案、状态与分组', icon: User },
   { key: 'post', label: '岗位管理', desc: '维护排班使用的岗位信息', icon: OfficeBuilding },
   { key: 'shift', label: '班次管理', desc: '配置班次名称与起止时间', icon: Clock },
@@ -56,6 +60,7 @@ const navItems: NavItem[] = [
 const componentMap: Record<string, Component> = {
   current: CurrentWeekView,
   next: NextWeekView,
+  history: HistoryView,
   staff: StaffView,
   post: PostView,
   shift: ShiftView,
@@ -84,6 +89,7 @@ const staffStore = useStaffStore()
 const postStore = usePostStore()
 const shiftStore = useShiftStore()
 const scheduleStore = useScheduleStore()
+const historyStore = useHistoryStore()
 const nightRuleStore = useNightRuleStore()
 const demandStore = useDemandStore()
 const settingsStore = useSettingsStore()
@@ -116,6 +122,7 @@ onMounted(async () => {
     postStore.load(),
     shiftStore.load(),
     scheduleStore.load(),
+    historyStore.load(),
     nightRuleStore.load(),
     demandStore.load(),
     settingsStore.load()
@@ -128,6 +135,13 @@ onMounted(async () => {
     } catch (e) {
       console.error('载入示例数据失败', e)
     }
+  }
+
+  // 已结束但未发布过的周，按周结束后的内容补一份存档镜像
+  try {
+    await historyStore.archiveEndedWeeks(scheduleStore.weeks)
+  } catch (e) {
+    console.error('归档历史排班失败', e)
   }
 
   // 自动备份：仅记录日志，不再弹窗打扰

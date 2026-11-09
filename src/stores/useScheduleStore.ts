@@ -3,10 +3,12 @@ import { ref } from 'vue'
 import dayjs from 'dayjs'
 import { FILE_NAMES } from '@/constants'
 import { storage } from '@/storage'
+import { useHistoryStore } from './useHistoryStore'
 import type { ScheduleDetail, ScheduleWeek } from '@/types/schedule'
 
 export const useScheduleStore = defineStore('schedule', () => {
   const weeks = ref<Record<string, ScheduleWeek>>({})
+  const historyStore = useHistoryStore()
 
   async function load() {
     const data = await storage.read(FILE_NAMES.SCHEDULES)
@@ -66,6 +68,8 @@ export const useScheduleStore = defineStore('schedule', () => {
     if (!week) return
     week.status = 'published'
     await persist()
+    // 发布即存档：冻结当时的排班与人员状态，历史页只读这份镜像
+    await historyStore.archivePublished(week)
   }
 
   /** 撤销发布：恢复为草稿，可继续编辑 */

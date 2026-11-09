@@ -1,5 +1,10 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
+import {
+  getStaffStatusText,
+  getStaffStatusDisplayText,
+  isStaffStatusEndedOn
+} from '@/constants'
 import type { ScheduleDetail, ScheduleWeek } from '@/types/schedule'
 import type { Staff } from '@/types/staff'
 import type { Shift } from '@/types/shift'
@@ -14,21 +19,37 @@ const props = defineProps<{
   shiftList: Shift[]
   postList?: Post[]
   title?: string
+  /** 标题右侧的操作说明，只读页面可自定义 */
+  hint?: string
   editable?: boolean | ((date: string) => boolean)
 }>()
 
 const emit = defineEmits<{
   'cell-change': [
-    payload: { staffId: string; date: string; shiftId: string | null; isRest: boolean; remark?: string }
+    payload: {
+      staffId: string
+      date: string
+      shiftId: string | null
+      isRest: boolean
+      remark?: string
+      remarkColor?: string
+    }
   ]
 }>()
 
 const weekDates = computed(() => getWeekDates(props.week.weekStart))
 
-const staffInWeek = computed(() => {
-  const ids = new Set(props.week.details.map((d) => d.staffId))
-  return props.staffList.filter((s) => ids.has(s.id))
-})
+/** 显示所有人员（含该周未排班者），按排序字段正序 */
+const staffInWeek = computed(() =>
+  props.staffList
+    .slice()
+    .sort(
+      (a, b) =>
+        (a.sortOrder ?? 0) - (b.sortOrder ?? 0) ||
+        a.employeeNo.localeCompare(b.employeeNo) ||
+        a.name.localeCompare(b.name)
+    )
+)
 
 const postMap = computed(() => new Map((props.postList ?? []).map((p) => [p.id, p.name])))
 
@@ -40,7 +61,9 @@ const tableData = computed(() =>
     annualLeave: s.annualLeave,
     accumulatedLeave: s.accumulatedLeave,
     bedManagement: s.bedManagement ?? '',
-    postName: s.postId ? (postMap.value.get(s.postId) ?? '') : ''
+    postName: s.postId ? (postMap.value.get(s.postId) ?? '') : '',
+    statusText: getStaffStatusText(s),
+    staff: s
   }))
 )
 
@@ -72,13 +95,19 @@ function openDialog(staffId: string, date: string) {
   dialogVisible.value = true
 }
 
-function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; remark?: string }) {
+function onDialogConfirm(payload: {
+  shiftId: string | null
+  isRest: boolean
+  remark?: string
+  remarkColor?: string
+}) {
   emit('cell-change', {
     staffId: currentStaffId.value,
     date: currentDate.value,
     shiftId: payload.shiftId,
     isRest: payload.isRest,
-    remark: payload.remark ?? ''
+    remark: payload.remark ?? '',
+    remarkColor: payload.remarkColor
   })
 }
 </script>
@@ -87,7 +116,7 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; rem
   <div class="schedule-wrap">
     <div v-if="title" class="schedule-head">
       <h3 class="schedule-title">{{ title }}</h3>
-      <span class="schedule-hint">点击单元格可调整班次 · 灰色单元格为只读</span>
+      <span class="schedule-hint">{{ hint ?? '点击单元格可调整班次 · 灰色单元格为只读' }}</span>
     </div>
     <el-table :data="tableData" border class="schedule-table">
       <!-- 以下列暂不展示，需要时取消注释即可恢复：
@@ -96,7 +125,14 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; rem
       <el-table-column prop="postName" label="岗位" width="110" fixed="left" align="center" />
       <el-table-column prop="bedManagement" label="管床" width="110" fixed="left" />
       -->
-      <el-table-column prop="staffName" label="姓名" width="84" fixed="left" align="center" />
+      <el-table-column label="姓名" width="116" fixed="left" align="center">
+        <template #default="{ row }">
+          <div class="staff-name">
+            <span>{{ row.staffName }}</span>
+            <span v-if="row.statusText" class="staff-status-tag">{{ row.statusText }}</span>
+          </div>
+        </template>
+      </el-table-column>
       <el-table-column v-for="date in weekDates" :key="date" min-width="108" align="center">
         <template #header>
           <div class="day-head">
@@ -105,7 +141,15 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; rem
           </div>
         </template>
         <template #default="{ row }">
+          <div
+            v-if="row.statusText && !isStaffStatusEndedOn(row.staff, date)"
+            class="schedule-cell is-status"
+            :title="getStaffStatusDisplayText(row.staff, date)"
+          >
+            {{ getStaffStatusDisplayText(row.staff, date) }}
+          </div>
           <ScheduleCell
+            v-else
             :detail="getDetail(row.staffId, date)"
             :shift="getShift(getDetail(row.staffId, date)?.shiftId)"
             :editable="isEditable(date)"
@@ -142,6 +186,24 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; rem
   height: 14px;
   border-radius: 2px;
   background: var(--brand);
+}
+
+.staff-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.staff-status-tag {
+  padding: 0 4px;
+  border-radius: 3px;
+  background: #eef1f6;
+  color: #8492a6;
+  font-size: 10px;
+  line-height: 16px;
+  white-space: nowrap;
 }
 
 .day-head {

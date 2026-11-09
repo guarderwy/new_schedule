@@ -72,16 +72,23 @@ async function onCellChange(payload: {
   shiftId: string | null
   isRest: boolean
   remark?: string
+  remarkColor?: string
 }) {
   try {
     if (!scheduleStore.getWeek(weekKey.value)) {
       await scheduleStore.upsertWeek(buildEmptyWeek(weekKey.value, staffStore.list))
     }
-    const patch: { shiftId: string | null; isRest: boolean; remark?: string } = {
+    const patch: {
+      shiftId: string | null
+      isRest: boolean
+      remark?: string
+      remarkColor?: string
+    } = {
       shiftId: payload.shiftId,
       isRest: payload.isRest
     }
     if (payload.remark !== undefined) patch.remark = payload.remark
+    if (payload.remarkColor !== undefined) patch.remarkColor = payload.remarkColor
     await scheduleStore.updateDetail(weekKey.value, payload.staffId, payload.date, patch)
   } catch (e) {
     reportError('保存排班', e)
@@ -174,10 +181,10 @@ function onExportCsv() {
       <el-tag v-else-if="week?.status === 'expired'" type="info">已过期</el-tag>
       <span class="hint">今天：{{ today }}（历史日期只读）</span>
       <span class="toolbar-spacer" />
-      <el-button :disabled="addableStaff.length === 0" @click="addPickerVisible = true">
+      <!-- <el-button :disabled="addableStaff.length === 0" @click="addPickerVisible = true">
         添加人员
-      </el-button>
-      <el-button type="primary" plain @click="onGenerate">生成排班</el-button>
+      </el-button> -->
+      <!-- <el-button type="primary" plain @click="onGenerate">生成排班</el-button> -->
       <el-button @click="onExportCsv">导出 CSV</el-button>
       <el-button v-if="week?.status === 'published'" @click="onUnpublish">撤销发布</el-button>
       <el-button v-else type="success" plain :disabled="!storedWeek" @click="onPublish">

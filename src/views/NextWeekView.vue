@@ -66,16 +66,23 @@ async function onCellChange(payload: {
   shiftId: string | null
   isRest: boolean
   remark?: string
+  remarkColor?: string
 }) {
   try {
     if (!scheduleStore.getWeek(weekKey.value)) {
       await scheduleStore.upsertWeek(buildEmptyWeek(weekKey.value, staffStore.list))
     }
-    const patch: { shiftId: string | null; isRest: boolean; remark?: string } = {
+    const patch: {
+      shiftId: string | null
+      isRest: boolean
+      remark?: string
+      remarkColor?: string
+    } = {
       shiftId: payload.shiftId,
       isRest: payload.isRest
     }
     if (payload.remark !== undefined) patch.remark = payload.remark
+    if (payload.remarkColor !== undefined) patch.remarkColor = payload.remarkColor
     await scheduleStore.updateDetail(weekKey.value, payload.staffId, payload.date, patch)
   } catch (e) {
     reportError('保存排班', e)

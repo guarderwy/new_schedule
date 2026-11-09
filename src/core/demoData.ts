@@ -170,6 +170,7 @@ export function buildDemoData(): DemoData {
     annualLeave: seed.annualLeave,
     accumulatedLeave: seed.accumulatedLeave,
     groupType: seed.groupType ?? 'day',
+    sortOrder: index + 1,
     createdAt: now,
     updatedAt: now
   }))

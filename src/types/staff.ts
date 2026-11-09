@@ -1,4 +1,11 @@
-export type StaffStatus = 'active' | 'leave' | 'resigned' | 'training' | 'suspended'
+export type StaffStatus =
+  | 'active'
+  | 'leave'
+  | 'resigned'
+  | 'training'
+  | 'suspended'
+  | 'other'
+
 export type GroupType = 'day' | 'night'
 
 export interface Staff {
@@ -8,6 +15,8 @@ export interface Staff {
   title: string
   remark?: string
   status: StaffStatus
+  /** 状态选「其他」时填写的自定义说明 */
+  statusNote?: string
   statusStartTime: string | null
   statusEndTime: string | null
   postId: string | null
@@ -15,6 +24,8 @@ export interface Staff {
   annualLeave: number
   accumulatedLeave: number
   groupType: GroupType
+  /** 人员列表与排班表的固定顺序，按正序展示 */
+  sortOrder: number
   createdAt: string
   updatedAt: string
 }

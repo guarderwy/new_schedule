@@ -103,6 +103,7 @@ function copyNonNightFromLastWeek(
       detail.shiftId = lastDetail.shiftId
       detail.isRest = lastDetail.isRest
       detail.remark = lastDetail.remark ?? ''
+      detail.remarkColor = lastDetail.remarkColor ?? null
     }
   }
 }
@@ -229,7 +230,8 @@ export function generateSchedule(params: GenerateParams): GenerateResult {
   const availableStaff = staffList.filter((s) => isStaffAvailable(s, ws, we))
   const details: ScheduleDetail[] = []
 
-  for (const staff of availableStaff) {
+  // 所有人员都建立 7 天的行：未排班 / 状态不可用的人也要显示在排班表里
+  for (const staff of staffList) {
     for (const date of dates) {
       details.push({
         id: crypto.randomUUID(),
@@ -289,11 +291,11 @@ export function copyLastWeekSchedule(params: {
   const { weekStart: ws, weekEnd: we } = parseWeekKey(targetWeekKey)
   const dates = getWeekDates(ws)
   const lastDates = getWeekDates(lastWeek.weekStart)
-  const availableStaff = staffList.filter((s) => isStaffAvailable(s, ws, we))
   const shiftIdSet = new Set(shifts.map((s) => s.id))
 
   const details: ScheduleDetail[] = []
-  for (const staff of availableStaff) {
+  // 全员建行；当天不可用的人员保留空行，不复制班次
+  for (const staff of staffList) {
     for (let i = 0; i < 7; i++) {
       const date = dates[i]
       const lastDate = lastDates[i]
@@ -302,6 +304,7 @@ export function copyLastWeekSchedule(params: {
       let shiftId: string | null = null
       let isRest = false
       let remark = ''
+      let remarkColor: string | null = null
 
       const demand = demands.find(
         (d) => d.staffId === staff.id && d.date === date && d.status !== 'rejected'
@@ -320,6 +323,7 @@ export function copyLastWeekSchedule(params: {
         shiftId = lastDetail.shiftId
         isRest = lastDetail.isRest
         remark = lastDetail.remark ?? ''
+        remarkColor = lastDetail.remarkColor ?? null
         // 与“生成排班”保持一致：周末不排助夜班
         if (
           isWeekend(date) &&
@@ -337,7 +341,8 @@ export function copyLastWeekSchedule(params: {
         date,
         shiftId,
         isRest,
-        remark
+        remark,
+        remarkColor
       })
     }
   }
@@ -358,9 +363,8 @@ export function buildEmptyWeek(
 ): ScheduleWeek {
   const { weekStart: ws, weekEnd: we } = parseWeekKey(targetWeekKey)
   const dates = getWeekDates(ws)
-  const availableStaff = staffList.filter((s) => isStaffAvailable(s, ws, we))
   const details: ScheduleDetail[] = []
-  for (const staff of availableStaff) {
+  for (const staff of staffList) {
     for (const date of dates) {
       details.push({
         id: crypto.randomUUID(),
@@ -397,7 +401,6 @@ export function appendStaffToWeek(week: ScheduleWeek, staffList: Staff[]): Sched
 
   for (const staff of staffList) {
     if (existing.has(staff.id)) continue
-    if (!isStaffAvailable(staff, week.weekStart, week.weekEnd)) continue
     for (const date of dates) {
       additions.push({
         id: crypto.randomUUID(),

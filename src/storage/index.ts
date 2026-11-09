@@ -2,7 +2,7 @@ import { FILE_NAMES } from '@/constants'
 import type { Demand } from '@/types/demand'
 import type { NightShiftRule } from '@/types/nightRule'
 import type { Post } from '@/types/post'
-import type { ScheduleWeek } from '@/types/schedule'
+import type { ScheduleSnapshot, ScheduleWeek } from '@/types/schedule'
 import type { Settings } from '@/types/settings'
 import type { Shift } from '@/types/shift'
 import type { Staff } from '@/types/staff'
@@ -18,6 +18,7 @@ interface DataFileMap {
   'posts.json': { version: number; list: Post[] }
   'shifts.json': { version: number; list: Shift[] }
   'schedules.json': { version: number; weeks: Record<string, ScheduleWeek> }
+  'history_snapshots.json': { version: number; snapshots: Record<string, ScheduleSnapshot> }
   'night_shift_rules.json': { version: number; rules: NightShiftRule[] }
   'demands.json': { version: number; list: Demand[] }
   'settings.json': Settings
@@ -30,6 +31,7 @@ const DEFAULT_FILES: DataFileMap = {
   'posts.json': { version: 1, list: [] },
   'shifts.json': { version: 1, list: [] },
   'schedules.json': { version: 1, weeks: {} },
+  'history_snapshots.json': { version: 1, snapshots: {} },
   'night_shift_rules.json': { version: 1, rules: [] },
   'demands.json': { version: 1, list: [] },
   'settings.json': {
@@ -42,12 +44,13 @@ const DEFAULT_FILES: DataFileMap = {
 }
 
 /** 各数据文件期望的结构，用于导入前校验，避免脏数据污染现有数据 */
-const FILE_SHAPES: Record<DataFileName, 'list' | 'weeks' | 'rules' | 'object'> = {
+const FILE_SHAPES: Record<DataFileName, 'list' | 'weeks' | 'snapshots' | 'rules' | 'object'> = {
   'staff.json': 'list',
   'posts.json': 'list',
   'shifts.json': 'list',
   'demands.json': 'list',
   'schedules.json': 'weeks',
+  'history_snapshots.json': 'snapshots',
   'night_shift_rules.json': 'rules',
   'settings.json': 'object'
 }
@@ -65,6 +68,10 @@ function isValidBundleFile(name: DataFileName, content: unknown): boolean {
     return typeof weeks === 'object' && weeks !== null
   }
   if (shape === 'rules') return Array.isArray((content as { rules?: unknown }).rules)
+  if (shape === 'snapshots') {
+    const snapshots = (content as { snapshots?: unknown }).snapshots
+    return typeof snapshots === 'object' && snapshots !== null
+  }
   return true
 }
 

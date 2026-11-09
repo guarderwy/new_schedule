@@ -1,3 +1,4 @@
+import { getStaffStatusDisplayText, isStaffStatusEndedOn } from '@/constants'
 import type { Post } from '@/types/post'
 import type { ScheduleWeek } from '@/types/schedule'
 import type { Shift } from '@/types/shift'
@@ -31,14 +32,25 @@ export function exportWeekToCsv(
   ]
 
   const rows = staffList
-    .filter((s) => week.details.some((d) => d.staffId === s.id))
+    .slice()
+    .sort(
+      (a, b) =>
+        (a.sortOrder ?? 0) - (b.sortOrder ?? 0) ||
+        a.employeeNo.localeCompare(b.employeeNo)
+    )
     .map((s) => {
       const cells = dates.map((date) => {
+        const statusText = isStaffStatusEndedOn(s, date)
+          ? ''
+          : getStaffStatusDisplayText(s, date)
+        if (statusText) return statusText
         const detail = week.details.find((d) => d.staffId === s.id && d.date === date)
         if (!detail) return ''
-        if (detail.isRest) return '休'
-        if (!detail.shiftId) return ''
-        return shiftMap.get(detail.shiftId) ?? detail.shiftId
+        let base = ''
+        if (detail.isRest) base = '休'
+        else if (detail.shiftId) base = shiftMap.get(detail.shiftId) ?? detail.shiftId
+        const remark = detail.remark?.trim()
+        return remark ? `${base || '-'}（${remark}）` : base
       })
       return [
         s.employeeNo,

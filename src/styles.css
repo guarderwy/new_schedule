@@ -571,7 +571,7 @@ body,
   transition: background 0.15s ease, color 0.15s ease;
 }
 
-.schedule-cell:not(.is-disabled):hover {
+.schedule-cell:not(.is-disabled):not(.is-status):hover {
   background: var(--brand-soft);
   color: var(--brand);
 }
@@ -590,6 +590,16 @@ body,
   cursor: not-allowed;
   background: #f7f8fb;
   color: #9aa4b4;
+}
+
+.schedule-cell.is-status {
+  cursor: default;
+  background: #f4f6fb;
+  color: #8492a6;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-align: center;
+  word-break: break-word;
 }
 
 /* ---------- 交互细节 ---------- */
