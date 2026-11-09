@@ -30,7 +30,7 @@ function shiftName(id: string): string {
         v-if="result.missingRequired.length === 0 && result.warnings.length === 0"
         type="success"
         :closable="false"
-        title="校验通过：必备班次齐全，未发现问题。"
+        title="校验通过：必备班次齐全，夜班循环正常。"
       />
       <template v-else>
         <el-alert

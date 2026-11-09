@@ -85,7 +85,10 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; rem
 
 <template>
   <div class="schedule-wrap">
-    <h3 v-if="title" class="schedule-title">{{ title }}</h3>
+    <div v-if="title" class="schedule-head">
+      <h3 class="schedule-title">{{ title }}</h3>
+      <span class="schedule-hint">点击单元格可调整班次 · 灰色单元格为只读</span>
+    </div>
     <el-table :data="tableData" border class="schedule-table">
       <!-- 以下列暂不展示，需要时取消注释即可恢复：
       <el-table-column prop="annualLeave" label="年假" width="56" fixed="left" align="center" />
@@ -124,15 +127,25 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; rem
 
 <style scoped>
 .schedule-title {
-  margin: 4px 0 12px;
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  color: #303133;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+.schedule-title::before {
+  content: '';
+  width: 3px;
+  height: 14px;
+  border-radius: 2px;
+  background: var(--brand);
 }
 
 .day-head {
-  line-height: 1.4;
+  line-height: 1.3;
 }
 
 .day-name {
@@ -140,7 +153,7 @@ function onDialogConfirm(payload: { shiftId: string | null; isRest: boolean; rem
 }
 
 .day-date {
-  font-size: 12px;
-  color: #909399;
+  font-size: 11px;
+  color: var(--muted);
 }
 </style>

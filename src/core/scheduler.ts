@@ -6,7 +6,6 @@ import type { ScheduleDetail, ScheduleWeek } from '@/types/schedule'
 import type { Settings } from '@/types/settings'
 import type { Shift } from '@/types/shift'
 import type { Staff } from '@/types/staff'
-import { findTimeConflicts } from './conflictChecker'
 import { hasDemandOnDate, validateSchedule } from './validator'
 import {
   getWeekDates,
@@ -261,8 +260,6 @@ export function generateSchedule(params: GenerateParams): GenerateResult {
     settings,
     nightRules
   })
-  warnings.push(...findTimeConflicts(details, shifts, staffList))
-
   return {
     week: {
       weekKey: targetWeekKey,
